@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Meadow.unity
     guid: b266a9cdce981f34d92c366dc72cc7df
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/HomeScreen.unity
     guid: 194e536b41c2edc4bbfed68806712ab9
   m_configObjects: {}
