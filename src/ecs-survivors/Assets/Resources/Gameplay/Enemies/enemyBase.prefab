@@ -10,6 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1835253824857810547}
   - component: {fileID: 8600206119152915635}
+  - component: {fileID: 848373032483130563}
+  - component: {fileID: 1643205620832147655}
+  - component: {fileID: 8844608326566308033}
+  - component: {fileID: 2529429512912019689}
   m_Layer: 0
   m_Name: enemyBase
   m_TagString: Untagged
@@ -46,7 +50,60 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3504a62946404cb4e710980c888496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EntityView: {fileID: 848373032483130563}
   Speed: 1
+--- !u!114 &848373032483130563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439855031686531578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 511653e70f1b4434a642cfce8b90ee4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1643205620832147655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439855031686531578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d9f8c0a3ffa4ffab7f8573459b8ef1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityView: {fileID: 848373032483130563}
+  SpriteRenderer: {fileID: 0}
+--- !u!114 &8844608326566308033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439855031686531578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a05134c594a6494d9f8c83798b4783ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityView: {fileID: 848373032483130563}
+--- !u!114 &2529429512912019689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439855031686531578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 969d28d9d3b148a7b37dec3d672334b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityView: {fileID: 848373032483130563}
   EnemyAnimator: {fileID: 3082643152100645119}
 --- !u!1 &3126144766799759099
 GameObject:
