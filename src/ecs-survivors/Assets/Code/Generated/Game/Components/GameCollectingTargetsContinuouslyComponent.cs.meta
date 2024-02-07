@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:src/ecs-survivors/Assets/Code/Generated/Game/Components/GameEntityLinkComponent.cs.meta
+guid: d88afe5008bb43149b0b920178a46d5a
+========
+guid: 6c3d2f8d02aea2941919809f15905789
+>>>>>>>> a1592a330363cb4d46e1af9afaaea69ab77d2cd3:src/ecs-survivors/Assets/Code/Generated/Game/Components/GameCollectingTargetsContinuouslyComponent.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

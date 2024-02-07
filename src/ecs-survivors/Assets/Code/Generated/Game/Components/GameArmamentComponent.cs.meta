@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:src/ecs-survivors/Assets/Code/Generated/Game/Components/GameCurrentHpComponent.cs.meta
+guid: 58bde46b5b94ff8488303ac4def61911
+========
+guid: 9581a769ed8a9a845b40d9deea104c30
+>>>>>>>> a1592a330363cb4d46e1af9afaaea69ab77d2cd3:src/ecs-survivors/Assets/Code/Generated/Game/Components/GameArmamentComponent.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
