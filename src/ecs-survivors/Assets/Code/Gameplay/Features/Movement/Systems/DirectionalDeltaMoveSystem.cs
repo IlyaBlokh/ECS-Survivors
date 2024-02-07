@@ -6,25 +6,26 @@ namespace Code.Gameplay.Features.Movement.Systems
 {
   public class DirectionalDeltaMoveSystem : IExecuteSystem
   {
-    private readonly ITimeService _time;
     private readonly IGroup<GameEntity> _movers;
+    private readonly ITimeService _time;
 
-    public DirectionalDeltaMoveSystem(GameContext gameContext, ITimeService time)
+    public DirectionalDeltaMoveSystem(GameContext game, ITimeService time)
     {
       _time = time;
-      _movers = gameContext.GetGroup(GameMatcher
+      _movers = game.GetGroup(GameMatcher
         .AllOf(
-          GameMatcher.WorldPosition,
-          GameMatcher.Direction,
-          GameMatcher.Speed,
+          GameMatcher.Direction, 
+          GameMatcher.WorldPosition, 
+          GameMatcher.Speed, 
+          GameMatcher.MovementAvailable, 
           GameMatcher.Moving));
     }
-    
+
     public void Execute()
     {
-      foreach (GameEntity mover in _movers)
+      foreach (GameEntity entity in _movers)
       {
-        mover.ReplaceWorldPosition((Vector2)mover.WorldPosition + mover.Direction * mover.Speed * _time.DeltaTime);
+        entity.ReplaceWorldPosition((Vector2)entity.WorldPosition + entity.Direction * entity.Speed * _time.DeltaTime);
       }
     }
   }

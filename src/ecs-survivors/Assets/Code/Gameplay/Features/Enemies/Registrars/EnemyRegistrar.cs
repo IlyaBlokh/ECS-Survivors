@@ -18,8 +18,8 @@ namespace Code.Gameplay.Features.Enemies.Registrars
         .AddWorldPosition(transform.position)
         .AddDirection(Vector2.zero)
         .AddSpeed(Speed)
-        .AddCurrentHP(HP)
-        .AddMaxHP(HP)
+        .AddCurrentHp(HP)
+        .AddMaxHp(HP)
         .AddDamage(Damage)
         .AddTargetsBuffer(new List<int>(1))
         .AddRadius(0.3f)
@@ -28,6 +28,7 @@ namespace Code.Gameplay.Features.Enemies.Registrars
         .AddLayerMask(CollisionLayer.Hero.AsMask())
         .With(x => x.isEnemy = true)
         .With(x => x.isTurnedAlongDirection = true)
+        .With(x => x.isMovementAvailable = true)
         ;
     }
 

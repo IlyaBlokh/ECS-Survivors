@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherMaxHp;
+    static Entitas.IMatcher<GameEntity> _matcherEntityLink;
 
-    public static Entitas.IMatcher<GameEntity> MaxHp {
+    public static Entitas.IMatcher<GameEntity> EntityLink {
         get {
-            if (_matcherMaxHp == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.MaxHp);
+            if (_matcherEntityLink == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.EntityLink);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherMaxHp = matcher;
+                _matcherEntityLink = matcher;
             }
 
-            return _matcherMaxHp;
+            return _matcherEntityLink;
         }
     }
 }
@@ -33,28 +33,28 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Lifetime.MaxHp maxHp { get { return (Code.Gameplay.Features.Lifetime.MaxHp)GetComponent(GameComponentsLookup.MaxHp); } }
-    public float MaxHp { get { return maxHp.Value; } }
-    public bool hasMaxHp { get { return HasComponent(GameComponentsLookup.MaxHp); } }
+    public Code.Gameplay.Common.EntityLink entityLink { get { return (Code.Gameplay.Common.EntityLink)GetComponent(GameComponentsLookup.EntityLink); } }
+    public int EntityLink { get { return entityLink.Value; } }
+    public bool hasEntityLink { get { return HasComponent(GameComponentsLookup.EntityLink); } }
 
-    public GameEntity AddMaxHp(float newValue) {
-        var index = GameComponentsLookup.MaxHp;
-        var component = (Code.Gameplay.Features.Lifetime.MaxHp)CreateComponent(index, typeof(Code.Gameplay.Features.Lifetime.MaxHp));
+    public GameEntity AddEntityLink(int newValue) {
+        var index = GameComponentsLookup.EntityLink;
+        var component = (Code.Gameplay.Common.EntityLink)CreateComponent(index, typeof(Code.Gameplay.Common.EntityLink));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceMaxHp(float newValue) {
-        var index = GameComponentsLookup.MaxHp;
-        var component = (Code.Gameplay.Features.Lifetime.MaxHp)CreateComponent(index, typeof(Code.Gameplay.Features.Lifetime.MaxHp));
+    public GameEntity ReplaceEntityLink(int newValue) {
+        var index = GameComponentsLookup.EntityLink;
+        var component = (Code.Gameplay.Common.EntityLink)CreateComponent(index, typeof(Code.Gameplay.Common.EntityLink));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;
     }
 
-    public GameEntity RemoveMaxHp() {
-        RemoveComponent(GameComponentsLookup.MaxHp);
+    public GameEntity RemoveEntityLink() {
+        RemoveComponent(GameComponentsLookup.EntityLink);
         return this;
     }
 }

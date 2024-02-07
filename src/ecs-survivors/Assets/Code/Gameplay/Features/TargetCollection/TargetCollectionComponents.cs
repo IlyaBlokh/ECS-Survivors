@@ -9,6 +9,5 @@ namespace Code.Gameplay.Features.TargetCollection
   [Game] public class CollectTargetsInterval : IComponent { public float Value; }
   [Game] public class CollectTargetsTimer : IComponent { public float Value; }
   
-  [Game] public class Radius : IComponent { public float Value; }
   [Game] public class LayerMask : IComponent { public int Value; }
 }

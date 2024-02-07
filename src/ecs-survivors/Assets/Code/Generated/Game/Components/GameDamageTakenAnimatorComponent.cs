@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Common.DamageTakenAnimatorComponent damageTakenAnimator { get { return (Code.Gameplay.Common.DamageTakenAnimatorComponent)GetComponent(GameComponentsLookup.DamageTakenAnimator); } }
+    public Code.Gameplay.Common.DamageTakenAnimator damageTakenAnimator { get { return (Code.Gameplay.Common.DamageTakenAnimator)GetComponent(GameComponentsLookup.DamageTakenAnimator); } }
     public Code.Gameplay.Common.Visuals.IDamageTakenAnimator DamageTakenAnimator { get { return damageTakenAnimator.Value; } }
     public bool hasDamageTakenAnimator { get { return HasComponent(GameComponentsLookup.DamageTakenAnimator); } }
 
     public GameEntity AddDamageTakenAnimator(Code.Gameplay.Common.Visuals.IDamageTakenAnimator newValue) {
         var index = GameComponentsLookup.DamageTakenAnimator;
-        var component = (Code.Gameplay.Common.DamageTakenAnimatorComponent)CreateComponent(index, typeof(Code.Gameplay.Common.DamageTakenAnimatorComponent));
+        var component = (Code.Gameplay.Common.DamageTakenAnimator)CreateComponent(index, typeof(Code.Gameplay.Common.DamageTakenAnimator));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceDamageTakenAnimator(Code.Gameplay.Common.Visuals.IDamageTakenAnimator newValue) {
         var index = GameComponentsLookup.DamageTakenAnimator;
-        var component = (Code.Gameplay.Common.DamageTakenAnimatorComponent)CreateComponent(index, typeof(Code.Gameplay.Common.DamageTakenAnimatorComponent));
+        var component = (Code.Gameplay.Common.DamageTakenAnimator)CreateComponent(index, typeof(Code.Gameplay.Common.DamageTakenAnimator));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

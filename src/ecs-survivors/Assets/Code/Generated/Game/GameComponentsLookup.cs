@@ -9,42 +9,48 @@
 public static class GameComponentsLookup {
 
     public const int Destructed = 0;
-    public const int SelfDestructTimer = 1;
-    public const int View = 2;
-    public const int Damage = 3;
-    public const int DamageTakenAnimator = 4;
-    public const int Id = 5;
-    public const int SpriteRenderer = 6;
-    public const int Transform = 7;
-    public const int WorldPosition = 8;
-    public const int Enemy = 9;
-    public const int EnemyAnimator = 10;
-    public const int EnemyTypeId = 11;
-    public const int Hero = 12;
-    public const int HeroAnimator = 13;
-    public const int CurrentHP = 14;
-    public const int MaxHP = 15;
-    public const int Direction = 16;
-    public const int Moving = 17;
-    public const int Speed = 18;
-    public const int TurnedAlongDirection = 19;
-    public const int CollectTargetsInterval = 20;
-    public const int CollectTargetsTimer = 21;
-    public const int LayerMask = 22;
-    public const int Radius = 23;
-    public const int ReadyToCollectTargets = 24;
-    public const int TargetsBuffer = 25;
-    public const int AxisInput = 26;
-    public const int Input = 27;
+    public const int Radius = 1;
+    public const int SelfDestructTimer = 2;
+    public const int View = 3;
+    public const int Damage = 4;
+    public const int DamageTakenAnimator = 5;
+    public const int EntityLink = 6;
+    public const int Id = 7;
+    public const int SpriteRenderer = 8;
+    public const int Transform = 9;
+    public const int WorldPosition = 10;
+    public const int Enemy = 11;
+    public const int EnemyAnimator = 12;
+    public const int EnemyTypeId = 13;
+    public const int Hero = 14;
+    public const int HeroAnimator = 15;
+    public const int CurrentHp = 16;
+    public const int Dead = 17;
+    public const int MaxHp = 18;
+    public const int ProcessingDeath = 19;
+    public const int Direction = 20;
+    public const int MovementAvailable = 21;
+    public const int Moving = 22;
+    public const int Speed = 23;
+    public const int TurnedAlongDirection = 24;
+    public const int CollectTargetsInterval = 25;
+    public const int CollectTargetsTimer = 26;
+    public const int LayerMask = 27;
+    public const int ReadyToCollectTargets = 28;
+    public const int TargetsBuffer = 29;
+    public const int AxisInput = 30;
+    public const int Input = 31;
 
-    public const int TotalComponents = 28;
+    public const int TotalComponents = 32;
 
     public static readonly string[] componentNames = {
         "Destructed",
+        "Radius",
         "SelfDestructTimer",
         "View",
         "Damage",
         "DamageTakenAnimator",
+        "EntityLink",
         "Id",
         "SpriteRenderer",
         "Transform",
@@ -54,16 +60,18 @@ public static class GameComponentsLookup {
         "EnemyTypeId",
         "Hero",
         "HeroAnimator",
-        "CurrentHP",
-        "MaxHP",
+        "CurrentHp",
+        "Dead",
+        "MaxHp",
+        "ProcessingDeath",
         "Direction",
+        "MovementAvailable",
         "Moving",
         "Speed",
         "TurnedAlongDirection",
         "CollectTargetsInterval",
         "CollectTargetsTimer",
         "LayerMask",
-        "Radius",
         "ReadyToCollectTargets",
         "TargetsBuffer",
         "AxisInput",
@@ -72,10 +80,12 @@ public static class GameComponentsLookup {
 
     public static readonly System.Type[] componentTypes = {
         typeof(Code.Common.Destructed),
+        typeof(Code.Common.Radius),
         typeof(Code.Common.SelfDestructTimer),
         typeof(Code.Common.View),
         typeof(Code.Gameplay.Common.Damage),
-        typeof(Code.Gameplay.Common.DamageTakenAnimatorComponent),
+        typeof(Code.Gameplay.Common.DamageTakenAnimator),
+        typeof(Code.Gameplay.Common.EntityLink),
         typeof(Code.Gameplay.Common.Id),
         typeof(Code.Gameplay.Common.SpriteRendererComponent),
         typeof(Code.Gameplay.Common.TransformComponent),
@@ -85,16 +95,18 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Enemies.EnemyTypeIdComponent),
         typeof(Code.Gameplay.Features.Hero.Hero),
         typeof(Code.Gameplay.Features.Hero.HeroAnimatorComponent),
-        typeof(Code.Gameplay.Features.Lifetime.CurrentHP),
-        typeof(Code.Gameplay.Features.Lifetime.MaxHP),
+        typeof(Code.Gameplay.Features.Lifetime.CurrentHp),
+        typeof(Code.Gameplay.Features.Lifetime.Dead),
+        typeof(Code.Gameplay.Features.Lifetime.MaxHp),
+        typeof(Code.Gameplay.Features.Lifetime.ProcessingDeath),
         typeof(Code.Gameplay.Features.Movement.Direction),
+        typeof(Code.Gameplay.Features.Movement.MovementAvailable),
         typeof(Code.Gameplay.Features.Movement.Moving),
         typeof(Code.Gameplay.Features.Movement.Speed),
         typeof(Code.Gameplay.Features.Movement.TurnedAlongDirection),
         typeof(Code.Gameplay.Features.TargetCollection.CollectTargetsInterval),
         typeof(Code.Gameplay.Features.TargetCollection.CollectTargetsTimer),
         typeof(Code.Gameplay.Features.TargetCollection.LayerMask),
-        typeof(Code.Gameplay.Features.TargetCollection.Radius),
         typeof(Code.Gameplay.Features.TargetCollection.ReadyToCollectTargets),
         typeof(Code.Gameplay.Features.TargetCollection.TargetsBuffer),
         typeof(Code.Gameplay.Input.AxisInput),

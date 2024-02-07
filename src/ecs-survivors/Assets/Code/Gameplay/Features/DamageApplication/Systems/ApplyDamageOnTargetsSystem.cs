@@ -23,9 +23,9 @@ namespace Code.Gameplay.Features.DamageApplication.Systems
       {
         GameEntity target = _game.GetEntityWithId(targetId);
         
-        if (target.hasCurrentHP)
+        if (target.hasCurrentHp)
         {
-          target.ReplaceCurrentHP(target.CurrentHP - damageDealer.Damage);
+          target.ReplaceCurrentHp(target.CurrentHp - damageDealer.Damage);
           
           if(target.hasDamageTakenAnimator)
             target.DamageTakenAnimator.PlayDamageTaken();
