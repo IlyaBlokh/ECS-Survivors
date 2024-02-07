@@ -19,43 +19,44 @@ public static class GameComponentsLookup {
     public const int EntityLink = 8;
     public const int Id = 9;
     public const int SpriteRenderer = 10;
-    public const int Transform = 11;
-    public const int WorldPosition = 12;
-    public const int AbilityId = 13;
-    public const int VegetableBoltAbility = 14;
-    public const int Armament = 15;
-    public const int Processed = 16;
-    public const int TargetLimit = 17;
-    public const int Cooldown = 18;
-    public const int CooldownLeft = 19;
-    public const int CooldownUp = 20;
-    public const int Enemy = 21;
-    public const int EnemyAnimator = 22;
-    public const int EnemyTypeId = 23;
-    public const int SpawnTimer = 24;
-    public const int Hero = 25;
-    public const int HeroAnimator = 26;
-    public const int CurrentHp = 27;
-    public const int Dead = 28;
-    public const int MaxHp = 29;
-    public const int ProcessingDeath = 30;
-    public const int Direction = 31;
-    public const int MovementAvailable = 32;
-    public const int Moving = 33;
-    public const int RotationAlignedAlongDirection = 34;
-    public const int Speed = 35;
-    public const int TurnedAlongDirection = 36;
-    public const int CollectingTargetsContinuously = 37;
-    public const int CollectTargetsInterval = 38;
-    public const int CollectTargetsTimer = 39;
-    public const int LayerMask = 40;
-    public const int ProcessedTargets = 41;
-    public const int ReadyToCollectTargets = 42;
-    public const int TargetBuffer = 43;
-    public const int AxisInput = 44;
-    public const int Input = 45;
+    public const int StatusVisuals = 11;
+    public const int Transform = 12;
+    public const int WorldPosition = 13;
+    public const int AbilityId = 14;
+    public const int VegetableBoltAbility = 15;
+    public const int Armament = 16;
+    public const int Processed = 17;
+    public const int TargetLimit = 18;
+    public const int Cooldown = 19;
+    public const int CooldownLeft = 20;
+    public const int CooldownUp = 21;
+    public const int Enemy = 22;
+    public const int EnemyAnimator = 23;
+    public const int EnemyTypeId = 24;
+    public const int SpawnTimer = 25;
+    public const int Hero = 26;
+    public const int HeroAnimator = 27;
+    public const int CurrentHp = 28;
+    public const int Dead = 29;
+    public const int MaxHp = 30;
+    public const int ProcessingDeath = 31;
+    public const int Direction = 32;
+    public const int MovementAvailable = 33;
+    public const int Moving = 34;
+    public const int RotationAlignedAlongDirection = 35;
+    public const int Speed = 36;
+    public const int TurnedAlongDirection = 37;
+    public const int CollectingTargetsContinuously = 38;
+    public const int CollectTargetsInterval = 39;
+    public const int CollectTargetsTimer = 40;
+    public const int LayerMask = 41;
+    public const int ProcessedTargets = 42;
+    public const int ReadyToCollectTargets = 43;
+    public const int TargetBuffer = 44;
+    public const int AxisInput = 45;
+    public const int Input = 46;
 
-    public const int TotalComponents = 46;
+    public const int TotalComponents = 47;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -69,6 +70,7 @@ public static class GameComponentsLookup {
         "EntityLink",
         "Id",
         "SpriteRenderer",
+        "StatusVisuals",
         "Transform",
         "WorldPosition",
         "AbilityId",
@@ -118,6 +120,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.EntityLink),
         typeof(Code.Gameplay.Common.Id),
         typeof(Code.Gameplay.Common.SpriteRendererComponent),
+        typeof(Code.Gameplay.Common.StatusVisualsComponent),
         typeof(Code.Gameplay.Common.TransformComponent),
         typeof(Code.Gameplay.Common.WorldPosition),
         typeof(Code.Gameplay.Features.Abilities.AbilityIdComponent),
