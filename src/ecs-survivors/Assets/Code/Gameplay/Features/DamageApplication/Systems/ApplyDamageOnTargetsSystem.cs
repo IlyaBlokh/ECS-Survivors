@@ -12,14 +12,14 @@ namespace Code.Gameplay.Features.DamageApplication.Systems
       _game = game;
       _damageDealers = game.GetGroup(GameMatcher
         .AllOf(
-          GameMatcher.TargetsBuffer,
+          GameMatcher.TargetBuffer,
           GameMatcher.Damage));
     }
     
     public void Execute()
     {
       foreach (GameEntity damageDealer in _damageDealers)
-      foreach (int targetId in damageDealer.TargetsBuffer)
+      foreach (int targetId in damageDealer.TargetBuffer)
       {
         GameEntity target = _game.GetEntityWithId(targetId);
         

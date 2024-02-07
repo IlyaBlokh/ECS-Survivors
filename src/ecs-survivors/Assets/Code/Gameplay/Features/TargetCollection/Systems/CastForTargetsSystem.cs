@@ -17,25 +17,27 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
       _ready = game.GetGroup(GameMatcher
         .AllOf(
           GameMatcher.ReadyToCollectTargets,
-          GameMatcher.TargetsBuffer,
-          GameMatcher.WorldPosition,
           GameMatcher.Radius,
-          GameMatcher.LayerMask));
+          GameMatcher.TargetBuffer,
+          GameMatcher.WorldPosition,
+          GameMatcher.LayerMask)
+      );
     }
 
     public void Execute()
     {
       foreach (GameEntity entity in _ready.GetEntities(_buffer))
       {
-        entity.TargetsBuffer.AddRange(TargetsInRadius(entity));
+        entity.TargetBuffer.AddRange(TargetsInRadius(entity));
 
         entity.isReadyToCollectTargets = false;
       }
     }
-
-    private IEnumerable<int> TargetsInRadius(GameEntity entity) =>
-      _physicsService
-        .CircleCast(entity.WorldPosition, entity.Radius, entity.LayerMask)
+    
+    private IEnumerable<int> TargetsInRadius(GameEntity entity)
+    {
+      return _physicsService.CircleCast(entity.WorldPosition, radius: entity.Radius, entity.LayerMask)
         .Select(x => x.Id);
+    }
   }
 }

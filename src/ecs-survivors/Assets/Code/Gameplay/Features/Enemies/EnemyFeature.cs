@@ -7,6 +7,10 @@ namespace Code.Gameplay.Features.Enemies
   {
     public EnemyFeature(ISystemFactory systems)
     {
+      Add(systems.Create<InitializeSpawnTimerSystem>());
+      
+      Add(systems.Create<EnemySpawnSystem>());
+      
       Add(systems.Create<EnemyChaseHeroSystem>());
       Add(systems.Create<EnemyDeathSystem>());
       
