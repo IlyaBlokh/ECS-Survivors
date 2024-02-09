@@ -7,6 +7,7 @@ namespace Code.Gameplay.Features.Lifetime.Systems
     public DeathFeature(ISystemFactory systems)
     {
       Add(systems.Create<MarkDeadSystem>());
+      Add(systems.Create<UnapplyStatusesOfDeadTargetSystem>());
     }
   }
 }
