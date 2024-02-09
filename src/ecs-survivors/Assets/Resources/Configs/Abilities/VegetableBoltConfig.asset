@@ -19,11 +19,7 @@ MonoBehaviour:
     EffectSetups:
     - EffectTypeId: 1
       Value: 1
-    StatusSetups:
-    - StatusTypeId: 1
-      Value: 1
-      Duration: 3
-      Period: 1
+    StatusSetups: []
     ProjectileSetup:
       Speed: 2
       Pierce: 3
