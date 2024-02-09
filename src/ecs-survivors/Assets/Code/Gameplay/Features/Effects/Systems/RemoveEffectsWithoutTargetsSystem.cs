@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Entitas;
 
 namespace Code.Gameplay.Features.Effects.Systems
@@ -5,6 +6,7 @@ namespace Code.Gameplay.Features.Effects.Systems
   public class RemoveEffectsWithoutTargetsSystem : IExecuteSystem
   {
     private readonly IGroup<GameEntity> _effects;
+    private readonly List<GameEntity> _buffer = new(128);
 
     public RemoveEffectsWithoutTargetsSystem(GameContext game)
     {
@@ -16,7 +18,7 @@ namespace Code.Gameplay.Features.Effects.Systems
 
     public void Execute()
     {
-      foreach (GameEntity effect in _effects)
+      foreach (GameEntity effect in _effects.GetEntities(_buffer))
       {
         GameEntity target = effect.Target();
         if (target == null)
