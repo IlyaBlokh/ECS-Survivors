@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Code.Gameplay.Features.Abilities;
 using Code.Gameplay.Features.Abilities.Configs;
+using Code.Gameplay.Features.Enchants;
 using UnityEngine;
 
 namespace Code.Gameplay.StaticData
@@ -10,10 +11,12 @@ namespace Code.Gameplay.StaticData
   public class StaticDataService : IStaticDataService
   {
     private Dictionary<AbilityId,AbilityConfig> _abilityById;
+    private Dictionary<EnchantTypeId, EnchantConfig> _enchantById;
 
     public void LoadAll()
     {
       LoadAbilities();
+      LoadEnchants();
     }
 
     public AbilityConfig GetAbilityConfig(AbilityId abilityId)
@@ -32,6 +35,21 @@ namespace Code.Gameplay.StaticData
         level = config.Levels.Count;
 
       return config.Levels[level - 1];
+    }
+
+    public EnchantConfig GetEnchantConfig(EnchantTypeId typeId)
+    {
+      if (_enchantById.TryGetValue(typeId, out EnchantConfig config))
+        return config;
+
+      throw new Exception($"Enchant config for {typeId} was not found");
+    }
+
+    private void LoadEnchants()
+    {
+      _enchantById = Resources
+        .LoadAll<EnchantConfig>("Configs/Enchants")
+        .ToDictionary(x => x.TypeId, x => x);
     }
 
     private void LoadAbilities()

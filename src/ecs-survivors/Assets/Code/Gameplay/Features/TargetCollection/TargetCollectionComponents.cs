@@ -12,4 +12,5 @@ namespace Code.Gameplay.Features.TargetCollection
   [Game] public class CollectTargetsTimer : IComponent { public float Value; }
   
   [Game] public class LayerMask : IComponent { public int Value; }
+  [Game] public class Reached : IComponent { }
 }

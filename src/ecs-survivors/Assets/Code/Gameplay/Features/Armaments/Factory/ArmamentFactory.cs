@@ -3,6 +3,7 @@ using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Abilities;
 using Code.Gameplay.Features.Abilities.Configs;
+using Code.Gameplay.Features.Enchants;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
 using UnityEngine;
@@ -87,5 +88,24 @@ namespace Code.Gameplay.Features.Armaments.Factory
         .AddSelfDestructTimer(setup.Lifetime)
         ;
     }
+
+    public GameEntity CreateExplosion(int producerId, Vector3 at)
+    {
+      EnchantConfig config = _staticDataService.GetEnchantConfig(EnchantTypeId.ExplosiveArmaments);
+      
+      return CreateEntity.Empty()
+        .AddId(_identifiers.Next())
+        .AddLayerMask(CollisionLayer.Enemy.AsMask())
+        .AddRadius(config.Radius)
+        .AddTargetBuffer(new List<int>(TargetBufferSize))
+        .With(x => x.AddEffectSetups(config.EffectSetups), when: !config.EffectSetups.IsNullOrEmpty())
+        .With(x => x.AddStatusSetups(config.StatusSetups), when: !config.StatusSetups.IsNullOrEmpty())
+        .AddViewPrefab(config.ViewPrefab)
+        .AddProducerId(producerId)
+        .AddWorldPosition(at)
+        .With(x => x.isReadyToCollectTargets = true)
+        .AddSelfDestructTimer(1);
+    }
+    
   }
 }

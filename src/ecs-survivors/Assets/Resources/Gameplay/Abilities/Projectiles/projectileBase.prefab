@@ -114,6 +114,7 @@ GameObject:
   - component: {fileID: 1045153556455938967}
   - component: {fileID: 7604695528526262236}
   - component: {fileID: 4676973270719304838}
+  - component: {fileID: 1998858275910845286}
   m_Layer: 0
   m_Name: projectileBase
   m_TagString: Untagged
@@ -162,6 +163,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EntityView: {fileID: 7604695528526262236}
+--- !u!114 &1998858275910845286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3360128356117953061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 323d16d6cb0044ff90075f488021ecc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityView: {fileID: 7604695528526262236}
+  EnchantVisuals: {fileID: 5976046918540340669}
 --- !u!1 &7376349850620682343
 GameObject:
   m_ObjectHideFlags: 0
