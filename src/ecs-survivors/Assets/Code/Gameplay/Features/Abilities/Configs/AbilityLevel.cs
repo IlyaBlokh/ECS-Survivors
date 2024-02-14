@@ -17,5 +17,6 @@ namespace Code.Gameplay.Features.Abilities.Configs
     public List<StatusSetup> StatusSetups;
     
     public ProjectileSetup ProjectileSetup;
+    public AuraSetup AuraSetup;
   }
 }

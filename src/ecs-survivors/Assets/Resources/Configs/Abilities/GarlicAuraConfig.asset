@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9833df43fb064a3199752651eaefcfde, type: 3}
+  m_Name: GarlicAuraConfig
+  m_EditorClassIdentifier: 
+  AbilityId: 2
+  Levels:
+  - Cooldown: 0
+    ViewPrefab: {fileID: 2893445765622195075, guid: c4c8cf39ebe3672468c50bd2fedcd936, type: 3}
+    EffectSetups: []
+    StatusSetups:
+    - StatusTypeId: 2
+      Value: -5
+      Duration: 0.2
+      Period: 0
+    ProjectileSetup:
+      ProjectileCount: 0
+      Speed: 0
+      Pierce: 0
+      ContactRadius: 0
+      Lifetime: 0
+      OrbitRadius: 0
+    AuraSetup:
+      Radius: 2
+      Interval: 0.5
