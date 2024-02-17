@@ -39,7 +39,9 @@ namespace Code.Gameplay.Features.Abilities.Factory
         .AddAbilityId(AbilityId.OrbitingMushroom)
         .AddCooldown(abilityLevel.Cooldown)
         .With(x => x.isOrbitingMushroomAbility = true)
+        .With(x => x.isRecreatedOnUpgrade = true)
         .PutOnCooldown();
+        ;
     }
 
     public GameEntity CreateGarlicAuraAbility()
@@ -47,7 +49,9 @@ namespace Code.Gameplay.Features.Abilities.Factory
       return CreateEntity.Empty()
         .AddId(_identifiers.Next())
         .AddAbilityId(AbilityId.GarlicAura)
-        .With(x => x.isGarlicAuraAbility = true);
+        .With(x => x.isGarlicAuraAbility = true)
+        .With(x => x.isRecreatedOnUpgrade = true)
+        ;
     }
   }
 }

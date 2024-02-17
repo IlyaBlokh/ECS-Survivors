@@ -17,5 +17,7 @@ namespace Code.Gameplay.StaticData
     LootConfig GetLootConfig(LootTypeId lootTypeId);
     
     GameObject GetWindowPrefab(WindowId id);
+    int MaxLevel();
+    float ExperienceForLevel(int level);
   }
 }
