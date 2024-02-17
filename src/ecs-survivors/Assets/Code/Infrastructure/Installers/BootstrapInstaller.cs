@@ -7,6 +7,7 @@ using Code.Gameplay.Common.Time;
 using Code.Gameplay.Features.Abilities.Factory;
 using Code.Gameplay.Features.Armaments.Factory;
 using Code.Gameplay.Features.Effects.Factory;
+using Code.Gameplay.Features.Enchants.UIFactory;
 using Code.Gameplay.Features.Enemies.Factory;
 using Code.Gameplay.Features.Hero.Factory;
 using Code.Gameplay.Features.Statuses.Applier;
@@ -33,6 +34,7 @@ namespace Code.Infrastructure.Installers
       BindAssetManagementServices();
       BindCommonServices();
       BindSystemFactory();
+      BindUIFactories();
       BindContexts();
       BindGameplayServices();
       BindCameraProvider();
@@ -104,6 +106,11 @@ namespace Code.Infrastructure.Installers
     private void BindInputService()
     {
       Container.Bind<IInputService>().To<StandaloneInputService>().AsSingle();
+    }
+
+    private void BindUIFactories()
+    {
+      Container.Bind<IEnchantUIFactory>().To<EnchantUIFactory>().AsSingle();
     }
     
     public void Initialize()
