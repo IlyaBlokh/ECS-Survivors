@@ -14,11 +14,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbilityId: 3
   Levels:
-  - Cooldown: 5
+  - Icon: {fileID: 21300000, guid: 4d94380f2cdab534b96b00f84934873a, type: 3}
+    Description: Adds an orbital mushroom
+    Cooldown: 5
     ViewPrefab: {fileID: 6295621220853740386, guid: 92dc63e318e181a4a9587ecf7216ee46, type: 3}
     EffectSetups:
     - EffectTypeId: 1
       Value: 1
+    StatusSetups: []
+    ProjectileSetup:
+      ProjectileCount: 1
+      Speed: 2
+      Pierce: 0
+      ContactRadius: 0.1
+      Lifetime: 3
+      OrbitRadius: 1
+    AuraSetup:
+      Radius: 0
+      Interval: 0
+  - Icon: {fileID: 21300000, guid: 4d94380f2cdab534b96b00f84934873a, type: 3}
+    Description: Adds one more orbital mushroom
+    Cooldown: 5
+    ViewPrefab: {fileID: 6295621220853740386, guid: 92dc63e318e181a4a9587ecf7216ee46, type: 3}
+    EffectSetups:
+    - EffectTypeId: 1
+      Value: 2
+    StatusSetups: []
+    ProjectileSetup:
+      ProjectileCount: 2
+      Speed: 2
+      Pierce: 0
+      ContactRadius: 0.1
+      Lifetime: 3
+      OrbitRadius: 1
+    AuraSetup:
+      Radius: 0
+      Interval: 0
+  - Icon: {fileID: 21300000, guid: 4d94380f2cdab534b96b00f84934873a, type: 3}
+    Description: Three orbital mushrooms
+    Cooldown: 5
+    ViewPrefab: {fileID: 6295621220853740386, guid: 92dc63e318e181a4a9587ecf7216ee46, type: 3}
+    EffectSetups:
+    - EffectTypeId: 1
+      Value: 2
     StatusSetups: []
     ProjectileSetup:
       ProjectileCount: 3
@@ -26,7 +64,43 @@ MonoBehaviour:
       Pierce: 0
       ContactRadius: 0.1
       Lifetime: 3
-      OrbitRadius: 1
+      OrbitRadius: 2
+    AuraSetup:
+      Radius: 0
+      Interval: 0
+  - Icon: {fileID: 21300000, guid: 4d94380f2cdab534b96b00f84934873a, type: 3}
+    Description: Four orbital mushrooms
+    Cooldown: 5
+    ViewPrefab: {fileID: 6295621220853740386, guid: 92dc63e318e181a4a9587ecf7216ee46, type: 3}
+    EffectSetups:
+    - EffectTypeId: 1
+      Value: 2
+    StatusSetups: []
+    ProjectileSetup:
+      ProjectileCount: 4
+      Speed: 2
+      Pierce: 0
+      ContactRadius: 0.1
+      Lifetime: 3
+      OrbitRadius: 2.5
+    AuraSetup:
+      Radius: 0
+      Interval: 0
+  - Icon: {fileID: 21300000, guid: 4d94380f2cdab534b96b00f84934873a, type: 3}
+    Description: FIVE glorious orbital mushrooms
+    Cooldown: 5
+    ViewPrefab: {fileID: 6295621220853740386, guid: 92dc63e318e181a4a9587ecf7216ee46, type: 3}
+    EffectSetups:
+    - EffectTypeId: 1
+      Value: 2
+    StatusSetups: []
+    ProjectileSetup:
+      ProjectileCount: 5
+      Speed: 2
+      Pierce: 0
+      ContactRadius: 0.1
+      Lifetime: 3
+      OrbitRadius: 2.5
     AuraSetup:
       Radius: 0
       Interval: 0

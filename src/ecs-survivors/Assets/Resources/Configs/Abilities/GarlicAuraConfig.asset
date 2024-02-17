@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbilityId: 2
   Levels:
-  - Cooldown: 0
+  - Icon: {fileID: 21300000, guid: 7c5b1d69d323a2c489af81f57a7a9602, type: 3}
+    Description: Adds an odourous aura
+    Cooldown: 0
     ViewPrefab: {fileID: 2893445765622195075, guid: c4c8cf39ebe3672468c50bd2fedcd936, type: 3}
     EffectSetups: []
     StatusSetups:
@@ -32,3 +34,69 @@ MonoBehaviour:
     AuraSetup:
       Radius: 2
       Interval: 0.5
+  - Icon: {fileID: 21300000, guid: 7c5b1d69d323a2c489af81f57a7a9602, type: 3}
+    Description: Increases odour strength
+    Cooldown: 0
+    ViewPrefab: {fileID: 2893445765622195075, guid: c4c8cf39ebe3672468c50bd2fedcd936, type: 3}
+    EffectSetups:
+    - EffectTypeId: 1
+      Value: 0.2
+    StatusSetups:
+    - StatusTypeId: 2
+      Value: -5
+      Duration: 0.2
+      Period: 0
+    ProjectileSetup:
+      ProjectileCount: 0
+      Speed: 0
+      Pierce: 0
+      ContactRadius: 0
+      Lifetime: 0
+      OrbitRadius: 0
+    AuraSetup:
+      Radius: 5
+      Interval: 0.5
+  - Icon: {fileID: 21300000, guid: 7c5b1d69d323a2c489af81f57a7a9602, type: 3}
+    Description: Increases odour strength even further
+    Cooldown: 0
+    ViewPrefab: {fileID: 2893445765622195075, guid: c4c8cf39ebe3672468c50bd2fedcd936, type: 3}
+    EffectSetups:
+    - EffectTypeId: 1
+      Value: 0.35
+    StatusSetups:
+    - StatusTypeId: 2
+      Value: -5
+      Duration: 0.2
+      Period: 0
+    ProjectileSetup:
+      ProjectileCount: 0
+      Speed: 0
+      Pierce: 0
+      ContactRadius: 0
+      Lifetime: 0
+      OrbitRadius: 0
+    AuraSetup:
+      Radius: 8
+      Interval: 0.5
+  - Icon: {fileID: 21300000, guid: 7c5b1d69d323a2c489af81f57a7a9602, type: 3}
+    Description: Increases odour stunrate
+    Cooldown: 0
+    ViewPrefab: {fileID: 2893445765622195075, guid: c4c8cf39ebe3672468c50bd2fedcd936, type: 3}
+    EffectSetups:
+    - EffectTypeId: 1
+      Value: 0.35
+    StatusSetups:
+    - StatusTypeId: 2
+      Value: -5
+      Duration: 0.2
+      Period: 0
+    ProjectileSetup:
+      ProjectileCount: 0
+      Speed: 0
+      Pierce: 0
+      ContactRadius: 0
+      Lifetime: 0
+      OrbitRadius: 0
+    AuraSetup:
+      Radius: 8
+      Interval: 0.3
