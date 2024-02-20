@@ -9,6 +9,8 @@ namespace Code.Common.Destruct
     {
       Add(systems.Create<SelfDestructTimerSystem>());
       
+      Add(systems.Create<CleanupMetaDestructedSystem>());
+      
       Add(systems.Create<CleanupGameDestructedViewSystem>());
       Add(systems.Create<CleanupGameDestructedSystem>());
     }

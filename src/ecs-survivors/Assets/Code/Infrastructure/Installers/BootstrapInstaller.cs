@@ -69,6 +69,7 @@ namespace Code.Infrastructure.Installers
     {
       Container.BindInterfacesAndSelfTo<BootstrapState>().AsSingle();
       Container.BindInterfacesAndSelfTo<InitializeProgressState>().AsSingle();
+      Container.BindInterfacesAndSelfTo<ActualizeProgressState>().AsSingle();
       Container.BindInterfacesAndSelfTo<LoadingHomeScreenState>().AsSingle();
       Container.BindInterfacesAndSelfTo<HomeScreenState>().AsSingle();
       Container.BindInterfacesAndSelfTo<LoadingBattleState>().AsSingle();
@@ -81,6 +82,8 @@ namespace Code.Infrastructure.Installers
       Container.Bind<Contexts>().FromInstance(Contexts.sharedInstance).AsSingle();
       
       Container.Bind<GameContext>().FromInstance(Contexts.sharedInstance.game).AsSingle();
+      Container.Bind<InputContext>().FromInstance(Contexts.sharedInstance.input).AsSingle();
+      Container.Bind<MetaContext>().FromInstance(Contexts.sharedInstance.meta).AsSingle();
     }
 
     private void BindCameraProvider()

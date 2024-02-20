@@ -7,7 +7,7 @@ namespace Code.Gameplay.Input.Systems
   {
     public void Initialize()
     {
-      CreateEntity.Empty()
+      CreateInputEntity.Empty()
         .isInput = true;
     }
   }

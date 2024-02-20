@@ -6,19 +6,19 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-public sealed partial class GameMatcher {
+public sealed partial class MetaMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherInput;
+    static Entitas.IMatcher<MetaEntity> _matcherStorage;
 
-    public static Entitas.IMatcher<GameEntity> Input {
+    public static Entitas.IMatcher<MetaEntity> Storage {
         get {
-            if (_matcherInput == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Input);
-                matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherInput = matcher;
+            if (_matcherStorage == null) {
+                var matcher = (Entitas.Matcher<MetaEntity>)Entitas.Matcher<MetaEntity>.AllOf(MetaComponentsLookup.Storage);
+                matcher.componentNames = MetaComponentsLookup.componentNames;
+                _matcherStorage = matcher;
             }
 
-            return _matcherInput;
+            return _matcherStorage;
         }
     }
 }
@@ -31,20 +31,20 @@ public sealed partial class GameMatcher {
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-public partial class GameEntity {
+public partial class MetaEntity {
 
-    static readonly Code.Gameplay.Input.Input inputComponent = new Code.Gameplay.Input.Input();
+    static readonly Code.Meta.Features.Storage.Storage storageComponent = new Code.Meta.Features.Storage.Storage();
 
-    public bool isInput {
-        get { return HasComponent(GameComponentsLookup.Input); }
+    public bool isStorage {
+        get { return HasComponent(MetaComponentsLookup.Storage); }
         set {
-            if (value != isInput) {
-                var index = GameComponentsLookup.Input;
+            if (value != isStorage) {
+                var index = MetaComponentsLookup.Storage;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : inputComponent;
+                            : storageComponent;
 
                     AddComponent(index, component);
                 } else {
