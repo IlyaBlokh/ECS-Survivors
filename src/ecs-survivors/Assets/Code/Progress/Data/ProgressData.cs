@@ -1,9 +1,11 @@
 ﻿using System;
+using Newtonsoft.Json;
 
 namespace Code.Progress.Data
 {
   public class ProgressData
   {
-    public DateTime LastSimulationTickTime;
+    [JsonProperty("e")] public EntityData EntityData = new();
+    [JsonProperty("at")] public DateTime LastSimulationTickTime;
   }
 }

@@ -19,7 +19,7 @@ namespace Code.Infrastructure.States.GameStates
     {
       _staticDataService.LoadAll();
       
-      _stateMachine.Enter<InitializeProgressState>();
+      _stateMachine.Enter<LoadProgressState>();
     }
 
     public void Exit()
