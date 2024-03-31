@@ -9,32 +9,44 @@
 public static class MetaComponentsLookup {
 
     public const int Destructed = 0;
-    public const int Duration = 1;
-    public const int GoldGainBoost = 2;
-    public const int Tick = 3;
-    public const int Gold = 4;
-    public const int GoldPerSecond = 5;
-    public const int Storage = 6;
+    public const int Id = 1;
+    public const int Duration = 2;
+    public const int GoldGainBoost = 3;
+    public const int Tick = 4;
+    public const int Gold = 5;
+    public const int GoldPerSecond = 6;
+    public const int Storage = 7;
+    public const int BuyRequest = 8;
+    public const int Purchased = 9;
+    public const int ShopItemId = 10;
 
-    public const int TotalComponents = 7;
+    public const int TotalComponents = 11;
 
     public static readonly string[] componentNames = {
         "Destructed",
+        "Id",
         "Duration",
         "GoldGainBoost",
         "Tick",
         "Gold",
         "GoldPerSecond",
-        "Storage"
+        "Storage",
+        "BuyRequest",
+        "Purchased",
+        "ShopItemId"
     };
 
     public static readonly System.Type[] componentTypes = {
         typeof(Code.Common.Destructed),
+        typeof(Code.Gameplay.Common.Id),
         typeof(Code.Meta.Features.Simulation.Duration),
         typeof(Code.Meta.Features.Simulation.GoldGainBoost),
         typeof(Code.Meta.Features.Simulation.Tick),
         typeof(Code.Meta.Features.Storage.Gold),
         typeof(Code.Meta.Features.Storage.GoldPerSecond),
-        typeof(Code.Meta.Features.Storage.Storage)
+        typeof(Code.Meta.Features.Storage.Storage),
+        typeof(Code.Meta.UI.Shop.BuyRequestComponent),
+        typeof(Code.Meta.UI.Shop.Purchased),
+        typeof(Code.Meta.UI.Shop.ShopItemIdComponent)
     };
 }

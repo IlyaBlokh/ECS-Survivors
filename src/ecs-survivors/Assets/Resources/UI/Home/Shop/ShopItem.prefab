@@ -641,6 +641,7 @@ GameObject:
   - component: {fileID: 7803392052963352497}
   - component: {fileID: 8110288551162860790}
   - component: {fileID: 2750529763006945022}
+  - component: {fileID: 303352938721961347}
   m_Layer: 5
   m_Name: ShopItem
   m_TagString: Untagged
@@ -690,6 +691,27 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &303352938721961347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4867716627066536016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9175a3808d1849469328086f12a608e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Id: 0
+  Icon: {fileID: 3755193522008665162}
+  Price: {fileID: 1274338893294435810}
+  Duration: {fileID: 3841911018063400232}
+  Boost: {fileID: 8227532067379980866}
+  BuyButton: {fileID: 4509424422571587579}
+  CanvasGroup: {fileID: 2750529763006945022}
+  EnoughColor: {r: 1, g: 0.8784314, b: 0.1254902, a: 1}
+  NotEnoughColor: {r: 0.85882354, g: 0.3137255, b: 0.14901961, a: 1}
 --- !u!1 &6221112723513602590
 GameObject:
   m_ObjectHideFlags: 0

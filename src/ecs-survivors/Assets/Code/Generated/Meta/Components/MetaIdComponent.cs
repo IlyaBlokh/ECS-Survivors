@@ -6,15 +6,15 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-public sealed partial class GameMatcher {
+public sealed partial class MetaMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherId;
+    static Entitas.IMatcher<MetaEntity> _matcherId;
 
-    public static Entitas.IMatcher<GameEntity> Id {
+    public static Entitas.IMatcher<MetaEntity> Id {
         get {
             if (_matcherId == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Id);
-                matcher.componentNames = GameComponentsLookup.componentNames;
+                var matcher = (Entitas.Matcher<MetaEntity>)Entitas.Matcher<MetaEntity>.AllOf(MetaComponentsLookup.Id);
+                matcher.componentNames = MetaComponentsLookup.componentNames;
                 _matcherId = matcher;
             }
 
@@ -31,7 +31,7 @@ public sealed partial class GameMatcher {
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-public partial class GameEntity : IIdEntity<GameEntity>, IIdEntity
+public partial class MetaEntity : IIdEntity<MetaEntity>, IIdEntity
 {
     Entitas.IEntity IIdEntity<Entitas.IEntity>.AddId(int newValue)
     {
@@ -57,30 +57,30 @@ public partial class GameEntity : IIdEntity<GameEntity>, IIdEntity
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-public partial class GameEntity {
+public partial class MetaEntity {
 
-    public Code.Gameplay.Common.Id id { get { return (Code.Gameplay.Common.Id)GetComponent(GameComponentsLookup.Id); } }
+    public Code.Gameplay.Common.Id id { get { return (Code.Gameplay.Common.Id)GetComponent(MetaComponentsLookup.Id); } }
     public int Id { get { return id.Value; } }
-    public bool hasId { get { return HasComponent(GameComponentsLookup.Id); } }
+    public bool hasId { get { return HasComponent(MetaComponentsLookup.Id); } }
 
-    public GameEntity AddId(int newValue) {
-        var index = GameComponentsLookup.Id;
+    public MetaEntity AddId(int newValue) {
+        var index = MetaComponentsLookup.Id;
         var component = (Code.Gameplay.Common.Id)CreateComponent(index, typeof(Code.Gameplay.Common.Id));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceId(int newValue) {
-        var index = GameComponentsLookup.Id;
+    public MetaEntity ReplaceId(int newValue) {
+        var index = MetaComponentsLookup.Id;
         var component = (Code.Gameplay.Common.Id)CreateComponent(index, typeof(Code.Gameplay.Common.Id));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;
     }
 
-    public GameEntity RemoveId() {
-        RemoveComponent(GameComponentsLookup.Id);
+    public MetaEntity RemoveId() {
+        RemoveComponent(MetaComponentsLookup.Id);
         return this;
     }
 }

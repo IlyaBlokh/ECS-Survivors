@@ -81,6 +81,10 @@ public partial class Contexts {
             Id,
             game.GetGroup(GameMatcher.Id),
             (e, c) => ((Code.Gameplay.Common.Id)c).Value));
+        meta.AddEntityIndex(new Entitas.PrimaryEntityIndex<MetaEntity, int>(
+            Id,
+            meta.GetGroup(MetaMatcher.Id),
+            (e, c) => ((Code.Gameplay.Common.Id)c).Value));
 
         game.AddEntityIndex(new Entitas.EntityIndex<GameEntity, Code.Gameplay.Features.Abilities.AbilityId>(
             ParentAbility,
@@ -101,6 +105,10 @@ public static class ContextsExtensions {
 
     public static GameEntity GetEntityWithId(this GameContext context, int Value) {
         return ((Entitas.PrimaryEntityIndex<GameEntity, int>)context.GetEntityIndex(Contexts.Id)).GetEntity(Value);
+    }
+
+    public static MetaEntity GetEntityWithId(this MetaContext context, int Value) {
+        return ((Entitas.PrimaryEntityIndex<MetaEntity, int>)context.GetEntityIndex(Contexts.Id)).GetEntity(Value);
     }
 
     public static System.Collections.Generic.HashSet<GameEntity> GetEntitiesWithParentAbility(this GameContext context, Code.Gameplay.Features.Abilities.AbilityId Value) {

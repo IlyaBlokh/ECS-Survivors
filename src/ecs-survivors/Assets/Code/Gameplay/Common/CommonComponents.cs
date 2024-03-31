@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Code.Gameplay.Common
 {
-  [Game] public class Id : IComponent { [PrimaryEntityIndex] public int Value; }
+  [Game, Meta] public class Id : IComponent { [PrimaryEntityIndex] public int Value; }
   [Game] public class EntityLink : IComponent { [EntityIndex] public int Value; }
   
   [Game] public class WorldPosition : IComponent { public Vector3 Value; }
