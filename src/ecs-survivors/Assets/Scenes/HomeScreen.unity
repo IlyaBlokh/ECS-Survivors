@@ -1325,7 +1325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efee75dcc7604011ac3e033429bda0cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UIRoot: {fileID: 0}
+  UIRoot: {fileID: 1407114854}
 --- !u!114 &1036772628
 MonoBehaviour:
   m_ObjectHideFlags: 0
