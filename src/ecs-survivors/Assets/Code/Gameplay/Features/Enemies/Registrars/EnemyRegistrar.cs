@@ -28,7 +28,7 @@ namespace Code.Gameplay.Features.Enemies.Registrars
         .AddLayerMask(CollisionLayer.Hero.AsMask())
         .With(x => x.isEnemy = true)
         .With(x => x.isTurnedAlongDirection = true)
-        ;
+        .With(x => x.isMovementAvailable = true);
     }
 
     public override void UnregisterComponents()

@@ -14,6 +14,7 @@ namespace Code.Gameplay.Features.Movement.Systems
       _time = time;
       _movers = gameContext.GetGroup(GameMatcher
         .AllOf(
+          GameMatcher.MovementAvailable,
           GameMatcher.WorldPosition,
           GameMatcher.Direction,
           GameMatcher.Speed,

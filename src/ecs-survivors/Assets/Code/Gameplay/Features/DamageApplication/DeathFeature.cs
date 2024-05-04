@@ -3,11 +3,11 @@ using Code.Infrastructure.Systems;
 
 namespace Code.Gameplay.Features.DamageApplication
 {
-  public class DamageApplicationFeature : Feature
+  public sealed class DeathFeature : Feature
   {
-    public DamageApplicationFeature(ISystemFactory systems)
+    public DeathFeature(ISystemFactory systems)
     {
-      Add(systems.Create<ApplyDamageOnTargetsSystem>());
+      Add(systems.Create<MarkDeadSystem>());
     }
   }
 }
