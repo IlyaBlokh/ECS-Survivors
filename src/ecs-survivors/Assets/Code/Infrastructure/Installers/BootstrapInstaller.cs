@@ -3,6 +3,8 @@ using Code.Gameplay.Common.Collisions;
 using Code.Gameplay.Common.Physics;
 using Code.Gameplay.Common.Random;
 using Code.Gameplay.Common.Time;
+using Code.Gameplay.Features.Enemies.Factory;
+using Code.Gameplay.Features.Hero.Factory;
 using Code.Gameplay.Input.Service;
 using Code.Gameplay.Levels;
 using Code.Gameplay.StaticData;
@@ -23,6 +25,7 @@ namespace Code.Infrastructure.Installers
       BindAssetManagementServices();
       BindCommonServices();
       BindSystemFactory();
+      BindGameplayFactories();
       BindContexts();
       BindGameplayServices();
       BindCameraProvider();
@@ -50,6 +53,12 @@ namespace Code.Infrastructure.Installers
     {
       Container.BindInterfacesTo<BootstrapInstaller>().FromInstance(this).AsSingle();
       Container.Bind<IIdentifierService>().To<IdentifierService>().AsSingle();
+    }
+
+    public void BindGameplayFactories()
+    {
+      Container.Bind<IHeroFactory>().To<HeroFactory>().AsSingle();
+      Container.Bind<IEnemyFactory>().To<EnemyFactory>().AsSingle();
     }
 
     private void BindAssetManagementServices()
