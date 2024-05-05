@@ -24,6 +24,16 @@ namespace Code.Gameplay.StaticData
       throw new Exception($"Ability config for {abilityId} not found");
     }
 
+    public AbilityLevel GetAbilityLevel(AbilityId abilityId, int level)
+    {
+      AbilityConfig config = GetAbilityConfig(abilityId);
+
+      if (level > config.Levels.Count)
+        level = config.Levels.Count;
+      
+      return config.Levels[level - 1];
+    }
+
     private void LoadAbilities()
     {
       _abilityById = Resources

@@ -20,36 +20,38 @@ public static class GameComponentsLookup {
     public const int Transform = 9;
     public const int WorldPosition = 10;
     public const int AbilityId = 11;
-    public const int Armament = 12;
-    public const int TargetLimit = 13;
-    public const int Cooldown = 14;
-    public const int CooldownLeft = 15;
-    public const int CooldownUp = 16;
-    public const int Enemy = 17;
-    public const int EnemyAnimator = 18;
-    public const int EnemyTypeId = 19;
-    public const int SpawnTimer = 20;
-    public const int Hero = 21;
-    public const int HeroAnimator = 22;
-    public const int CurrentHP = 23;
-    public const int Dead = 24;
-    public const int MaxHP = 25;
-    public const int ProcessingDeath = 26;
-    public const int Direction = 27;
-    public const int MovementAvailable = 28;
-    public const int Moving = 29;
-    public const int Speed = 30;
-    public const int TurnedAlongDirection = 31;
-    public const int CollectTargetsInterval = 32;
-    public const int CollectTargetsTimer = 33;
-    public const int LayerMask = 34;
-    public const int Radius = 35;
-    public const int ReadyToCollectTargets = 36;
-    public const int TargetsBuffer = 37;
-    public const int AxisInput = 38;
-    public const int Input = 39;
+    public const int VegetableBoltAbility = 12;
+    public const int Armament = 13;
+    public const int TargetLimit = 14;
+    public const int Cooldown = 15;
+    public const int CooldownLeft = 16;
+    public const int CooldownUp = 17;
+    public const int Enemy = 18;
+    public const int EnemyAnimator = 19;
+    public const int EnemyTypeId = 20;
+    public const int SpawnTimer = 21;
+    public const int Hero = 22;
+    public const int HeroAnimator = 23;
+    public const int CurrentHP = 24;
+    public const int Dead = 25;
+    public const int MaxHP = 26;
+    public const int ProcessingDeath = 27;
+    public const int Direction = 28;
+    public const int MovementAvailable = 29;
+    public const int Moving = 30;
+    public const int Speed = 31;
+    public const int TurnedAlongDirection = 32;
+    public const int CollectingTargetsContinuously = 33;
+    public const int CollectTargetsInterval = 34;
+    public const int CollectTargetsTimer = 35;
+    public const int LayerMask = 36;
+    public const int Radius = 37;
+    public const int ReadyToCollectTargets = 38;
+    public const int TargetsBuffer = 39;
+    public const int AxisInput = 40;
+    public const int Input = 41;
 
-    public const int TotalComponents = 40;
+    public const int TotalComponents = 42;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -64,6 +66,7 @@ public static class GameComponentsLookup {
         "Transform",
         "WorldPosition",
         "AbilityId",
+        "VegetableBoltAbility",
         "Armament",
         "TargetLimit",
         "Cooldown",
@@ -84,6 +87,7 @@ public static class GameComponentsLookup {
         "Moving",
         "Speed",
         "TurnedAlongDirection",
+        "CollectingTargetsContinuously",
         "CollectTargetsInterval",
         "CollectTargetsTimer",
         "LayerMask",
@@ -107,6 +111,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.TransformComponent),
         typeof(Code.Gameplay.Common.WorldPosition),
         typeof(Code.Gameplay.Features.Abilities.AbilityIdComponent),
+        typeof(Code.Gameplay.Features.Abilities.VegetableBoltAbility),
         typeof(Code.Gameplay.Features.Armaments.Armament),
         typeof(Code.Gameplay.Features.Armaments.TargetLimit),
         typeof(Code.Gameplay.Features.Cooldowns.Cooldown),
@@ -127,6 +132,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Movement.Moving),
         typeof(Code.Gameplay.Features.Movement.Speed),
         typeof(Code.Gameplay.Features.Movement.TurnedAlongDirection),
+        typeof(Code.Gameplay.Features.TargetCollection.CollectingTargetsContinuously),
         typeof(Code.Gameplay.Features.TargetCollection.CollectTargetsInterval),
         typeof(Code.Gameplay.Features.TargetCollection.CollectTargetsTimer),
         typeof(Code.Gameplay.Features.TargetCollection.LayerMask),

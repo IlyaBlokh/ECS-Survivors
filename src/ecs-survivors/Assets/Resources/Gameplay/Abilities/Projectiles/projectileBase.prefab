@@ -93,8 +93,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1045153556455938967}
-  - component: {fileID: 7604695528526262236}
-  - component: {fileID: 6116180036570099195}
+  - component: {fileID: 5764499098619178063}
+  - component: {fileID: 2897959858957575267}
   m_Layer: 0
   m_Name: projectileBase
   m_TagString: Untagged
@@ -118,7 +118,7 @@ Transform:
   - {fileID: 1065704985033883940}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7604695528526262236
+--- !u!114 &5764499098619178063
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,10 +127,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3360128356117953061}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e160ad6dc2fd4ff9bc772c10046168ef, type: 3}
+  m_Script: {fileID: 11500000, guid: 511653e70f1b4434a642cfce8b90ee4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6116180036570099195
+--- !u!114 &2897959858957575267
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,10 +139,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3360128356117953061}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1f4b0f86cbd4a1095061dabe6c20b33, type: 3}
+  m_Script: {fileID: 11500000, guid: a05134c594a6494d9f8c83798b4783ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EntityView: {fileID: 7604695528526262236}
+  EntityView: {fileID: 5764499098619178063}
 --- !u!1 &7376349850620682343
 GameObject:
   m_ObjectHideFlags: 0
