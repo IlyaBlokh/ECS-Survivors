@@ -12,6 +12,7 @@ using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.Identifiers;
 using Code.Infrastructure.Loading;
 using Code.Infrastructure.Systems;
+using Code.Infrastructure.View.Factory;
 using Zenject;
 
 namespace Code.Infrastructure.Installers
@@ -59,6 +60,7 @@ namespace Code.Infrastructure.Installers
     {
       Container.Bind<IHeroFactory>().To<HeroFactory>().AsSingle();
       Container.Bind<IEnemyFactory>().To<EnemyFactory>().AsSingle();
+      Container.Bind<IEntityViewFactory>().To<EntityViewFactory>().AsSingle();
     }
 
     private void BindAssetManagementServices()

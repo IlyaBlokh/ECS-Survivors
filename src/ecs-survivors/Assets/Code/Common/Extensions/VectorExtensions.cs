@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Entitas;
+using UnityEngine;
 
 namespace Code.Common.Extensions
 {

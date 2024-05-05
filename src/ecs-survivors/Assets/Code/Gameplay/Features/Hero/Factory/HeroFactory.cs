@@ -26,6 +26,7 @@ namespace Code.Gameplay.Features.Hero.Factory
         .AddSpeed(Speed)
         .AddCurrentHP(MaxHP)
         .AddMaxHP(MaxHP)
+        .AddViewPath("Gameplay/Hero/hero")
         .With(x => x.isHero = true)
         .With(x => x.isTurnedAlongDirection = true)
         .With(x => x.isMovementAvailable = true);
