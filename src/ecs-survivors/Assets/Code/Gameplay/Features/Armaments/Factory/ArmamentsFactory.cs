@@ -39,6 +39,7 @@ namespace Code.Gameplay.Features.Armaments.Factory
           .AddTargetLimit(setup.Pierce)
           .AddLayerMask(CollisionLayer.Enemy.AsMask())
           .With(x => x.isMovementAvailable = true)
+          .With(x => x.isRotationAlignedAlongDirection = true)
           .With(x => x.isReadyToCollectTargets = true)
           .With(x => x.isCollectingTargetsContinuously = true)
           .AddSelfDestructTimer(setup.Lifetime)
