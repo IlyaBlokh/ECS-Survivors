@@ -28,6 +28,18 @@ namespace Code.Gameplay.Features.Abilities.Factory
         .AddCooldown(abilityLevel.Cooldown)
         .With(x => x.isVegetableBoltAbility = true)
         .PutOnCooldown();
+    }    
+    
+    public GameEntity CreateShovelRadialStrikeAbility(int level)
+    {
+      AbilityLevel abilityLevel = _staticDataService.GetAbilityLevel(AbilityId.ShovelRadialStrike, level);
+      
+      return CreateEntity.Empty()
+        .AddId(_identifiers.Next())
+        .AddAbilityId(AbilityId.ShovelRadialStrike)
+        .AddCooldown(abilityLevel.Cooldown)
+        .With(x => x.isShovelRadialStrikeAbility = true)
+        .PutOnCooldown();
     }
   }
 }

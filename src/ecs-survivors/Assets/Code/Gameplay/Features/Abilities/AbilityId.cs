@@ -3,6 +3,7 @@
   public enum AbilityId
   {
     Unknown = 0,
-    VegetableBolt = 1
+    VegetableBolt = 1,
+    ShovelRadialStrike = 2
   }
 }

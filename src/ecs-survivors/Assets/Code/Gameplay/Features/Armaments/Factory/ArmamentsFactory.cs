@@ -45,5 +45,30 @@ namespace Code.Gameplay.Features.Armaments.Factory
           .AddSelfDestructTimer(setup.Lifetime)
         ;
     }
+    
+    public GameEntity CreateShovelBolt(int level, Vector3 at)
+    {
+      AbilityLevel abilityLevel = _staticDataService.GetAbilityLevel(AbilityId.ShovelRadialStrike, level);
+      ProjectileSetup setup = abilityLevel.ProjectileSetup;
+      return CreateEntity.Empty()
+          .AddId(_identifiers.Next())
+          .With(x => x.isArmament = true)
+          .AddViewPrefab(abilityLevel.ViewPrefab)
+          .AddWorldPosition(at)
+          .AddSpeed(setup.Speed)
+          .AddAngleSpeed(setup.AngleSpeed)
+          .AddDamage(1)
+          .AddRadius(setup.ContactRadius)
+          .AddTargetsBuffer(new List<int>(TargetBufferSize))
+          .AddProcessedTargets(new List<int>(TargetBufferSize))
+          .AddTargetLimit(setup.Pierce)
+          .AddLayerMask(CollisionLayer.Enemy.AsMask())
+          .With(x => x.isMovementAvailable = true)
+          .With(x => x.RotatesAroundCenter = true)
+          .With(x => x.isReadyToCollectTargets = true)
+          .With(x => x.isCollectingTargetsContinuously = true)
+          .AddSelfDestructTimer(setup.Lifetime)
+        ;
+    }
   }
 }

@@ -20,41 +20,44 @@ public static class GameComponentsLookup {
     public const int Transform = 9;
     public const int WorldPosition = 10;
     public const int AbilityId = 11;
-    public const int VegetableBoltAbility = 12;
-    public const int Armament = 13;
-    public const int Processed = 14;
-    public const int TargetLimit = 15;
-    public const int Cooldown = 16;
-    public const int CooldownLeft = 17;
-    public const int CooldownUp = 18;
-    public const int Enemy = 19;
-    public const int EnemyAnimator = 20;
-    public const int EnemyTypeId = 21;
-    public const int SpawnTimer = 22;
-    public const int Hero = 23;
-    public const int HeroAnimator = 24;
-    public const int CurrentHP = 25;
-    public const int Dead = 26;
-    public const int MaxHP = 27;
-    public const int ProcessingDeath = 28;
-    public const int Direction = 29;
-    public const int MovementAvailable = 30;
-    public const int Moving = 31;
-    public const int RotationAlignedAlongDirection = 32;
-    public const int Speed = 33;
-    public const int TurnedAlongDirection = 34;
-    public const int CollectingTargetsContinuously = 35;
-    public const int CollectTargetsInterval = 36;
-    public const int CollectTargetsTimer = 37;
-    public const int LayerMask = 38;
-    public const int ProcessedTargets = 39;
-    public const int Radius = 40;
-    public const int ReadyToCollectTargets = 41;
-    public const int TargetsBuffer = 42;
-    public const int AxisInput = 43;
-    public const int Input = 44;
+    public const int ShovelRadialStrikeAbility = 12;
+    public const int VegetableBoltAbility = 13;
+    public const int Armament = 14;
+    public const int Processed = 15;
+    public const int TargetLimit = 16;
+    public const int Cooldown = 17;
+    public const int CooldownLeft = 18;
+    public const int CooldownUp = 19;
+    public const int Enemy = 20;
+    public const int EnemyAnimator = 21;
+    public const int EnemyTypeId = 22;
+    public const int SpawnTimer = 23;
+    public const int Hero = 24;
+    public const int HeroAnimator = 25;
+    public const int CurrentHP = 26;
+    public const int Dead = 27;
+    public const int MaxHP = 28;
+    public const int ProcessingDeath = 29;
+    public const int AngleSpeed = 30;
+    public const int Direction = 31;
+    public const int MovementAvailable = 32;
+    public const int Moving = 33;
+    public const int RotatesAroundCenter = 34;
+    public const int RotationAlignedAlongDirection = 35;
+    public const int Speed = 36;
+    public const int TurnedAlongDirection = 37;
+    public const int CollectingTargetsContinuously = 38;
+    public const int CollectTargetsInterval = 39;
+    public const int CollectTargetsTimer = 40;
+    public const int LayerMask = 41;
+    public const int ProcessedTargets = 42;
+    public const int Radius = 43;
+    public const int ReadyToCollectTargets = 44;
+    public const int TargetsBuffer = 45;
+    public const int AxisInput = 46;
+    public const int Input = 47;
 
-    public const int TotalComponents = 45;
+    public const int TotalComponents = 48;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -69,6 +72,7 @@ public static class GameComponentsLookup {
         "Transform",
         "WorldPosition",
         "AbilityId",
+        "ShovelRadialStrikeAbility",
         "VegetableBoltAbility",
         "Armament",
         "Processed",
@@ -86,9 +90,11 @@ public static class GameComponentsLookup {
         "Dead",
         "MaxHP",
         "ProcessingDeath",
+        "AngleSpeed",
         "Direction",
         "MovementAvailable",
         "Moving",
+        "RotatesAroundCenter",
         "RotationAlignedAlongDirection",
         "Speed",
         "TurnedAlongDirection",
@@ -117,6 +123,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.TransformComponent),
         typeof(Code.Gameplay.Common.WorldPosition),
         typeof(Code.Gameplay.Features.Abilities.AbilityIdComponent),
+        typeof(Code.Gameplay.Features.Abilities.ShovelRadialStrikeAbility),
         typeof(Code.Gameplay.Features.Abilities.VegetableBoltAbility),
         typeof(Code.Gameplay.Features.Armaments.Armament),
         typeof(Code.Gameplay.Features.Armaments.Processed),
@@ -134,9 +141,11 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Lifetime.Dead),
         typeof(Code.Gameplay.Features.Lifetime.MaxHP),
         typeof(Code.Gameplay.Features.Lifetime.ProcessingDeath),
+        typeof(Code.Gameplay.Features.Movement.AngleSpeed),
         typeof(Code.Gameplay.Features.Movement.Direction),
         typeof(Code.Gameplay.Features.Movement.MovementAvailable),
         typeof(Code.Gameplay.Features.Movement.Moving),
+        typeof(Code.Gameplay.Features.Movement.RotatesAroundCenter),
         typeof(Code.Gameplay.Features.Movement.RotationAlignedAlongDirection),
         typeof(Code.Gameplay.Features.Movement.Speed),
         typeof(Code.Gameplay.Features.Movement.TurnedAlongDirection),

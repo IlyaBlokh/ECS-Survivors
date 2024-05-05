@@ -1,40 +1,34 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Armaments.Factory;
 using Code.Gameplay.Features.Cooldowns;
 using Code.Gameplay.StaticData;
 using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Abilities.Systems
 {
-  public class VegetableBoltAbilitySystem : IExecuteSystem
+  public class ShovelRadialStrikeAbilitySystem : IExecuteSystem
   {
     private readonly IGroup<GameEntity> _abilities;
     private readonly IStaticDataService _staticDataService;
     private readonly IArmamentsFactory _armamentsFactory;
     private readonly List<GameEntity> _buffer = new(1);
     private readonly IGroup<GameEntity> _heroes;
-    private readonly IGroup<GameEntity> _enemies;
 
-    public VegetableBoltAbilitySystem(GameContext game, IStaticDataService staticDataService, IArmamentsFactory armamentsFactory)
+    public ShovelRadialStrikeAbilitySystem(GameContext game, IStaticDataService staticDataService, IArmamentsFactory armamentsFactory)
     {
       _armamentsFactory = armamentsFactory;
       _staticDataService = staticDataService;
       
       _abilities = game.GetGroup(GameMatcher
         .AllOf(
-          GameMatcher.VegetableBoltAbility, 
+          GameMatcher.ShovelRadialStrikeAbility, 
           GameMatcher.CooldownUp));
 
       _heroes = game.GetGroup(GameMatcher
         .AllOf(
           GameMatcher.Hero,
-          GameMatcher.WorldPosition));
-      
-      _enemies = game.GetGroup(GameMatcher
-        .AllOf(
-          GameMatcher.Enemy,
           GameMatcher.WorldPosition));
     }
 
@@ -43,19 +37,22 @@ namespace Code.Gameplay.Features.Abilities.Systems
       foreach (GameEntity ability in _abilities.GetEntities(_buffer))
         foreach (GameEntity hero in _heroes)
         {
-          if (_enemies.count <= 0)
-            continue;
-          
-          _armamentsFactory.CreateVegetableBolt(1, hero.WorldPosition)
-            .ReplaceDirection((FirstAvailableTarget().WorldPosition - hero.WorldPosition).normalized)
-            .With(x => x.isMoving = true);
-          
+          int projectileAmount = _staticDataService.GetAbilityLevel(AbilityId.ShovelRadialStrike, 1).ProjectileAmount;
+          float angleBetween = 2 * Mathf.PI / projectileAmount;
+          for (int i = 0; i < projectileAmount; i++)
+          {
+            float x = Mathf.Cos(i * angleBetween);
+            float y = Mathf.Sin(i * angleBetween);
+            Vector2 startDirection = new Vector2(x, y).normalized;
+            
+            _armamentsFactory.CreateShovelBolt(1, hero.WorldPosition)
+              .ReplaceDirection(startDirection)
+              .With(x => x.isMoving = true);
+          }
+
           ability
-            .PutOnCooldown(_staticDataService.GetAbilityLevel(AbilityId.VegetableBolt, 1).Cooldown);
+            .PutOnCooldown(_staticDataService.GetAbilityLevel(AbilityId.ShovelRadialStrike, 1).Cooldown);
         }
     }
-
-    private GameEntity FirstAvailableTarget() => 
-      _enemies.AsEnumerable().First();
   }
 }

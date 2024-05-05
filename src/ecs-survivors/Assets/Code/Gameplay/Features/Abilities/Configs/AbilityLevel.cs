@@ -9,5 +9,6 @@ namespace Code.Gameplay.Features.Abilities.Configs
     public float Cooldown;
     public EntityBehaviour ViewPrefab;
     public ProjectileSetup ProjectileSetup;
+    public int ProjectileAmount;
   }
 }

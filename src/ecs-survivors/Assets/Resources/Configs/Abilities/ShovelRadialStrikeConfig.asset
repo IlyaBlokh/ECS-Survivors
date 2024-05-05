@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c3c0c6b2aff4a0997ef4e257699115c, type: 3}
+  m_Name: ShovelRadialStrikeConfig
+  m_EditorClassIdentifier: 
+  AbilityId: 2
+  Levels:
+  - Cooldown: 2.5
+    ViewPrefab: {fileID: 8153865036766097649, guid: 2f8dae630358fe84a9ac79b9bf4788f5, type: 3}
+    ProjectileSetup:
+      Speed: 3
+      AngleSpeed: 220
+      Pierce: 1
+      ContactRadius: 0.1
+      Lifetime: 5
+    ProjectileAmount: 6
