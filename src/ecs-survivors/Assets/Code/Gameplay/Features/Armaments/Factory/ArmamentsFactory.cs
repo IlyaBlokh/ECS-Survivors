@@ -11,6 +11,8 @@ namespace Code.Gameplay.Features.Armaments.Factory
 {
   public class ArmamentsFactory : IArmamentsFactory
   {
+    private const int TargetBufferSize = 16;
+    
     private readonly IIdentifierService _identifiers;
     private readonly IStaticDataService _staticDataService;
 
@@ -19,7 +21,7 @@ namespace Code.Gameplay.Features.Armaments.Factory
       _staticDataService = staticDataService;
       _identifiers = identifiers;
     }
-    
+
     public GameEntity CreateVegetableBolt(int level, Vector3 at)
     {
       AbilityLevel abilityLevel = _staticDataService.GetAbilityLevel(AbilityId.VegetableBolt, level);
@@ -32,12 +34,14 @@ namespace Code.Gameplay.Features.Armaments.Factory
           .AddSpeed(setup.Speed)
           .AddDamage(1)
           .AddRadius(setup.ContactRadius)
-          .AddTargetsBuffer(new List<int>(16))
+          .AddTargetsBuffer(new List<int>(TargetBufferSize))
+          .AddProcessedTargets(new List<int>(TargetBufferSize))
           .AddTargetLimit(setup.Pierce)
           .AddLayerMask(CollisionLayer.Enemy.AsMask())
           .With(x => x.isMovementAvailable = true)
           .With(x => x.isReadyToCollectTargets = true)
           .With(x => x.isCollectingTargetsContinuously = true)
+          .AddSelfDestructTimer(setup.Lifetime)
         ;
     }
   }

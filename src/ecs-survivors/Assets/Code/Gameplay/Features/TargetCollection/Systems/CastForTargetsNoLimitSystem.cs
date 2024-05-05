@@ -5,13 +5,13 @@ using Entitas;
 
 namespace Code.Gameplay.Features.TargetCollection.Systems
 {
-  public class CastForTargetsSystem : IExecuteSystem
+  public class CastForTargetsNoLimitSystem : IExecuteSystem
   {
     private readonly IPhysicsService _physicsService;
     private readonly IGroup<GameEntity> _ready;
     private readonly List<GameEntity> _buffer = new(64);
 
-    public CastForTargetsSystem(GameContext game, IPhysicsService physicsService)
+    public CastForTargetsNoLimitSystem(GameContext game, IPhysicsService physicsService)
     {
       _physicsService = physicsService;
       _ready = game.GetGroup(GameMatcher
@@ -20,7 +20,9 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
           GameMatcher.TargetsBuffer,
           GameMatcher.WorldPosition,
           GameMatcher.Radius,
-          GameMatcher.LayerMask));
+          GameMatcher.LayerMask)
+        .NoneOf(
+          GameMatcher.TargetLimit));
     }
 
     public void Execute()

@@ -8,7 +8,8 @@ namespace Code.Gameplay.Features.TargetCollection
     public CollectTargetsFeature(ISystemFactory systems)
     {
       Add(systems.Create<CollectTargetsIntervalSystem>());
-      Add(systems.Create<CastForTargetsSystem>());
+      Add(systems.Create<CastForTargetsNoLimitSystem>());
+      Add(systems.Create<CastForTargetsWithLimitSystem>());
       
       Add(systems.Create<CleanupTargetBuffersSystem>());
     }

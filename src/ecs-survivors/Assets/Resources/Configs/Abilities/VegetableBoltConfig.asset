@@ -20,3 +20,4 @@ MonoBehaviour:
       Speed: 2
       Pierce: 3
       ContactRadius: 0.1
+      Lifetime: 5
