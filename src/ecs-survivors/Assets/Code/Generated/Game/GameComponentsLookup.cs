@@ -22,27 +22,28 @@ public static class GameComponentsLookup {
     public const int Enemy = 11;
     public const int EnemyAnimator = 12;
     public const int EnemyTypeId = 13;
-    public const int Hero = 14;
-    public const int HeroAnimator = 15;
-    public const int CurrentHP = 16;
-    public const int Dead = 17;
-    public const int MaxHP = 18;
-    public const int ProcessingDeath = 19;
-    public const int Direction = 20;
-    public const int MovementAvailable = 21;
-    public const int Moving = 22;
-    public const int Speed = 23;
-    public const int TurnedAlongDirection = 24;
-    public const int CollectTargetsInterval = 25;
-    public const int CollectTargetsTimer = 26;
-    public const int LayerMask = 27;
-    public const int Radius = 28;
-    public const int ReadyToCollectTargets = 29;
-    public const int TargetsBuffer = 30;
-    public const int AxisInput = 31;
-    public const int Input = 32;
+    public const int SpawnTimer = 14;
+    public const int Hero = 15;
+    public const int HeroAnimator = 16;
+    public const int CurrentHP = 17;
+    public const int Dead = 18;
+    public const int MaxHP = 19;
+    public const int ProcessingDeath = 20;
+    public const int Direction = 21;
+    public const int MovementAvailable = 22;
+    public const int Moving = 23;
+    public const int Speed = 24;
+    public const int TurnedAlongDirection = 25;
+    public const int CollectTargetsInterval = 26;
+    public const int CollectTargetsTimer = 27;
+    public const int LayerMask = 28;
+    public const int Radius = 29;
+    public const int ReadyToCollectTargets = 30;
+    public const int TargetsBuffer = 31;
+    public const int AxisInput = 32;
+    public const int Input = 33;
 
-    public const int TotalComponents = 33;
+    public const int TotalComponents = 34;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -59,6 +60,7 @@ public static class GameComponentsLookup {
         "Enemy",
         "EnemyAnimator",
         "EnemyTypeId",
+        "SpawnTimer",
         "Hero",
         "HeroAnimator",
         "CurrentHP",
@@ -95,6 +97,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Enemies.Enemy),
         typeof(Code.Gameplay.Features.Enemies.EnemyAnimatorComponent),
         typeof(Code.Gameplay.Features.Enemies.EnemyTypeIdComponent),
+        typeof(Code.Gameplay.Features.Enemies.SpawnTimer),
         typeof(Code.Gameplay.Features.Hero.Hero),
         typeof(Code.Gameplay.Features.Hero.HeroAnimatorComponent),
         typeof(Code.Gameplay.Features.Lifetime.CurrentHP),
