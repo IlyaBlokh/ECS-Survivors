@@ -52,7 +52,5 @@ namespace Code.Gameplay.Features.Enemies.Factory
         .With(x => x.isTurnedAlongDirection = true)
         .With(x => x.isMovementAvailable = true);
     }
-    
-    
   }
 }
