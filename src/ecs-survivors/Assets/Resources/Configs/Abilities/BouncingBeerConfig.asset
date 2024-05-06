@@ -10,16 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c3c0c6b2aff4a0997ef4e257699115c, type: 3}
-  m_Name: ShovelRadialStrikeConfig
+  m_Name: BouncingBeerConfig
   m_EditorClassIdentifier: 
-  AbilityId: 2
+  AbilityId: 3
   Levels:
-  - Cooldown: 2.5
-    ViewPrefab: {fileID: 8153865036766097649, guid: 2f8dae630358fe84a9ac79b9bf4788f5, type: 3}
+  - Cooldown: 2
+    ViewPrefab: {fileID: 8153865036766097649, guid: 35813c6908c477241b5f934a95c02d92, type: 3}
     ProjectileSetup:
-      Speed: 3
-      AngleSpeed: 220
+      Speed: 8
+      AngleSpeed: 0
       Pierce: 1
+      Bounce: 5
       ContactRadius: 0.25
       Lifetime: 5
-    ProjectileAmount: 6
+    ProjectileAmount: 1

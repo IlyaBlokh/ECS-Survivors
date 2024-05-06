@@ -4,6 +4,7 @@
   {
     Unknown = 0,
     VegetableBolt = 1,
-    ShovelRadialStrike = 2
+    ShovelRadialStrike = 2,
+    BouncingBeer = 3
   }
 }

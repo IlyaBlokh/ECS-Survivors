@@ -46,6 +46,8 @@ namespace Code.Gameplay.Features.Enemies.Factory
         .AddRadius(0.3f)
         .AddCollectTargetsInterval(0.5f)
         .AddCollectTargetsTimer(0)
+        .AddScheduledToProcessByArmaments(new List<int>(32))
+        .AddProcessedByArmaments(new List<int>(32))
         .AddLayerMask(CollisionLayer.Hero.AsMask())
         .AddViewPath("Gameplay/Enemies/Goblins/Torch/goblin_torch_blue")
         .With(x => x.isEnemy = true)

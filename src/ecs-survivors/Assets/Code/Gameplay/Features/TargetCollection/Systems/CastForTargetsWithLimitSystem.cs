@@ -37,6 +37,8 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
           {
             entity.TargetsBuffer.Add(targetId);
             entity.ProcessedTargets.Add(targetId);
+            if (_targetCastBuffer[i].hasScheduledToProcessByArmaments)
+              _targetCastBuffer[i].ScheduledToProcessByArmaments.Add(entity.Id);
           }
         }
       

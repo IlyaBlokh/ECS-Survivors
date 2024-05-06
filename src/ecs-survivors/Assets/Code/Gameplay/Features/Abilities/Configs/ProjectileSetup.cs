@@ -8,6 +8,7 @@ namespace Code.Gameplay.Features.Abilities.Configs
     public float Speed;
     public float AngleSpeed;
     public int Pierce = 1;
+    public int Bounce;
     public float ContactRadius;
     public float Lifetime;
   }

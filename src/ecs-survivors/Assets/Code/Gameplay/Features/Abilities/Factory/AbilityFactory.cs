@@ -40,6 +40,18 @@ namespace Code.Gameplay.Features.Abilities.Factory
         .AddCooldown(abilityLevel.Cooldown)
         .With(x => x.isShovelRadialStrikeAbility = true)
         .PutOnCooldown();
+    }    
+    
+    public GameEntity CreateBouncingBeerAbility(int level)
+    {
+      AbilityLevel abilityLevel = _staticDataService.GetAbilityLevel(AbilityId.BouncingBeer, level);
+      
+      return CreateEntity.Empty()
+        .AddId(_identifiers.Next())
+        .AddAbilityId(AbilityId.BouncingBeer)
+        .AddCooldown(abilityLevel.Cooldown)
+        .With(x => x.isBouncingBeerAbility = true)
+        .PutOnCooldown();
     }
   }
 }
