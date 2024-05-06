@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Code.Gameplay.Common.Physics;
 using Entitas;
-using UnityEngine;
 
 namespace Code.Gameplay.Features.TargetCollection.Systems
 {
@@ -35,6 +34,9 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
         for (int i = 0; i < Math.Min(armament.TargetLimit, TargetCountInRadius(armament)); i++)
         {
           GameEntity targetEntity = _targetCastBuffer[i];
+          if (targetEntity == null)
+            continue;
+          
           int targetId = targetEntity.Id;
           if (!AlreadyProcessed(armament, targetId))
           {
@@ -49,6 +51,8 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
       
         if (!armament.isCollectingTargetsContinuously)
           armament.isReadyToCollectTargets = false;
+        
+        Array.Clear(_targetCastBuffer, 0, _targetCastBuffer.Length);
       }
     }
 

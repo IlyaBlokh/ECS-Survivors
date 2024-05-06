@@ -18,6 +18,18 @@ MonoBehaviour:
     ViewPrefab: {fileID: 8153865036766097649, guid: 08ce9f5922001044d87f0b92a159a8c4, type: 3}
     ProjectileSetup:
       Speed: 2
-      Pierce: 3
+      AngleSpeed: 0
       ContactRadius: 0.1
       Lifetime: 5
+      Pierce: 3
+      Bounce: 0
+    ProjectileAmount: 0
+    ChildViewPrefab: {fileID: 0}
+    ChildProjectile:
+      Speed: 0
+      AngleSpeed: 0
+      ContactRadius: 0
+      Lifetime: 0
+      Pierce: 1
+      Bounce: 0
+  KillsToUnlock: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbilityId: 4
   Levels:
-  - Cooldown: 1
+  - Cooldown: 2
     ViewPrefab: {fileID: 8153865036766097649, guid: 6d48da10e3ad4be439770f8c63bed905, type: 3}
     ProjectileSetup:
       Speed: 3

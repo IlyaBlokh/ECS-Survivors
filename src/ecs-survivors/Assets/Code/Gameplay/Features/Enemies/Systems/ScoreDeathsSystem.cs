@@ -29,7 +29,6 @@ namespace Code.Gameplay.Features.Enemies.Systems
         foreach (GameEntity hero in _heroes)
         {
           hero.ReplaceKillScore(hero.KillScore + 1);
-          Debug.Log($"kills:{hero.KillScore}");
         }
     }
   }

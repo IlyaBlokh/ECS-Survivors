@@ -32,4 +32,4 @@ MonoBehaviour:
       Lifetime: 0
       Pierce: 1
       Bounce: 0
-  KillsToUnlock: 3
+  KillsToUnlock: 6
