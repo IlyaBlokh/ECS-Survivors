@@ -19,8 +19,17 @@ MonoBehaviour:
     ProjectileSetup:
       Speed: 8
       AngleSpeed: 0
-      Pierce: 1
-      Bounce: 5
       ContactRadius: 0.25
       Lifetime: 5
+      Pierce: 1
+      Bounce: 5
     ProjectileAmount: 1
+    ChildViewPrefab: {fileID: 0}
+    ChildProjectile:
+      Speed: 0
+      AngleSpeed: 0
+      ContactRadius: 0
+      Lifetime: 0
+      Pierce: 1
+      Bounce: 0
+  KillsToUnlock: 6

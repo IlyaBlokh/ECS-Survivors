@@ -8,5 +8,6 @@ namespace Code.Gameplay.Features.Abilities.Configs
   {
     public AbilityId AbilityId;
     public List<AbilityLevel> Levels;
+    public int KillsToUnlock;
   }
 }

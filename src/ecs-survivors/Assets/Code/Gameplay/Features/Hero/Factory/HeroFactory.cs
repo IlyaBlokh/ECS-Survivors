@@ -1,5 +1,7 @@
-﻿using Code.Common.Entity;
+﻿using System.Collections.Generic;
+using Code.Common.Entity;
 using Code.Common.Extensions;
+using Code.Gameplay.Features.Abilities;
 using Code.Infrastructure.Identifiers;
 using UnityEngine;
 
@@ -27,6 +29,8 @@ namespace Code.Gameplay.Features.Hero.Factory
         .AddCurrentHP(MaxHP)
         .AddMaxHP(MaxHP)
         .AddViewPath("Gameplay/Hero/hero")
+        .AddKillScore(0)
+        .AddAbilities(new List<AbilityId>())
         .With(x => x.isHero = true)
         .With(x => x.isTurnedAlongDirection = true)
         .With(x => x.isMovementAvailable = true);

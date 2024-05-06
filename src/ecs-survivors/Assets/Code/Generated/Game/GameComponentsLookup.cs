@@ -39,32 +39,34 @@ public static class GameComponentsLookup {
     public const int ProcessedByArmaments = 28;
     public const int ScheduledToProcessByArmaments = 29;
     public const int SpawnTimer = 30;
-    public const int Hero = 31;
-    public const int HeroAnimator = 32;
-    public const int CurrentHP = 33;
-    public const int Dead = 34;
-    public const int MaxHP = 35;
-    public const int ProcessingDeath = 36;
-    public const int AngleSpeed = 37;
-    public const int Direction = 38;
-    public const int MovementAvailable = 39;
-    public const int Moving = 40;
-    public const int RotatesAroundCenter = 41;
-    public const int RotationAlignedAlongDirection = 42;
-    public const int Speed = 43;
-    public const int TurnedAlongDirection = 44;
-    public const int CollectingTargetsContinuously = 45;
-    public const int CollectTargetsInterval = 46;
-    public const int CollectTargetsTimer = 47;
-    public const int LayerMask = 48;
-    public const int ProcessedTargets = 49;
-    public const int Radius = 50;
-    public const int ReadyToCollectTargets = 51;
-    public const int TargetsBuffer = 52;
-    public const int AxisInput = 53;
-    public const int Input = 54;
+    public const int Abilities = 31;
+    public const int Hero = 32;
+    public const int HeroAnimator = 33;
+    public const int KillScore = 34;
+    public const int CurrentHP = 35;
+    public const int Dead = 36;
+    public const int MaxHP = 37;
+    public const int ProcessingDeath = 38;
+    public const int AngleSpeed = 39;
+    public const int Direction = 40;
+    public const int MovementAvailable = 41;
+    public const int Moving = 42;
+    public const int RotatesAroundCenter = 43;
+    public const int RotationAlignedAlongDirection = 44;
+    public const int Speed = 45;
+    public const int TurnedAlongDirection = 46;
+    public const int CollectingTargetsContinuously = 47;
+    public const int CollectTargetsInterval = 48;
+    public const int CollectTargetsTimer = 49;
+    public const int LayerMask = 50;
+    public const int ProcessedTargets = 51;
+    public const int Radius = 52;
+    public const int ReadyToCollectTargets = 53;
+    public const int TargetsBuffer = 54;
+    public const int AxisInput = 55;
+    public const int Input = 56;
 
-    public const int TotalComponents = 55;
+    public const int TotalComponents = 57;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -98,8 +100,10 @@ public static class GameComponentsLookup {
         "ProcessedByArmaments",
         "ScheduledToProcessByArmaments",
         "SpawnTimer",
+        "Abilities",
         "Hero",
         "HeroAnimator",
+        "KillScore",
         "CurrentHP",
         "Dead",
         "MaxHP",
@@ -156,8 +160,10 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Enemies.ProcessedByArmaments),
         typeof(Code.Gameplay.Features.Enemies.ScheduledToProcessByArmaments),
         typeof(Code.Gameplay.Features.Enemies.SpawnTimer),
+        typeof(Code.Gameplay.Features.Hero.Abilities),
         typeof(Code.Gameplay.Features.Hero.Hero),
         typeof(Code.Gameplay.Features.Hero.HeroAnimatorComponent),
+        typeof(Code.Gameplay.Features.Hero.KillScore),
         typeof(Code.Gameplay.Features.Lifetime.CurrentHP),
         typeof(Code.Gameplay.Features.Lifetime.Dead),
         typeof(Code.Gameplay.Features.Lifetime.MaxHP),

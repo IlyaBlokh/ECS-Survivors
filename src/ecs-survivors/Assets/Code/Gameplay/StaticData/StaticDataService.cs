@@ -24,6 +24,12 @@ namespace Code.Gameplay.StaticData
       throw new Exception($"Ability config for {abilityId} not found");
     }
 
+    public List<AbilityId> GetAvailableAbilities(int killScore) =>
+      _abilityById.Values
+        .Where(c => c.KillsToUnlock <= killScore)
+        .Select(x => x.AbilityId)
+        .ToList();
+
     public AbilityLevel GetAbilityLevel(AbilityId abilityId, int level)
     {
       AbilityConfig config = GetAbilityConfig(abilityId);

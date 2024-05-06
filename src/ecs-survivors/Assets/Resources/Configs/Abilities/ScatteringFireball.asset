@@ -30,5 +30,6 @@ MonoBehaviour:
       AngleSpeed: 0
       ContactRadius: 0.15
       Lifetime: 3
-      Pierce: 1
+      Pierce: 2
       Bounce: 0
+  KillsToUnlock: 10

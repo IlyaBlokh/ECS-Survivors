@@ -1,4 +1,5 @@
-﻿using Code.Gameplay.Features.Abilities;
+﻿using System.Collections.Generic;
+using Code.Gameplay.Features.Abilities;
 using Code.Gameplay.Features.Abilities.Configs;
 
 namespace Code.Gameplay.StaticData
@@ -8,5 +9,6 @@ namespace Code.Gameplay.StaticData
     void LoadAll();
     AbilityConfig GetAbilityConfig(AbilityId abilityId);
     AbilityLevel GetAbilityLevel(AbilityId abilityId, int level);
+    List<AbilityId> GetAvailableAbilities(int killScore);
   }
 }

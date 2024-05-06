@@ -1,6 +1,5 @@
 ﻿using Code.Gameplay.Features.TargetCollection;
 using Entitas;
-using UnityEngine;
 
 namespace Code.Gameplay.Features.Enemies.Systems
 {

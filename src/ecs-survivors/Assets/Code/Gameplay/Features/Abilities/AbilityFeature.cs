@@ -9,6 +9,7 @@ namespace Code.Gameplay.Features.Abilities
   {
     public AbilityFeature(ISystemFactory systems)
     {
+      Add(systems.Create<UnlockAbilitySystem>());
       Add(systems.Create<CooldownSystem>());
       Add(systems.Create<VegetableBoltAbilitySystem>());
       Add(systems.Create<ShovelRadialStrikeAbilitySystem>());
