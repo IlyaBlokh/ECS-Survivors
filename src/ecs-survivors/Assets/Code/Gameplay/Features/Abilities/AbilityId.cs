@@ -5,6 +5,7 @@
     Unknown = 0,
     VegetableBolt = 1,
     ShovelRadialStrike = 2,
-    BouncingBeer = 3
+    BouncingBeer = 3,
+    ScatteringFireball = 4
   }
 }

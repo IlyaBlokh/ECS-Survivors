@@ -23,7 +23,8 @@ namespace Code.Gameplay.Features.Hero.Systems
       _heroFactory.CreateHero(_levelDataProvider.StartPoint);
       // _abilityFactory.CreateVegetableBoltAbility(level: 1);
       // _abilityFactory.CreateShovelRadialStrikeAbility(level: 1);
-      _abilityFactory.CreateBouncingBeerAbility(level: 1);
+      // _abilityFactory.CreateBouncingBeerAbility(level: 1);
+      _abilityFactory.CreateScatteringFireballAbility(level: 1);
     }
   }
 }

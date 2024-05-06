@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.DamageApplication.Systems
 {
@@ -23,6 +24,7 @@ namespace Code.Gameplay.Features.DamageApplication.Systems
       {
         if (entity.CurrentHP <= 0)
         {
+          Debug.Log($"mark dead: {entity.Id}");
           entity.isDead = true;
           entity.isProcessingDeath = true;
         }

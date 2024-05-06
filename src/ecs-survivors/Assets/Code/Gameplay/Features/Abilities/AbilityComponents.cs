@@ -6,4 +6,5 @@ namespace Code.Gameplay.Features.Abilities
   [Game] public class VegetableBoltAbility : IComponent { }
   [Game] public class ShovelRadialStrikeAbility : IComponent { }
   [Game] public class BouncingBeerAbility : IComponent { }
+  [Game] public class ScatteringFireballAbility : IComponent { }
 }

@@ -21,48 +21,50 @@ public static class GameComponentsLookup {
     public const int WorldPosition = 10;
     public const int AbilityId = 11;
     public const int BouncingBeerAbility = 12;
-    public const int ShovelRadialStrikeAbility = 13;
-    public const int VegetableBoltAbility = 14;
-    public const int Armament = 15;
-    public const int BeerBoltArmament = 16;
-    public const int Processed = 17;
-    public const int RequiresNextNearestEnemy = 18;
-    public const int TargetLimit = 19;
-    public const int Cooldown = 20;
-    public const int CooldownLeft = 21;
-    public const int CooldownUp = 22;
-    public const int Enemy = 23;
-    public const int EnemyAnimator = 24;
-    public const int EnemyTypeId = 25;
-    public const int ProcessedByArmaments = 26;
-    public const int ScheduledToProcessByArmaments = 27;
-    public const int SpawnTimer = 28;
-    public const int Hero = 29;
-    public const int HeroAnimator = 30;
-    public const int CurrentHP = 31;
-    public const int Dead = 32;
-    public const int MaxHP = 33;
-    public const int ProcessingDeath = 34;
-    public const int AngleSpeed = 35;
-    public const int Direction = 36;
-    public const int MovementAvailable = 37;
-    public const int Moving = 38;
-    public const int RotatesAroundCenter = 39;
-    public const int RotationAlignedAlongDirection = 40;
-    public const int Speed = 41;
-    public const int TurnedAlongDirection = 42;
-    public const int CollectingTargetsContinuously = 43;
-    public const int CollectTargetsInterval = 44;
-    public const int CollectTargetsTimer = 45;
-    public const int LayerMask = 46;
-    public const int ProcessedTargets = 47;
-    public const int Radius = 48;
-    public const int ReadyToCollectTargets = 49;
-    public const int TargetsBuffer = 50;
-    public const int AxisInput = 51;
-    public const int Input = 52;
+    public const int ScatteringFireballAbility = 13;
+    public const int ShovelRadialStrikeAbility = 14;
+    public const int VegetableBoltAbility = 15;
+    public const int Armament = 16;
+    public const int BeerBoltArmament = 17;
+    public const int Processed = 18;
+    public const int RequiresNextNearestEnemy = 19;
+    public const int ScatteringFireballArmament = 20;
+    public const int TargetLimit = 21;
+    public const int Cooldown = 22;
+    public const int CooldownLeft = 23;
+    public const int CooldownUp = 24;
+    public const int Enemy = 25;
+    public const int EnemyAnimator = 26;
+    public const int EnemyTypeId = 27;
+    public const int ProcessedByArmaments = 28;
+    public const int ScheduledToProcessByArmaments = 29;
+    public const int SpawnTimer = 30;
+    public const int Hero = 31;
+    public const int HeroAnimator = 32;
+    public const int CurrentHP = 33;
+    public const int Dead = 34;
+    public const int MaxHP = 35;
+    public const int ProcessingDeath = 36;
+    public const int AngleSpeed = 37;
+    public const int Direction = 38;
+    public const int MovementAvailable = 39;
+    public const int Moving = 40;
+    public const int RotatesAroundCenter = 41;
+    public const int RotationAlignedAlongDirection = 42;
+    public const int Speed = 43;
+    public const int TurnedAlongDirection = 44;
+    public const int CollectingTargetsContinuously = 45;
+    public const int CollectTargetsInterval = 46;
+    public const int CollectTargetsTimer = 47;
+    public const int LayerMask = 48;
+    public const int ProcessedTargets = 49;
+    public const int Radius = 50;
+    public const int ReadyToCollectTargets = 51;
+    public const int TargetsBuffer = 52;
+    public const int AxisInput = 53;
+    public const int Input = 54;
 
-    public const int TotalComponents = 53;
+    public const int TotalComponents = 55;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -78,12 +80,14 @@ public static class GameComponentsLookup {
         "WorldPosition",
         "AbilityId",
         "BouncingBeerAbility",
+        "ScatteringFireballAbility",
         "ShovelRadialStrikeAbility",
         "VegetableBoltAbility",
         "Armament",
         "BeerBoltArmament",
         "Processed",
         "RequiresNextNearestEnemy",
+        "ScatteringFireballArmament",
         "TargetLimit",
         "Cooldown",
         "CooldownLeft",
@@ -134,12 +138,14 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.WorldPosition),
         typeof(Code.Gameplay.Features.Abilities.AbilityIdComponent),
         typeof(Code.Gameplay.Features.Abilities.BouncingBeerAbility),
+        typeof(Code.Gameplay.Features.Abilities.ScatteringFireballAbility),
         typeof(Code.Gameplay.Features.Abilities.ShovelRadialStrikeAbility),
         typeof(Code.Gameplay.Features.Abilities.VegetableBoltAbility),
         typeof(Code.Gameplay.Features.Armaments.Armament),
         typeof(Code.Gameplay.Features.Armaments.BeerBoltArmament),
         typeof(Code.Gameplay.Features.Armaments.Processed),
         typeof(Code.Gameplay.Features.Armaments.RequiresNextNearestEnemy),
+        typeof(Code.Gameplay.Features.Armaments.ScatteringFireballArmament),
         typeof(Code.Gameplay.Features.Armaments.TargetLimit),
         typeof(Code.Gameplay.Features.Cooldowns.Cooldown),
         typeof(Code.Gameplay.Features.Cooldowns.CooldownLeft),

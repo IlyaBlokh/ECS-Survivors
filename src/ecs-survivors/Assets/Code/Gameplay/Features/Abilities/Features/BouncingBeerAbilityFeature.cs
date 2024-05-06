@@ -1,7 +1,7 @@
 ﻿using Code.Gameplay.Features.Abilities.Systems;
 using Code.Infrastructure.Systems;
 
-namespace Code.Gameplay.Features.Abilities
+namespace Code.Gameplay.Features.Abilities.Features
 {
   public sealed class BouncingBeerAbilityFeature : Feature
   {

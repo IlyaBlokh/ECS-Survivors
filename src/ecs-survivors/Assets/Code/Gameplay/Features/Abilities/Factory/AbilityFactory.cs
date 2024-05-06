@@ -52,6 +52,18 @@ namespace Code.Gameplay.Features.Abilities.Factory
         .AddCooldown(abilityLevel.Cooldown)
         .With(x => x.isBouncingBeerAbility = true)
         .PutOnCooldown();
+    }    
+    
+    public GameEntity CreateScatteringFireballAbility(int level)
+    {
+      AbilityLevel abilityLevel = _staticDataService.GetAbilityLevel(AbilityId.ScatteringFireball, level);
+      
+      return CreateEntity.Empty()
+        .AddId(_identifiers.Next())
+        .AddAbilityId(AbilityId.ScatteringFireball)
+        .AddCooldown(abilityLevel.Cooldown)
+        .With(x => x.isScatteringFireballAbility = true)
+        .PutOnCooldown();
     }
   }
 }

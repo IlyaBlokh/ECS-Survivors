@@ -28,13 +28,16 @@ namespace Code.Infrastructure.View
         _collisionRegistry.Register(collider2d.GetInstanceID(), _entity);
     }
 
+    public void ReleaseColliders()
+    {
+      foreach (Collider2D collider2d in GetComponentsInChildren<Collider2D>(includeInactive: true)) 
+        _collisionRegistry.Unregister(collider2d.GetInstanceID());
+    }
+
     public void ReleaseEntity()
     {
       foreach (IEntityComponentRegistrar registrar in GetComponentsInChildren<IEntityComponentRegistrar>()) 
         registrar.UnregisterComponents();
-
-      foreach (Collider2D collider2d in GetComponentsInChildren<Collider2D>(includeInactive: true)) 
-        _collisionRegistry.Unregister(collider2d.GetInstanceID());
       
       _entity.Release(this);
       _entity = null;

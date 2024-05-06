@@ -9,7 +9,7 @@ namespace Code.Gameplay.Features.TargetCollection
     {
       Add(systems.Create<CollectTargetsIntervalSystem>());
       Add(systems.Create<CastForTargetsNoLimitSystem>());
-      Add(systems.Create<CastForTargetsWithLimitSystem>());
+      Add(systems.Create<ArmamentCastForTargetsWithLimitSystem>());
       
       Add(systems.Create<CleanupTargetBuffersSystem>());
     }

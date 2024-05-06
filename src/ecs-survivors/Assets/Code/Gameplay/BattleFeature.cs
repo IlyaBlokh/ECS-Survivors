@@ -21,15 +21,15 @@ namespace Code.Gameplay
       
       Add(systems.Create<HeroFeature>());
       Add(systems.Create<EnemyFeature>());
-      Add(systems.Create<DeathFeature>());
-      
+
       Add(systems.Create<MovementFeature>());
       Add(systems.Create<AbilityFeature>());
       Add(systems.Create<ArmamentFeature>());
-      
+
       Add(systems.Create<CollectTargetsFeature>());
       Add(systems.Create<DamageApplicationFeature>());
-      
+      Add(systems.Create<DeathFeature>());
+
       Add(systems.Create<ProcessDestructedFeature>());
     }
   }

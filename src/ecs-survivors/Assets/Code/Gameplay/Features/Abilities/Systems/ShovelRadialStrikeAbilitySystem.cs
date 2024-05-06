@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Code.Common.Extensions;
+using Code.Gameplay.Common.Geometry;
 using Code.Gameplay.Features.Armaments.Factory;
 using Code.Gameplay.Features.Cooldowns;
 using Code.Gameplay.StaticData;
@@ -13,14 +15,17 @@ namespace Code.Gameplay.Features.Abilities.Systems
     private readonly IGroup<GameEntity> _abilities;
     private readonly IStaticDataService _staticDataService;
     private readonly IArmamentsFactory _armamentsFactory;
-    private readonly List<GameEntity> _buffer = new(1);
-    private readonly IGroup<GameEntity> _heroes;
+    private readonly IGeometryService _geometryService;
 
-    public ShovelRadialStrikeAbilitySystem(GameContext game, IStaticDataService staticDataService, IArmamentsFactory armamentsFactory)
+    private readonly IGroup<GameEntity> _heroes;
+    private readonly List<GameEntity> _buffer = new(1);
+
+    public ShovelRadialStrikeAbilitySystem(GameContext game, IStaticDataService staticDataService, IArmamentsFactory armamentsFactory, IGeometryService geometryService)
     {
       _armamentsFactory = armamentsFactory;
       _staticDataService = staticDataService;
-      
+      _geometryService = geometryService;
+
       _abilities = game.GetGroup(GameMatcher
         .AllOf(
           GameMatcher.ShovelRadialStrikeAbility, 
@@ -38,15 +43,12 @@ namespace Code.Gameplay.Features.Abilities.Systems
         foreach (GameEntity hero in _heroes)
         {
           int projectileAmount = _staticDataService.GetAbilityLevel(AbilityId.ShovelRadialStrike, 1).ProjectileAmount;
-          float angleBetween = 2 * Mathf.PI / projectileAmount;
+          Vector2[] directions = _geometryService.GetRadialDirections(projectileAmount).ToArray();
+          
           for (int i = 0; i < projectileAmount; i++)
           {
-            float x = Mathf.Cos(i * angleBetween);
-            float y = Mathf.Sin(i * angleBetween);
-            Vector2 startDirection = new Vector2(x, y).normalized;
-            
             _armamentsFactory.CreateShovelBolt(1, hero.WorldPosition)
-              .ReplaceDirection(startDirection)
+              .ReplaceDirection(directions[i])
               .With(x => x.isMoving = true);
           }
 
