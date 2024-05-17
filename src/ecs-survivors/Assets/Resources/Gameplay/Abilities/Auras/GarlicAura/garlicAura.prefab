@@ -9713,6 +9713,7 @@ GameObject:
   - component: {fileID: 7897260696194773655}
   - component: {fileID: 2893445765622195075}
   - component: {fileID: 5776008095014193973}
+  - component: {fileID: 6901901538254673162}
   m_Layer: 0
   m_Name: garlicAura
   m_TagString: Untagged
@@ -9731,7 +9732,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5444044905996140599}
   m_Father: {fileID: 0}
@@ -9761,3 +9762,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EntityView: {fileID: 2893445765622195075}
+--- !u!114 &6901901538254673162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8783522936459097793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 258166ad02be441fba963118744f15ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityView: {fileID: 2893445765622195075}
+  Container: {fileID: 5444044905996140599}

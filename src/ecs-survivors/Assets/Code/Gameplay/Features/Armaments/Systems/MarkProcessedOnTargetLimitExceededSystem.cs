@@ -1,6 +1,6 @@
-using Entitas;
+﻿using Entitas;
 
-namespace Code.Gameplay.Features.Armaments
+namespace Code.Gameplay.Features.Armaments.Systems
 {
   public class MarkProcessedOnTargetLimitExceededSystem : IExecuteSystem
   {

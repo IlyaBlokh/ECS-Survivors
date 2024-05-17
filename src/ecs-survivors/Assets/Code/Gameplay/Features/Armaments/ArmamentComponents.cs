@@ -10,4 +10,5 @@ namespace Code.Gameplay.Features.Armaments
   [Game] public class EffectSetups : IComponent { public List<EffectSetup> Value; }
   [Game] public class StatusSetups : IComponent { public List<StatusSetup> Value; }
   [Game] public class Processed : IComponent { }
+  [Game] public class FollowingProducer : IComponent { }
 }

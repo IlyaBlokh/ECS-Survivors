@@ -10,23 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9833df43fb064a3199752651eaefcfde, type: 3}
-  m_Name: MushroomConfig
+  m_Name: GarlicAuraConfig
   m_EditorClassIdentifier: 
-  AbilityId: 3
+  AbilityId: 2
   Levels:
-  - Cooldown: 5
-    ViewPrefab: {fileID: 6295621220853740386, guid: 92dc63e318e181a4a9587ecf7216ee46, type: 3}
-    EffectSetups:
-    - EffectTypeId: 1
-      Value: 1
-    StatusSetups: []
+  - Cooldown: 0
+    ViewPrefab: {fileID: 2893445765622195075, guid: c4c8cf39ebe3672468c50bd2fedcd936, type: 3}
+    EffectSetups: []
+    StatusSetups:
+    - StatusTypeId: 2
+      Value: -5
+      Duration: 0.2
+      Period: 0
     ProjectileSetup:
-      ProjectileCount: 3
-      Speed: 2
+      ProjectileCount: 0
+      Speed: 0
       Pierce: 0
-      ContactRadius: 0.1
-      Lifetime: 3
-      OrbitRadius: 1
+      ContactRadius: 0
+      Lifetime: 0
+      OrbitRadius: 0
     AuraSetup:
-      Radius: 0
-      Interval: 0
+      Radius: 2
+      Interval: 0.5

@@ -4,6 +4,7 @@
   {
     Unknown = 0,
     VegetableBolt = 1,
-    OrbitingMushroom = 2
+    GarlicAura = 2,
+    OrbitingMushroom = 3
   }
 }

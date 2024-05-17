@@ -7,4 +7,5 @@ namespace Code.Gameplay.Features.Abilities
   [Game] public class ParentAbility : IComponent { [EntityIndex] public AbilityId Value; }
   [Game] public class VegetableBoltAbility : IComponent { }
   [Game] public class OrbitingMushroomAbility : IComponent { }
+  [Game] public class GarlicAuraAbility : IComponent { }
 }
