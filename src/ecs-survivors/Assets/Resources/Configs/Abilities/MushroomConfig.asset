@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9833df43fb064a3199752651eaefcfde, type: 3}
+  m_Name: MushroomConfig
+  m_EditorClassIdentifier: 
+  AbilityId: 2
+  Levels:
+  - Cooldown: 5
+    ViewPrefab: {fileID: 6295621220853740386, guid: 92dc63e318e181a4a9587ecf7216ee46, type: 3}
+    EffectSetups:
+    - EffectTypeId: 1
+      Value: 1
+    StatusSetups: []
+    ProjectileSetup:
+      ProjectileCount: 3
+      Speed: 2
+      Pierce: 0
+      ContactRadius: 0.1
+      Lifetime: 3
+      OrbitRadius: 1

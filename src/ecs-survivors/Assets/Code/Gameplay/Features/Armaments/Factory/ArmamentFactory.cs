@@ -27,25 +27,43 @@ namespace Code.Gameplay.Features.Armaments.Factory
       AbilityLevel abilityLevel = _staticDataService.GetAbilityLevel(AbilityId.VegetableBolt, level);
       ProjectileSetup setup = abilityLevel.ProjectileSetup;
 
+      return CreateProjectileEntity(at, abilityLevel, setup)
+          .AddParentAbility(AbilityId.VegetableBolt)
+          .With(x => x.isRotationAlignedAlongDirection = true)
+        ;
+    }    
+    
+    public GameEntity CreateMushroom(int level, Vector3 at, float phase)
+    {
+      AbilityLevel abilityLevel = _staticDataService.GetAbilityLevel(AbilityId.OrbitingMushroom, level);
+      ProjectileSetup setup = abilityLevel.ProjectileSetup;
+
+      return CreateProjectileEntity(at, abilityLevel, setup)
+          .AddParentAbility(AbilityId.OrbitingMushroom)
+          .AddOrbitPhase(phase)
+          .AddOrbitRadius(setup.OrbitRadius)
+        ;
+    }
+
+    private GameEntity CreateProjectileEntity(Vector3 at, AbilityLevel abilityLevel, ProjectileSetup setup)
+    {
       return CreateEntity.Empty()
         .AddId(_identifiers.Next())
         .With(x => x.isArmament = true)
         .AddViewPrefab(abilityLevel.ViewPrefab)
         .AddWorldPosition(at)
         .AddSpeed(setup.Speed)
-        .AddEffectSetups(abilityLevel.EffectSetups)
-        .AddStatusSetups(abilityLevel.StatusSetups)
+        .With(x => x.AddEffectSetups(abilityLevel.EffectSetups), when: !abilityLevel.EffectSetups.IsNullOrEmpty())
+        .With(x => x.AddStatusSetups(abilityLevel.StatusSetups), when: !abilityLevel.StatusSetups.IsNullOrEmpty())
+        .With(x => x.AddTargetLimit(setup.Pierce), when: setup.Pierce > 0)
         .AddRadius(setup.ContactRadius)
         .AddTargetBuffer(new List<int>(TargetBufferSize))
         .AddProcessedTargets(new List<int>(TargetBufferSize))
-        .AddTargetLimit(setup.Pierce)
         .AddLayerMask(CollisionLayer.Enemy.AsMask())
         .With(x => x.isMovementAvailable = true)
         .With(x => x.isReadyToCollectTargets = true)
         .With(x => x.isCollectingTargetsContinuously = true)
-        .With(x => x.isRotationAlignedAlongDirection = true)
-        .AddSelfDestructTimer(setup.Lifetime)
-        ;
+        .AddSelfDestructTimer(setup.Lifetime);
     }
   }
 }
