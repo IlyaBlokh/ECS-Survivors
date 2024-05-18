@@ -46,49 +46,52 @@ public static class GameComponentsLookup {
     public const int HealEffect = 35;
     public const int ProducerId = 36;
     public const int TargetId = 37;
-    public const int Enemy = 38;
-    public const int EnemyAnimator = 39;
-    public const int EnemyTypeId = 40;
-    public const int SpawnTimer = 41;
-    public const int Hero = 42;
-    public const int HeroAnimator = 43;
-    public const int CurrentHp = 44;
-    public const int Dead = 45;
-    public const int MaxHp = 46;
-    public const int ProcessingDeath = 47;
-    public const int Direction = 48;
-    public const int MovementAvailable = 49;
-    public const int Moving = 50;
-    public const int OrbitCenterFollowTarget = 51;
-    public const int OrbitCenterPosition = 52;
-    public const int OrbitPhase = 53;
-    public const int OrbitRadius = 54;
-    public const int RotationAlignedAlongDirection = 55;
-    public const int Speed = 56;
-    public const int TurnedAlongDirection = 57;
-    public const int Affected = 58;
-    public const int Applied = 59;
-    public const int ApplierStatusLink = 60;
-    public const int Duration = 61;
-    public const int Freeze = 62;
-    public const int Period = 63;
-    public const int Poison = 64;
-    public const int Status = 65;
-    public const int StatusTypeId = 66;
-    public const int TimeLeft = 67;
-    public const int TimeSinceLastTick = 68;
-    public const int Unapplied = 69;
-    public const int CollectingTargetsContinuously = 70;
-    public const int CollectTargetsInterval = 71;
-    public const int CollectTargetsTimer = 72;
-    public const int LayerMask = 73;
-    public const int ProcessedTargets = 74;
-    public const int ReadyToCollectTargets = 75;
-    public const int TargetBuffer = 76;
-    public const int AxisInput = 77;
-    public const int Input = 78;
+    public const int EnchantTypeId = 38;
+    public const int EnchantVisuals = 39;
+    public const int PoisonEnchant = 40;
+    public const int Enemy = 41;
+    public const int EnemyAnimator = 42;
+    public const int EnemyTypeId = 43;
+    public const int SpawnTimer = 44;
+    public const int Hero = 45;
+    public const int HeroAnimator = 46;
+    public const int CurrentHp = 47;
+    public const int Dead = 48;
+    public const int MaxHp = 49;
+    public const int ProcessingDeath = 50;
+    public const int Direction = 51;
+    public const int MovementAvailable = 52;
+    public const int Moving = 53;
+    public const int OrbitCenterFollowTarget = 54;
+    public const int OrbitCenterPosition = 55;
+    public const int OrbitPhase = 56;
+    public const int OrbitRadius = 57;
+    public const int RotationAlignedAlongDirection = 58;
+    public const int Speed = 59;
+    public const int TurnedAlongDirection = 60;
+    public const int Affected = 61;
+    public const int Applied = 62;
+    public const int ApplierStatusLink = 63;
+    public const int Duration = 64;
+    public const int Freeze = 65;
+    public const int Period = 66;
+    public const int Poison = 67;
+    public const int Status = 68;
+    public const int StatusTypeId = 69;
+    public const int TimeLeft = 70;
+    public const int TimeSinceLastTick = 71;
+    public const int Unapplied = 72;
+    public const int CollectingTargetsContinuously = 73;
+    public const int CollectTargetsInterval = 74;
+    public const int CollectTargetsTimer = 75;
+    public const int LayerMask = 76;
+    public const int ProcessedTargets = 77;
+    public const int ReadyToCollectTargets = 78;
+    public const int TargetBuffer = 79;
+    public const int AxisInput = 80;
+    public const int Input = 81;
 
-    public const int TotalComponents = 79;
+    public const int TotalComponents = 82;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -129,6 +132,9 @@ public static class GameComponentsLookup {
         "HealEffect",
         "ProducerId",
         "TargetId",
+        "EnchantTypeId",
+        "EnchantVisuals",
+        "PoisonEnchant",
         "Enemy",
         "EnemyAnimator",
         "EnemyTypeId",
@@ -211,6 +217,9 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Effects.HealEffect),
         typeof(Code.Gameplay.Features.Effects.ProducerId),
         typeof(Code.Gameplay.Features.Effects.TargetId),
+        typeof(Code.Gameplay.Features.Enchants.EnchantComponents.EnchantTypeIdComponent),
+        typeof(Code.Gameplay.Features.Enchants.EnchantComponents.EnchantVisualsComponent),
+        typeof(Code.Gameplay.Features.Enchants.EnchantComponents.PoisonEnchant),
         typeof(Code.Gameplay.Features.Enemies.Enemy),
         typeof(Code.Gameplay.Features.Enemies.EnemyAnimatorComponent),
         typeof(Code.Gameplay.Features.Enemies.EnemyTypeIdComponent),

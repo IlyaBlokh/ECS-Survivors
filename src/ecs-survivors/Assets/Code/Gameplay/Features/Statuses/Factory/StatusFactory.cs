@@ -1,6 +1,7 @@
 ﻿using System;
 using Code.Common.Entity;
 using Code.Common.Extensions;
+using Code.Gameplay.Features.Enchants;
 using Code.Infrastructure.Identifiers;
 
 namespace Code.Gameplay.Features.Statuses.Factory
@@ -16,19 +17,13 @@ namespace Code.Gameplay.Features.Statuses.Factory
 
     public GameEntity CreateStatus(StatusSetup setup, int producerId, int targetId)
     {
-      GameEntity status;
-      switch (setup.StatusTypeId)
+      GameEntity status = setup.StatusTypeId switch
       {
-        case StatusTypeId.Poison:
-          status = CreatePoisonStatus(setup, producerId, targetId);
-          break;
-        case StatusTypeId.Freeze:
-          status = CreateFreezeStatus(setup, producerId, targetId);
-          break;
-        
-        default:
-          throw new Exception($"Status with type id {setup.StatusTypeId} does not exist");
-      }
+        StatusTypeId.Poison => CreatePoisonStatus(setup, producerId, targetId),
+        StatusTypeId.Freeze => CreateFreezeStatus(setup, producerId, targetId),
+        StatusTypeId.PoisonEnchant => CreatePoisonEnchantStatus(setup, producerId, targetId),
+        _ => throw new Exception($"Status with type id {setup.StatusTypeId} does not exist")
+      };
 
       status
         .With(x => x.AddDuration(setup.Duration), when: setup.Duration > 0)
@@ -63,6 +58,21 @@ namespace Code.Gameplay.Features.Statuses.Factory
         .AddTargetId(targetId)
         .With(x => x.isStatus = true)
         .With(x => x.isFreeze = true)
+        ;
+    }
+
+    private GameEntity CreatePoisonEnchantStatus(StatusSetup setup, int producerId, int targetId)
+    {
+      return CreateEntity.Empty()
+          .AddId(_identifiers.Next())
+          .AddStatusTypeId(StatusTypeId.PoisonEnchant)
+          .AddEnchantTypeId(EnchantTypeId.PoisonArmaments)
+          .AddEffectValue(setup.Value)
+          .AddProducerId(producerId)
+          .AddTargetId(targetId)
+          .With(x => x.isStatus = true)
+          .With(x => x.isPoison = true)
+          .With(x => x.isPoisonEnchant = true)
         ;
     }
   }
