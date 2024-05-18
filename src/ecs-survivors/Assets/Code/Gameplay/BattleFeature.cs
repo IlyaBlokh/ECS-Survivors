@@ -35,7 +35,7 @@ namespace Code.Gameplay
 
       Add(systems.Create<CollectTargetsFeature>());
       Add(systems.Create<EffectApplicationFeature>());
-      Add(systems.Create<PoisonEnchantFeature>());
+      Add(systems.Create<EnchantFeature>());
       
       Add(systems.Create<EffectFeature>());
       Add(systems.Create<StatusFeature>());

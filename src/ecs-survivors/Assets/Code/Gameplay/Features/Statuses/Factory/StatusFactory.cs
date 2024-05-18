@@ -22,6 +22,7 @@ namespace Code.Gameplay.Features.Statuses.Factory
         StatusTypeId.Poison => CreatePoisonStatus(setup, producerId, targetId),
         StatusTypeId.Freeze => CreateFreezeStatus(setup, producerId, targetId),
         StatusTypeId.PoisonEnchant => CreatePoisonEnchantStatus(setup, producerId, targetId),
+        StatusTypeId.ExplosiveEnchant =>CreateExplosiveEnchantStatus(setup, producerId, targetId),
         _ => throw new Exception($"Status with type id {setup.StatusTypeId} does not exist")
       };
 
@@ -71,8 +72,21 @@ namespace Code.Gameplay.Features.Statuses.Factory
           .AddProducerId(producerId)
           .AddTargetId(targetId)
           .With(x => x.isStatus = true)
-          .With(x => x.isPoison = true)
           .With(x => x.isPoisonEnchant = true)
+        ;
+    }
+
+    private GameEntity CreateExplosiveEnchantStatus(StatusSetup setup, int producerId, int targetId)
+    {
+      return CreateEntity.Empty()
+          .AddId(_identifiers.Next())
+          .AddStatusTypeId(StatusTypeId.ExplosiveEnchant)
+          .AddEnchantTypeId(EnchantTypeId.ExplosiveArmaments)
+          .AddEffectValue(setup.Value)
+          .AddProducerId(producerId)
+          .AddTargetId(targetId)
+          .With(x => x.isStatus = true)
+          .With(x => x.isExplosiveEnchant = true)
         ;
     }
   }

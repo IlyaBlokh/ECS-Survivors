@@ -2,12 +2,13 @@
 
 namespace Code.Gameplay.Features.Enchants.Systems
 {
-  public class PoisonEnchantFeature : Feature
+  public class EnchantFeature : Feature
   {
-    public PoisonEnchantFeature(ISystemFactory systems)
+    public EnchantFeature(ISystemFactory systems)
     {
       Add(systems.Create<PoisonEnchantSystem>());
       Add(systems.Create<ApplyPoisonEnchantVisualsSystem>());
+      Add(systems.Create<ExplosiveEnchantSystem>());
     }
   }
 }

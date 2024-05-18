@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d368b324f3346029bae64aaa6c8b4da, type: 3}
+  m_Name: ExplosiveArmamentsConfig
+  m_EditorClassIdentifier: 
+  TypeId: 1
+  EffectSetups:
+  - EffectTypeId: 1
+    Value: 3
+  StatusSetups: []
+  Radius: 2
+  ViewPrefab: {fileID: 6902555966744461871, guid: 1341d554ea3ef934da5f10cbfae07840, type: 3}
