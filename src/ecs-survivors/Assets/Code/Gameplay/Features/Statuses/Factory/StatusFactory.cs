@@ -25,6 +25,7 @@ namespace Code.Gameplay.Features.Statuses.Factory
         StatusTypeId.PoisonEnchant => CreatePoisonEnchantStatus(setup, producerId, targetId),
         StatusTypeId.ExplosiveEnchant => CreateExplosiveEnchantStatus(setup, producerId, targetId),
         StatusTypeId.HexEnchant => CreateHexEnchantStatus(setup, producerId, targetId),
+        StatusTypeId.Metamorph => CreateMetamorphStatus(setup, producerId, targetId),
         _ => throw new Exception($"Status with type id {setup.StatusTypeId} does not exist")
       };
 
@@ -116,6 +117,18 @@ namespace Code.Gameplay.Features.Statuses.Factory
           .AddTargetId(targetId)
           .With(x => x.isStatus = true)
           .With(x => x.isHexEnchant = true)
+        ;
+    }
+
+    private GameEntity CreateMetamorphStatus(StatusSetup setup, int producerId, int targetId)
+    {
+      return CreateEntity.Empty()
+          .AddId(_identifiers.Next())
+          .AddStatusTypeId(StatusTypeId.Metamorph)
+          .AddProducerId(producerId)
+          .AddTargetId(targetId)
+          .With(x => x.isStatus = true)
+          .With(x => x.isMetamorph = true)
         ;
     }
   }

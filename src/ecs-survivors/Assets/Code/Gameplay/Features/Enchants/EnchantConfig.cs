@@ -14,5 +14,6 @@ namespace Code.Gameplay.Features.Enchants
     public List<StatusSetup> StatusSetups;
     public float Radius;
     public EntityBehaviour ViewPrefab;
+    public Sprite ViewImage;
   }
 }

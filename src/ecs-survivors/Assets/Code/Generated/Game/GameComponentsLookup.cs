@@ -76,26 +76,27 @@ public static class GameComponentsLookup {
     public const int ApplierStatusLink = 65;
     public const int Duration = 66;
     public const int Freeze = 67;
-    public const int Period = 68;
-    public const int Poison = 69;
-    public const int Slow = 70;
-    public const int Status = 71;
-    public const int StatusTypeId = 72;
-    public const int TimeLeft = 73;
-    public const int TimeSinceLastTick = 74;
-    public const int Unapplied = 75;
-    public const int CollectingTargetsContinuously = 76;
-    public const int CollectTargetsInterval = 77;
-    public const int CollectTargetsTimer = 78;
-    public const int LayerMask = 79;
-    public const int ProcessedTargets = 80;
-    public const int Reached = 81;
-    public const int ReadyToCollectTargets = 82;
-    public const int TargetBuffer = 83;
-    public const int AxisInput = 84;
-    public const int Input = 85;
+    public const int Metamorph = 68;
+    public const int Period = 69;
+    public const int Poison = 70;
+    public const int Slow = 71;
+    public const int Status = 72;
+    public const int StatusTypeId = 73;
+    public const int TimeLeft = 74;
+    public const int TimeSinceLastTick = 75;
+    public const int Unapplied = 76;
+    public const int CollectingTargetsContinuously = 77;
+    public const int CollectTargetsInterval = 78;
+    public const int CollectTargetsTimer = 79;
+    public const int LayerMask = 80;
+    public const int ProcessedTargets = 81;
+    public const int Reached = 82;
+    public const int ReadyToCollectTargets = 83;
+    public const int TargetBuffer = 84;
+    public const int AxisInput = 85;
+    public const int Input = 86;
 
-    public const int TotalComponents = 86;
+    public const int TotalComponents = 87;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -166,6 +167,7 @@ public static class GameComponentsLookup {
         "ApplierStatusLink",
         "Duration",
         "Freeze",
+        "Metamorph",
         "Period",
         "Poison",
         "Slow",
@@ -255,6 +257,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Statuses.ApplierStatusLink),
         typeof(Code.Gameplay.Features.Statuses.Duration),
         typeof(Code.Gameplay.Features.Statuses.Freeze),
+        typeof(Code.Gameplay.Features.Statuses.Metamorph),
         typeof(Code.Gameplay.Features.Statuses.Period),
         typeof(Code.Gameplay.Features.Statuses.Poison),
         typeof(Code.Gameplay.Features.Statuses.Slow),

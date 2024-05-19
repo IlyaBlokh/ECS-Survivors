@@ -33,7 +33,7 @@ namespace Code.Gameplay.Features.Enemies.Factory
     {
       Dictionary<Stats, float> baseStats = InitStats.EmptyStatDictionary()
           .With(x => x[Stats.Speed] = 1)
-          .With(x => x[Stats.MaxHp] = 3)
+          .With(x => x[Stats.MaxHp] = 5)
           .With(x => x[Stats.Damage] = 1);
       
       return CreateEntity.Empty()
@@ -46,7 +46,7 @@ namespace Code.Gameplay.Features.Enemies.Factory
           .AddSpeed(baseStats[Stats.Speed])
           .AddCurrentHp(baseStats[Stats.MaxHp])
           .AddMaxHp(baseStats[Stats.MaxHp])
-          .AddEffectSetups(new List<EffectSetup>{new EffectSetup(){EffectTypeId = EffectTypeId.Damage, Value = baseStats[Stats.Damage]}})
+          .AddEffectSetups(new List<EffectSetup>{new(){EffectTypeId = EffectTypeId.Damage, Value = baseStats[Stats.Damage]}})
           .AddRadius(0.3f)
           .AddTargetBuffer(new List<int>(1))
           .AddCollectTargetsInterval(0.5f)

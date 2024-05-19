@@ -8,6 +8,7 @@
     PoisonEnchant = 3,
     ExplosiveEnchant = 4,
     Slow = 5,
-    HexEnchant = 6
+    HexEnchant = 6,
+    Metamorph = 7
   }
 }

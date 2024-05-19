@@ -16,8 +16,13 @@ MonoBehaviour:
   EffectSetups: []
   StatusSetups:
   - StatusTypeId: 5
-    Value: -0.5
-    Duration: 2
+    Value: -0.7
+    Duration: 5
+    Period: 0
+  - StatusTypeId: 7
+    Value: 0
+    Duration: 5
     Period: 0
   Radius: 0
   ViewPrefab: {fileID: 0}
+  ViewImage: {fileID: 8980259175255949757, guid: 2c6676b9aeae36c48b60d04ad8e15251, type: 3}
