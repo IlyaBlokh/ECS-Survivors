@@ -21,8 +21,10 @@ namespace Code.Gameplay.Features.Statuses.Factory
       {
         StatusTypeId.Poison => CreatePoisonStatus(setup, producerId, targetId),
         StatusTypeId.Freeze => CreateFreezeStatus(setup, producerId, targetId),
+        StatusTypeId.Slow => CreateSlowStatus(setup, producerId, targetId),
         StatusTypeId.PoisonEnchant => CreatePoisonEnchantStatus(setup, producerId, targetId),
-        StatusTypeId.ExplosiveEnchant =>CreateExplosiveEnchantStatus(setup, producerId, targetId),
+        StatusTypeId.ExplosiveEnchant => CreateExplosiveEnchantStatus(setup, producerId, targetId),
+        StatusTypeId.HexEnchant => CreateHexEnchantStatus(setup, producerId, targetId),
         _ => throw new Exception($"Status with type id {setup.StatusTypeId} does not exist")
       };
 
@@ -62,6 +64,19 @@ namespace Code.Gameplay.Features.Statuses.Factory
         ;
     }
 
+    private GameEntity CreateSlowStatus(StatusSetup setup, int producerId, int targetId)
+    {
+      return CreateEntity.Empty()
+          .AddId(_identifiers.Next())
+          .AddStatusTypeId(StatusTypeId.Slow)
+          .AddEffectValue(setup.Value)
+          .AddProducerId(producerId)
+          .AddTargetId(targetId)
+          .With(x => x.isStatus = true)
+          .With(x => x.isSlow = true)
+        ;
+    }
+
     private GameEntity CreatePoisonEnchantStatus(StatusSetup setup, int producerId, int targetId)
     {
       return CreateEntity.Empty()
@@ -87,6 +102,20 @@ namespace Code.Gameplay.Features.Statuses.Factory
           .AddTargetId(targetId)
           .With(x => x.isStatus = true)
           .With(x => x.isExplosiveEnchant = true)
+        ;
+    }
+
+    private GameEntity CreateHexEnchantStatus(StatusSetup setup, int producerId, int targetId)
+    {
+      return CreateEntity.Empty()
+          .AddId(_identifiers.Next())
+          .AddStatusTypeId(StatusTypeId.HexEnchant)
+          .AddEnchantTypeId(EnchantTypeId.HexArmaments)
+          .AddEffectValue(setup.Value)
+          .AddProducerId(producerId)
+          .AddTargetId(targetId)
+          .With(x => x.isStatus = true)
+          .With(x => x.isHexEnchant = true)
         ;
     }
   }

@@ -9,6 +9,7 @@ namespace Code.Gameplay.Features.Enchants.Systems
       Add(systems.Create<PoisonEnchantSystem>());
       Add(systems.Create<ApplyPoisonEnchantVisualsSystem>());
       Add(systems.Create<ExplosiveEnchantSystem>());
+      Add(systems.Create<HexEnchantSystem>());
     }
   }
 }

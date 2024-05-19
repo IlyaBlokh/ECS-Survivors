@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d368b324f3346029bae64aaa6c8b4da, type: 3}
-  m_Name: PosionArmamentsConfig
+  m_Name: PoisonArmamentsConfig
   m_EditorClassIdentifier: 
   TypeId: 1
   EffectSetups: []

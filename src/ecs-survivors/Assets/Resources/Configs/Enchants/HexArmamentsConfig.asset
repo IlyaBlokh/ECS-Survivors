@@ -10,12 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d368b324f3346029bae64aaa6c8b4da, type: 3}
-  m_Name: ExplosiveArmamentsConfig
+  m_Name: HexArmamentsConfig
   m_EditorClassIdentifier: 
-  TypeId: 2
-  EffectSetups:
-  - EffectTypeId: 1
-    Value: 3
-  StatusSetups: []
-  Radius: 2
-  ViewPrefab: {fileID: 6902555966744461871, guid: 1341d554ea3ef934da5f10cbfae07840, type: 3}
+  TypeId: 3
+  EffectSetups: []
+  StatusSetups:
+  - StatusTypeId: 5
+    Value: -0.5
+    Duration: 2
+    Period: 0
+  Radius: 0
+  ViewPrefab: {fileID: 0}
