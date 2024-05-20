@@ -50,11 +50,12 @@ namespace Code.Gameplay.Features.Abilities.Factory
         .With(x => x.isGarlicAuraAbility = true);
     }    
     
-    public GameEntity CreateSpeedUpAuraAbility()
+    public GameEntity CreateSpeedUpAuraAbility(int producerId)
     {
       return CreateEntity.Empty()
         .AddId(_identifiers.Next())
         .AddAbilityId(AbilityId.SpeedUpAura)
+        .AddProducerId(producerId)
         .With(x => x.isSpeedUpAuraAbility = true);
     }
   }

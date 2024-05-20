@@ -4,5 +4,6 @@
   {
     Unknown = 0,
     Goblin = 1,
+    Buffer = 2
   }
 }

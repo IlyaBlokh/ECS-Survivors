@@ -1,6 +1,5 @@
 using Code.Gameplay.Features.Abilities.Factory;
 using Code.Gameplay.Features.Hero.Factory;
-using Code.Gameplay.Features.Statuses;
 using Code.Gameplay.Features.Statuses.Applier;
 using Code.Gameplay.Levels;
 using Entitas;
@@ -28,7 +27,6 @@ namespace Code.Gameplay.Features.Hero.Systems
       _abilityFactory.CreateVegetableBoltAbility(level: 1);
       _abilityFactory.CreateOrbitingMushroomAbility(level: 1);
       // _abilityFactory.CreateGarlicAuraAbility();
-      _abilityFactory.CreateSpeedUpAuraAbility();
 
       // _statusApplier.ApplyStatus(new StatusSetup
       // {

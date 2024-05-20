@@ -52,52 +52,53 @@ public static class GameComponentsLookup {
     public const int ExplosiveEnchant = 41;
     public const int HexEnchant = 42;
     public const int PoisonEnchant = 43;
-    public const int Enemy = 44;
-    public const int EnemyAnimator = 45;
-    public const int EnemyTypeId = 46;
-    public const int SpawnTimer = 47;
-    public const int Hero = 48;
-    public const int HeroAnimator = 49;
-    public const int CurrentHp = 50;
-    public const int Dead = 51;
-    public const int MaxHp = 52;
-    public const int ProcessingDeath = 53;
-    public const int Direction = 54;
-    public const int MovementAvailable = 55;
-    public const int Moving = 56;
-    public const int OrbitCenterFollowTarget = 57;
-    public const int OrbitCenterPosition = 58;
-    public const int OrbitPhase = 59;
-    public const int OrbitRadius = 60;
-    public const int RotationAlignedAlongDirection = 61;
-    public const int Speed = 62;
-    public const int TurnedAlongDirection = 63;
-    public const int Affected = 64;
-    public const int Applied = 65;
-    public const int ApplierStatusLink = 66;
-    public const int Duration = 67;
-    public const int Freeze = 68;
-    public const int Metamorph = 69;
-    public const int Period = 70;
-    public const int Poison = 71;
-    public const int SpeedChange = 72;
-    public const int Status = 73;
-    public const int StatusTypeId = 74;
-    public const int TimeLeft = 75;
-    public const int TimeSinceLastTick = 76;
-    public const int Unapplied = 77;
-    public const int CollectingTargetsContinuously = 78;
-    public const int CollectTargetsInterval = 79;
-    public const int CollectTargetsTimer = 80;
-    public const int LayerMask = 81;
-    public const int ProcessedTargets = 82;
-    public const int Reached = 83;
-    public const int ReadyToCollectTargets = 84;
-    public const int TargetBuffer = 85;
-    public const int AxisInput = 86;
-    public const int Input = 87;
+    public const int Buffer = 44;
+    public const int Enemy = 45;
+    public const int EnemyAnimator = 46;
+    public const int EnemyTypeId = 47;
+    public const int SpawnTimer = 48;
+    public const int Hero = 49;
+    public const int HeroAnimator = 50;
+    public const int CurrentHp = 51;
+    public const int Dead = 52;
+    public const int MaxHp = 53;
+    public const int ProcessingDeath = 54;
+    public const int Direction = 55;
+    public const int MovementAvailable = 56;
+    public const int Moving = 57;
+    public const int OrbitCenterFollowTarget = 58;
+    public const int OrbitCenterPosition = 59;
+    public const int OrbitPhase = 60;
+    public const int OrbitRadius = 61;
+    public const int RotationAlignedAlongDirection = 62;
+    public const int Speed = 63;
+    public const int TurnedAlongDirection = 64;
+    public const int Affected = 65;
+    public const int Applied = 66;
+    public const int ApplierStatusLink = 67;
+    public const int Duration = 68;
+    public const int Freeze = 69;
+    public const int Metamorph = 70;
+    public const int Period = 71;
+    public const int Poison = 72;
+    public const int SpeedChange = 73;
+    public const int Status = 74;
+    public const int StatusTypeId = 75;
+    public const int TimeLeft = 76;
+    public const int TimeSinceLastTick = 77;
+    public const int Unapplied = 78;
+    public const int CollectingTargetsContinuously = 79;
+    public const int CollectTargetsInterval = 80;
+    public const int CollectTargetsTimer = 81;
+    public const int LayerMask = 82;
+    public const int ProcessedTargets = 83;
+    public const int Reached = 84;
+    public const int ReadyToCollectTargets = 85;
+    public const int TargetBuffer = 86;
+    public const int AxisInput = 87;
+    public const int Input = 88;
 
-    public const int TotalComponents = 88;
+    public const int TotalComponents = 89;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -144,6 +145,7 @@ public static class GameComponentsLookup {
         "ExplosiveEnchant",
         "HexEnchant",
         "PoisonEnchant",
+        "Buffer",
         "Enemy",
         "EnemyAnimator",
         "EnemyTypeId",
@@ -235,6 +237,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Enchants.EnchantComponents.ExplosiveEnchant),
         typeof(Code.Gameplay.Features.Enchants.EnchantComponents.HexEnchant),
         typeof(Code.Gameplay.Features.Enchants.EnchantComponents.PoisonEnchant),
+        typeof(Code.Gameplay.Features.Enemies.Buffer),
         typeof(Code.Gameplay.Features.Enemies.Enemy),
         typeof(Code.Gameplay.Features.Enemies.EnemyAnimatorComponent),
         typeof(Code.Gameplay.Features.Enemies.EnemyTypeIdComponent),
