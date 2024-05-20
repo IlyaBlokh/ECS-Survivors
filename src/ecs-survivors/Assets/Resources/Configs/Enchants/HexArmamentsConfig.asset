@@ -17,11 +17,11 @@ MonoBehaviour:
   StatusSetups:
   - StatusTypeId: 5
     Value: -0.7
-    Duration: 5
+    Duration: 2
     Period: 0
   - StatusTypeId: 7
     Value: 0
-    Duration: 5
+    Duration: 2
     Period: 0
   Radius: 0
   ViewPrefab: {fileID: 0}

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Code.Common.Extensions;
+using UnityEngine;
 
 namespace Code.Gameplay.Common.Visuals.StatusVisuals
 {
@@ -58,12 +59,14 @@ namespace Code.Gameplay.Common.Visuals.StatusVisuals
       Animator.enabled = false;
       _originalSprite = Renderer.sprite;
       Renderer.sprite = newImage;
+      Renderer.transform.AddLocalY(-1);
     }
 
     public void UnapplyMetamorph()
     {
       Animator.enabled = true;
       Renderer.sprite = _originalSprite;
+      Renderer.transform.AddLocalY(1);
     }
   }
 }

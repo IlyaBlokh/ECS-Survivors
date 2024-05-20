@@ -19,7 +19,7 @@ MonoBehaviour:
     EffectSetups: []
     StatusSetups:
     - StatusTypeId: 5
-      Value: 0.76
+      Value: 1.5
       Duration: 4
       Period: 0
     ProjectileSetup:

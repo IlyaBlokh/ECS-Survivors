@@ -43,12 +43,6 @@ namespace Code.Common.Extensions
     public static void SetScaleX(this Transform t, float scale) =>
       t.localScale = new Vector3(scale, t.localScale.y, t.localScale.z);
 
-    public static Transform AddLocalX(this Transform transform, float x)
-    {
-      transform.localPosition = transform.localPosition.AddX(x);
-      return transform;
-    }
-
     public static Transform SetWorldY(this Transform transform, float y)
     {
       transform.position = transform.position.SetY(y);
@@ -67,9 +61,15 @@ namespace Code.Common.Extensions
       return transform;
     }
 
+    public static Transform AddLocalX(this Transform transform, float x)
+    {
+      transform.localPosition = transform.localPosition.AddX(x);
+      return transform;
+    }
+
     public static Transform AddLocalY(this Transform transform, float y)
     {
-      transform.localPosition = transform.localPosition.AddX(y);
+      transform.localPosition = transform.localPosition.AddY(y);
       return transform;
     }
   }
