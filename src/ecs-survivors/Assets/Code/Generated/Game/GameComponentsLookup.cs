@@ -57,50 +57,52 @@ public static class GameComponentsLookup {
     public const int Enemy = 46;
     public const int EnemyAnimator = 47;
     public const int EnemyTypeId = 48;
-    public const int SpawnTimer = 49;
-    public const int Hero = 50;
-    public const int HeroAnimator = 51;
-    public const int CurrentHp = 52;
-    public const int Dead = 53;
-    public const int MaxHp = 54;
-    public const int ProcessingDeath = 55;
-    public const int Direction = 56;
-    public const int MovementAvailable = 57;
-    public const int Moving = 58;
-    public const int OrbitCenterFollowTarget = 59;
-    public const int OrbitCenterPosition = 60;
-    public const int OrbitPhase = 61;
-    public const int OrbitRadius = 62;
-    public const int RotationAlignedAlongDirection = 63;
-    public const int Speed = 64;
-    public const int TurnedAlongDirection = 65;
-    public const int Affected = 66;
-    public const int Applied = 67;
-    public const int ApplierStatusLink = 68;
-    public const int Duration = 69;
-    public const int Freeze = 70;
-    public const int Heal = 71;
-    public const int Metamorph = 72;
-    public const int Period = 73;
-    public const int Poison = 74;
-    public const int SpeedChange = 75;
-    public const int Status = 76;
-    public const int StatusTypeId = 77;
-    public const int TimeLeft = 78;
-    public const int TimeSinceLastTick = 79;
-    public const int Unapplied = 80;
-    public const int CollectingTargetsContinuously = 81;
-    public const int CollectTargetsInterval = 82;
-    public const int CollectTargetsTimer = 83;
-    public const int LayerMask = 84;
-    public const int ProcessedTargets = 85;
-    public const int Reached = 86;
-    public const int ReadyToCollectTargets = 87;
-    public const int TargetBuffer = 88;
-    public const int AxisInput = 89;
-    public const int Input = 90;
+    public const int Goblin = 49;
+    public const int Healer = 50;
+    public const int SpawnTimer = 51;
+    public const int Hero = 52;
+    public const int HeroAnimator = 53;
+    public const int CurrentHp = 54;
+    public const int Dead = 55;
+    public const int MaxHp = 56;
+    public const int ProcessingDeath = 57;
+    public const int Direction = 58;
+    public const int MovementAvailable = 59;
+    public const int Moving = 60;
+    public const int OrbitCenterFollowTarget = 61;
+    public const int OrbitCenterPosition = 62;
+    public const int OrbitPhase = 63;
+    public const int OrbitRadius = 64;
+    public const int RotationAlignedAlongDirection = 65;
+    public const int Speed = 66;
+    public const int TurnedAlongDirection = 67;
+    public const int Affected = 68;
+    public const int Applied = 69;
+    public const int ApplierStatusLink = 70;
+    public const int Duration = 71;
+    public const int Freeze = 72;
+    public const int Heal = 73;
+    public const int Metamorph = 74;
+    public const int Period = 75;
+    public const int Poison = 76;
+    public const int SpeedChange = 77;
+    public const int Status = 78;
+    public const int StatusTypeId = 79;
+    public const int TimeLeft = 80;
+    public const int TimeSinceLastTick = 81;
+    public const int Unapplied = 82;
+    public const int CollectingTargetsContinuously = 83;
+    public const int CollectTargetsInterval = 84;
+    public const int CollectTargetsTimer = 85;
+    public const int LayerMask = 86;
+    public const int ProcessedTargets = 87;
+    public const int Reached = 88;
+    public const int ReadyToCollectTargets = 89;
+    public const int TargetBuffer = 90;
+    public const int AxisInput = 91;
+    public const int Input = 92;
 
-    public const int TotalComponents = 91;
+    public const int TotalComponents = 93;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -152,6 +154,8 @@ public static class GameComponentsLookup {
         "Enemy",
         "EnemyAnimator",
         "EnemyTypeId",
+        "Goblin",
+        "Healer",
         "SpawnTimer",
         "Hero",
         "HeroAnimator",
@@ -246,6 +250,8 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Enemies.Enemy),
         typeof(Code.Gameplay.Features.Enemies.EnemyAnimatorComponent),
         typeof(Code.Gameplay.Features.Enemies.EnemyTypeIdComponent),
+        typeof(Code.Gameplay.Features.Enemies.Goblin),
+        typeof(Code.Gameplay.Features.Enemies.Healer),
         typeof(Code.Gameplay.Features.Enemies.SpawnTimer),
         typeof(Code.Gameplay.Features.Hero.Hero),
         typeof(Code.Gameplay.Features.Hero.HeroAnimatorComponent),

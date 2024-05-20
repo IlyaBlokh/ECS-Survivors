@@ -93,6 +93,7 @@ namespace Code.Gameplay.Features.Armaments.Factory
       
       return CreateEntity.Empty()
           .AddId(_identifiers.Next())
+          .With(x => x.isArmament = true)
           .AddViewPrefab(abilityLevel.ViewPrefab)
           .With(x => x.AddEffectSetups(abilityLevel.EffectSetups), when: !abilityLevel.EffectSetups.IsNullOrEmpty())
           .With(x => x.AddStatusSetups(abilityLevel.StatusSetups), when: !abilityLevel.StatusSetups.IsNullOrEmpty())

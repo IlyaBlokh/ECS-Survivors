@@ -29,6 +29,8 @@ namespace Code.Gameplay.Features.Enemies.Factory
           return CreateGoblin(at);
         case EnemyTypeId.Buffer:
           return CreateBuffer(at);
+        case EnemyTypeId.Healer:
+          return CreateHealer(at);
       }
 
       throw new Exception($"Enemy with type id {typeId} does not exist");
@@ -44,6 +46,7 @@ namespace Code.Gameplay.Features.Enemies.Factory
       return
         CreateEnemyBase(at, baseStats)
           .AddEnemyTypeId(EnemyTypeId.Goblin)
+          .With(x => x.isGoblin = true)
           .AddViewPath("Gameplay/Enemies/Goblins/Torch/goblin_torch_blue");
     }
 
@@ -62,8 +65,25 @@ namespace Code.Gameplay.Features.Enemies.Factory
           .AddViewPath("Gameplay/Enemies/Goblins/Torch/goblin_torch_red");
       
       _abilityFactory.CreateSpeedUpAuraAbility(bufferEnemy.Id);
-      // _abilityFactory.CreateHealAuraAbility(bufferEnemy.Id);
       return bufferEnemy;
+    }    
+    
+    private GameEntity CreateHealer(Vector3 at)
+    {
+      Dictionary<Stats, float> baseStats = InitStats.EmptyStatDictionary()
+        .With(x => x[Stats.Speed] = 1f)
+        .With(x => x[Stats.MaxHp] = 2)
+        .With(x => x[Stats.Damage] = 0.5f);
+
+
+      GameEntity healerEnemy = 
+        CreateEnemyBase(at, baseStats)
+          .AddEnemyTypeId(EnemyTypeId.Healer)
+          .With(x => x.isHealer = true)
+          .AddViewPath("Gameplay/Enemies/Goblins/Torch/goblin_torch_yellow");
+      
+      _abilityFactory.CreateHealAuraAbility(healerEnemy.Id);
+      return healerEnemy;
     }
 
     private GameEntity CreateEnemyBase(Vector2 at, Dictionary<Stats, float> baseStats)
