@@ -57,6 +57,15 @@ namespace Code.Gameplay.Features.Abilities.Factory
         .AddAbilityId(AbilityId.SpeedUpAura)
         .AddProducerId(producerId)
         .With(x => x.isSpeedUpAuraAbility = true);
+    }    
+    
+    public GameEntity CreateHealAuraAbility(int producerId)
+    {
+      return CreateEntity.Empty()
+        .AddId(_identifiers.Next())
+        .AddAbilityId(AbilityId.HealAura)
+        .AddProducerId(producerId)
+        .With(x => x.isHealAuraAbility = true);
     }
   }
 }

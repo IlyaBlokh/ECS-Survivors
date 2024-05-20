@@ -5,13 +5,13 @@ using Entitas;
 
 namespace Code.Gameplay.Features.Statuses.Systems
 {
-  public class PeriodicDamageStatusSystem : IExecuteSystem
+  public class PeriodicPoisonDamageStatusSystem : IExecuteSystem
   {
     private readonly ITimeService _timeService;
     private readonly IEffectFactory _effectFactory;
     private readonly IGroup<GameEntity> _statuses;
 
-    public PeriodicDamageStatusSystem(GameContext game, ITimeService timeService, IEffectFactory effectFactory)
+    public PeriodicPoisonDamageStatusSystem(GameContext game, ITimeService timeService, IEffectFactory effectFactory)
     {
       _timeService = timeService;
       _effectFactory = effectFactory;
@@ -22,7 +22,8 @@ namespace Code.Gameplay.Features.Statuses.Systems
           GameMatcher.TimeSinceLastTick,
           GameMatcher.EffectValue,
           GameMatcher.ProducerId,
-          GameMatcher.TargetId));
+          GameMatcher.TargetId,
+          GameMatcher.Poison));
     }
 
     public void Execute()

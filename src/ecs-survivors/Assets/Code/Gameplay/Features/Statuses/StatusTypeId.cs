@@ -9,6 +9,7 @@
     ExplosiveEnchant = 4,
     SpeedChange = 5,
     HexEnchant = 6,
-    Metamorph = 7
+    Metamorph = 7,
+    Heal = 8
   }
 }

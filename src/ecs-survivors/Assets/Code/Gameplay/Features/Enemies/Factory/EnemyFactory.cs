@@ -62,6 +62,7 @@ namespace Code.Gameplay.Features.Enemies.Factory
           .AddViewPath("Gameplay/Enemies/Goblins/Torch/goblin_torch_red");
       
       _abilityFactory.CreateSpeedUpAuraAbility(bufferEnemy.Id);
+      // _abilityFactory.CreateHealAuraAbility(bufferEnemy.Id);
       return bufferEnemy;
     }
 

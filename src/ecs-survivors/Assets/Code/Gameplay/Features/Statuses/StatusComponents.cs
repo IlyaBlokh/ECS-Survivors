@@ -21,4 +21,5 @@ namespace Code.Gameplay.Features.Statuses
   [Game] public class Freeze : IComponent { }
   [Game] public class SpeedChange : IComponent { }
   [Game] public class Metamorph : IComponent { }
+  [Game] public class Heal : IComponent { }
 }

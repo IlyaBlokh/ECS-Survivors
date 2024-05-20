@@ -10,5 +10,6 @@ namespace Code.Gameplay.Features.Armaments.Factory
     GameEntity CreateGarlicEffectAura(AbilityId parentAbilityId, int producerId, int level);
     GameEntity CreateExplosion(int producerId, Vector3 at);
     GameEntity CreateSpeedUpEffectAura(AbilityId parentAbilityId, int producerId, int level);
+    GameEntity CreateHealEffectAura(AbilityId parentAbilityId, int producerId, int level);
   }
 }

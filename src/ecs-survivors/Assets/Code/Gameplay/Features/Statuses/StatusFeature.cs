@@ -8,7 +8,8 @@ namespace Code.Gameplay.Features.Statuses
     public StatusFeature(ISystemFactory systems)
     {
       Add(systems.Create<StatusDurationSystem>());
-      Add(systems.Create<PeriodicDamageStatusSystem>());
+      Add(systems.Create<PeriodicPoisonDamageStatusSystem>());
+      Add(systems.Create<PeriodicHealStatusSystem>());
       Add(systems.Create<ApplyFreezeStatusSystem>());
       Add(systems.Create<ApplySpeedChangeStatusSystem>());
       

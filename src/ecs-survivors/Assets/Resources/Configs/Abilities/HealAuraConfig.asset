@@ -10,27 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9833df43fb064a3199752651eaefcfde, type: 3}
-  m_Name: VegetableBoltConfig
+  m_Name: HealAuraConfig
   m_EditorClassIdentifier: 
-  AbilityId: 1
+  AbilityId: 5
   Levels:
-  - Cooldown: 1
-    ViewPrefab: {fileID: 6295621220853740386, guid: 08ce9f5922001044d87f0b92a159a8c4, type: 3}
-    EffectSetups:
-    - EffectTypeId: 1
-      Value: 1
+  - Cooldown: 0
+    ViewPrefab: {fileID: 2893445765622195075, guid: be635fee73fe2874985529aedaa27afa, type: 3}
+    EffectSetups: []
     StatusSetups:
-    - StatusTypeId: 1
-      Value: 0.25
-      Duration: 4
-      Period: 0.5
+    - StatusTypeId: 8
+      Value: 5
+      Duration: 22
+      Period: 0.1
     ProjectileSetup:
-      ProjectileCount: 1
-      Speed: 2
-      Pierce: 3
-      ContactRadius: 0.1
-      Lifetime: 3
+      ProjectileCount: 0
+      Speed: 0
+      Pierce: 0
+      ContactRadius: 0
+      Lifetime: 0
       OrbitRadius: 0
     AuraSetup:
-      Radius: 0
-      Interval: 0
+      Radius: 2.5
+      Interval: 0.5

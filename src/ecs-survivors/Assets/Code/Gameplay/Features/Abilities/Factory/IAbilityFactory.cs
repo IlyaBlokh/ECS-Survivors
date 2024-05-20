@@ -6,5 +6,6 @@ namespace Code.Gameplay.Features.Abilities.Factory
     GameEntity CreateOrbitingMushroomAbility(int level);
     GameEntity CreateGarlicAuraAbility();
     GameEntity CreateSpeedUpAuraAbility(int producerId);
+    GameEntity CreateHealAuraAbility(int producerId);
   }
 }
