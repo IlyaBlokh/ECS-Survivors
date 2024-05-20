@@ -27,7 +27,8 @@ namespace Code.Gameplay.Features.Hero.Systems
       GameEntity hero = _heroFactory.CreateHero(_levelDataProvider.StartPoint);
       _abilityFactory.CreateVegetableBoltAbility(level: 1);
       _abilityFactory.CreateOrbitingMushroomAbility(level: 1);
-      _abilityFactory.CreateGarlicAuraAbility();
+      // _abilityFactory.CreateGarlicAuraAbility();
+      _abilityFactory.CreateSpeedUpAuraAbility();
 
       // _statusApplier.ApplyStatus(new StatusSetup
       // {
@@ -41,11 +42,11 @@ namespace Code.Gameplay.Features.Hero.Systems
       //   Duration = 10
       // }, hero.Id, hero.Id);
       
-      _statusApplier.ApplyStatus(new StatusSetup
-      {
-        StatusTypeId = StatusTypeId.HexEnchant,
-        Duration = 30
-      }, hero.Id, hero.Id);
+      // _statusApplier.ApplyStatus(new StatusSetup
+      // {
+      //   StatusTypeId = StatusTypeId.HexEnchant,
+      //   Duration = 30
+      // }, hero.Id, hero.Id);
     }
   }
 }

@@ -5,6 +5,7 @@
     Unknown = 0,
     VegetableBolt = 1,
     GarlicAura = 2,
-    OrbitingMushroom = 3
+    OrbitingMushroom = 3,
+    SpeedUpAura = 4
   }
 }

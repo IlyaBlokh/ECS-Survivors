@@ -5,18 +5,18 @@ using Entitas;
 
 namespace Code.Gameplay.Features.Statuses.Systems
 {
-  public class ApplySlowStatusSystem : IExecuteSystem
+  public class ApplySpeedChangeStatusSystem : IExecuteSystem
   {
     private readonly IGroup<GameEntity> _statuses;
     private readonly List<GameEntity> _buffer = new(32);
 
-    public ApplySlowStatusSystem(GameContext game)
+    public ApplySpeedChangeStatusSystem(GameContext game)
     {
       _statuses = game.GetGroup(GameMatcher
         .AllOf(
           GameMatcher.Id,
           GameMatcher.Status,
-          GameMatcher.Slow,
+          GameMatcher.SpeedChange,
           GameMatcher.ProducerId, 
           GameMatcher.TargetId,
           GameMatcher.EffectValue)

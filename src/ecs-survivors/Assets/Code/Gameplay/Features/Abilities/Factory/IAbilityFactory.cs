@@ -5,5 +5,6 @@ namespace Code.Gameplay.Features.Abilities.Factory
     GameEntity CreateVegetableBoltAbility(int level);
     GameEntity CreateOrbitingMushroomAbility(int level);
     GameEntity CreateGarlicAuraAbility();
+    GameEntity CreateSpeedUpAuraAbility();
   }
 }

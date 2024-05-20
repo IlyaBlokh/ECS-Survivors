@@ -21,7 +21,7 @@ namespace Code.Gameplay.Features.Statuses.Factory
       {
         StatusTypeId.Poison => CreatePoisonStatus(setup, producerId, targetId),
         StatusTypeId.Freeze => CreateFreezeStatus(setup, producerId, targetId),
-        StatusTypeId.Slow => CreateSlowStatus(setup, producerId, targetId),
+        StatusTypeId.SpeedChange => CreateSpeedChangeStatus(setup, producerId, targetId),
         StatusTypeId.PoisonEnchant => CreatePoisonEnchantStatus(setup, producerId, targetId),
         StatusTypeId.ExplosiveEnchant => CreateExplosiveEnchantStatus(setup, producerId, targetId),
         StatusTypeId.HexEnchant => CreateHexEnchantStatus(setup, producerId, targetId),
@@ -65,16 +65,16 @@ namespace Code.Gameplay.Features.Statuses.Factory
         ;
     }
 
-    private GameEntity CreateSlowStatus(StatusSetup setup, int producerId, int targetId)
+    private GameEntity CreateSpeedChangeStatus(StatusSetup setup, int producerId, int targetId)
     {
       return CreateEntity.Empty()
           .AddId(_identifiers.Next())
-          .AddStatusTypeId(StatusTypeId.Slow)
+          .AddStatusTypeId(StatusTypeId.SpeedChange)
           .AddEffectValue(setup.Value)
           .AddProducerId(producerId)
           .AddTargetId(targetId)
           .With(x => x.isStatus = true)
-          .With(x => x.isSlow = true)
+          .With(x => x.isSpeedChange = true)
         ;
     }
 

@@ -12,6 +12,7 @@ namespace Code.Gameplay.Features.Abilities
       Add(systems.Create<VegetableBoltAbilitySystem>());
       Add(systems.Create<OrbitingMushroomAbilitySystem>());
       Add(systems.Create<GarlicAuraAbilitySystem>());
+      Add(systems.Create<SpeedUpAuraAbilitySystem>());
     }
   }
 }

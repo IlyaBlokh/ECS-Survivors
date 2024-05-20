@@ -8,4 +8,5 @@ namespace Code.Gameplay.Features.Abilities
   [Game] public class VegetableBoltAbility : IComponent { }
   [Game] public class OrbitingMushroomAbility : IComponent { }
   [Game] public class GarlicAuraAbility : IComponent { }
+  [Game] public class SpeedUpAuraAbility : IComponent { }
 }

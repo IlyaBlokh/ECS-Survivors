@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherSlow;
+    static Entitas.IMatcher<GameEntity> _matcherSpeedChange;
 
-    public static Entitas.IMatcher<GameEntity> Slow {
+    public static Entitas.IMatcher<GameEntity> SpeedChange {
         get {
-            if (_matcherSlow == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Slow);
+            if (_matcherSpeedChange == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.SpeedChange);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherSlow = matcher;
+                _matcherSpeedChange = matcher;
             }
 
-            return _matcherSlow;
+            return _matcherSpeedChange;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Statuses.Slow slowComponent = new Code.Gameplay.Features.Statuses.Slow();
+    static readonly Code.Gameplay.Features.Statuses.SpeedChange speedChangeComponent = new Code.Gameplay.Features.Statuses.SpeedChange();
 
-    public bool isSlow {
-        get { return HasComponent(GameComponentsLookup.Slow); }
+    public bool isSpeedChange {
+        get { return HasComponent(GameComponentsLookup.SpeedChange); }
         set {
-            if (value != isSlow) {
-                var index = GameComponentsLookup.Slow;
+            if (value != isSpeedChange) {
+                var index = GameComponentsLookup.SpeedChange;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : slowComponent;
+                            : speedChangeComponent;
 
                     AddComponent(index, component);
                 } else {

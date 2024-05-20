@@ -7,7 +7,7 @@
     Freeze = 2,
     PoisonEnchant = 3,
     ExplosiveEnchant = 4,
-    Slow = 5,
+    SpeedChange = 5,
     HexEnchant = 6,
     Metamorph = 7
   }
