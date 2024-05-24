@@ -60,40 +60,46 @@ public static class GameComponentsLookup {
     public const int Dead = 49;
     public const int MaxHp = 50;
     public const int ProcessingDeath = 51;
-    public const int Direction = 52;
-    public const int MovementAvailable = 53;
-    public const int Moving = 54;
-    public const int OrbitCenterFollowTarget = 55;
-    public const int OrbitCenterPosition = 56;
-    public const int OrbitPhase = 57;
-    public const int OrbitRadius = 58;
-    public const int RotationAlignedAlongDirection = 59;
-    public const int Speed = 60;
-    public const int TurnedAlongDirection = 61;
-    public const int Affected = 62;
-    public const int Applied = 63;
-    public const int ApplierStatusLink = 64;
-    public const int Duration = 65;
-    public const int Freeze = 66;
-    public const int Period = 67;
-    public const int Poison = 68;
-    public const int Status = 69;
-    public const int StatusTypeId = 70;
-    public const int TimeLeft = 71;
-    public const int TimeSinceLastTick = 72;
-    public const int Unapplied = 73;
-    public const int CollectingTargetsContinuously = 74;
-    public const int CollectTargetsInterval = 75;
-    public const int CollectTargetsTimer = 76;
-    public const int LayerMask = 77;
-    public const int ProcessedTargets = 78;
-    public const int Reached = 79;
-    public const int ReadyToCollectTargets = 80;
-    public const int TargetBuffer = 81;
-    public const int AxisInput = 82;
-    public const int Input = 83;
+    public const int Collected = 52;
+    public const int Experience = 53;
+    public const int LootTypeId = 54;
+    public const int PickupRadius = 55;
+    public const int Pullable = 56;
+    public const int Pulling = 57;
+    public const int Direction = 58;
+    public const int MovementAvailable = 59;
+    public const int Moving = 60;
+    public const int OrbitCenterFollowTarget = 61;
+    public const int OrbitCenterPosition = 62;
+    public const int OrbitPhase = 63;
+    public const int OrbitRadius = 64;
+    public const int RotationAlignedAlongDirection = 65;
+    public const int Speed = 66;
+    public const int TurnedAlongDirection = 67;
+    public const int Affected = 68;
+    public const int Applied = 69;
+    public const int ApplierStatusLink = 70;
+    public const int Duration = 71;
+    public const int Freeze = 72;
+    public const int Period = 73;
+    public const int Poison = 74;
+    public const int Status = 75;
+    public const int StatusTypeId = 76;
+    public const int TimeLeft = 77;
+    public const int TimeSinceLastTick = 78;
+    public const int Unapplied = 79;
+    public const int CollectingTargetsContinuously = 80;
+    public const int CollectTargetsInterval = 81;
+    public const int CollectTargetsTimer = 82;
+    public const int LayerMask = 83;
+    public const int ProcessedTargets = 84;
+    public const int Reached = 85;
+    public const int ReadyToCollectTargets = 86;
+    public const int TargetBuffer = 87;
+    public const int AxisInput = 88;
+    public const int Input = 89;
 
-    public const int TotalComponents = 84;
+    public const int TotalComponents = 90;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -148,6 +154,12 @@ public static class GameComponentsLookup {
         "Dead",
         "MaxHp",
         "ProcessingDeath",
+        "Collected",
+        "Experience",
+        "LootTypeId",
+        "PickupRadius",
+        "Pullable",
+        "Pulling",
         "Direction",
         "MovementAvailable",
         "Moving",
@@ -235,6 +247,12 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Lifetime.Dead),
         typeof(Code.Gameplay.Features.Lifetime.MaxHp),
         typeof(Code.Gameplay.Features.Lifetime.ProcessingDeath),
+        typeof(Code.Gameplay.Features.Loot.Collected),
+        typeof(Code.Gameplay.Features.Loot.Experience),
+        typeof(Code.Gameplay.Features.Loot.LootTypeIdComponent),
+        typeof(Code.Gameplay.Features.Loot.PickupRadius),
+        typeof(Code.Gameplay.Features.Loot.Pullable),
+        typeof(Code.Gameplay.Features.Loot.Pulling),
         typeof(Code.Gameplay.Features.Movement.Direction),
         typeof(Code.Gameplay.Features.Movement.MovementAvailable),
         typeof(Code.Gameplay.Features.Movement.Moving),
