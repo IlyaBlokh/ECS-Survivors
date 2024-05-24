@@ -29,7 +29,7 @@ namespace Code.Gameplay.Features.Loot.Systems
           if (_hitBuffer[i].isPullable)
           {
             _hitBuffer[i].isPullable = false;
-            _hitBuffer[i].isPulling = false;
+            _hitBuffer[i].isPulling = true;
           }          
         }
 

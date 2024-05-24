@@ -9,6 +9,7 @@ using Code.Gameplay.Features.Armaments.Factory;
 using Code.Gameplay.Features.Effects.Factory;
 using Code.Gameplay.Features.Enemies.Factory;
 using Code.Gameplay.Features.Hero.Factory;
+using Code.Gameplay.Features.Loot.Factory;
 using Code.Gameplay.Features.Statuses.Applier;
 using Code.Gameplay.Features.Statuses.Factory;
 using Code.Gameplay.Input.Service;
@@ -67,6 +68,7 @@ namespace Code.Infrastructure.Installers
       Container.Bind<IAbilityFactory>().To<AbilityFactory>().AsSingle();
       Container.Bind<IEffectFactory>().To<EffectFactory>().AsSingle();
       Container.Bind<IStatusFactory>().To<StatusFactory>().AsSingle();
+      Container.Bind<ILootFactory>().To<LootFactory>().AsSingle();
     }
 
     private void BindEntityIndices()
