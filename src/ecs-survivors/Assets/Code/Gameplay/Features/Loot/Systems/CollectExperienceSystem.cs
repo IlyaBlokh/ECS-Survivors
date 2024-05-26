@@ -1,4 +1,5 @@
-﻿using Entitas;
+﻿using Code.Gameplay.Features.LevelUp.Services;
+using Entitas;
 
 namespace Code.Gameplay.Features.Loot.Systems
 {
@@ -6,9 +7,11 @@ namespace Code.Gameplay.Features.Loot.Systems
   {
     private readonly IGroup<GameEntity> _collected;
     private readonly IGroup<GameEntity> _heroes;
+    private readonly ILevelUpService _levelUpService;
 
-    public CollectExperienceSystem(GameContext game)
+    public CollectExperienceSystem(GameContext game, ILevelUpService levelUpService)
     {
+      _levelUpService = levelUpService;
       _heroes = game.GetGroup(GameMatcher
         .AllOf(
           GameMatcher.Hero,
@@ -25,7 +28,8 @@ namespace Code.Gameplay.Features.Loot.Systems
       foreach (GameEntity hero in _heroes) 
       foreach (GameEntity collected in _collected)
       {
-        hero.ReplaceExperience(hero.Experience + collected.Experience);
+        _levelUpService.AddExperience(collected.Experience);
+        hero.ReplaceExperience(_levelUpService.CurrentExperience);
       }
     }
   }

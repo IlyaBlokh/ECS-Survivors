@@ -10,12 +10,14 @@ using Code.Gameplay.Features.Effects.Factory;
 using Code.Gameplay.Features.Enchants.UIFactories;
 using Code.Gameplay.Features.Enemies.Factory;
 using Code.Gameplay.Features.Hero.Factory;
+using Code.Gameplay.Features.LevelUp.Services;
 using Code.Gameplay.Features.Loot.Factory;
 using Code.Gameplay.Features.Statuses.Applier;
 using Code.Gameplay.Features.Statuses.Factory;
 using Code.Gameplay.Input.Service;
 using Code.Gameplay.Levels;
 using Code.Gameplay.StaticData;
+using Code.Gameplay.Windows;
 using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.Identifiers;
 using Code.Infrastructure.Loading;
@@ -34,6 +36,7 @@ namespace Code.Infrastructure.Installers
       BindAssetManagementServices();
       BindCommonServices();
       BindSystemFactory();
+      BindUIServices();
       BindContexts();
       BindGameplayServices();
       BindCameraProvider();
@@ -59,6 +62,7 @@ namespace Code.Infrastructure.Installers
       Container.Bind<IStaticDataService>().To<StaticDataService>().AsSingle();
       Container.Bind<ILevelDataProvider>().To<LevelDataProvider>().AsSingle();
       Container.Bind<IStatusApplier>().To<StatusApplier>().AsSingle();
+      Container.Bind<ILevelUpService>().To<LevelUpService>().AsSingle();
     }
 
     private void BindGameplayFactories()
@@ -108,8 +112,14 @@ namespace Code.Infrastructure.Installers
       Container.Bind<IInputService>().To<StandaloneInputService>().AsSingle();
     }
 
+    private void BindUIServices()
+    {
+      Container.Bind<IWindowService>().To<WindowService>().AsSingle();
+    }
+
     private void BindUIFactories()
     {
+      Container.Bind<IWindowFactory>().To<WindowFactory>().AsSingle();
       Container.Bind<IEnchantUIFactory>().To<EnchantUIFactory>().AsSingle();
     }
 

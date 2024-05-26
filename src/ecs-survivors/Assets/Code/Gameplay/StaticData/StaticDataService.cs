@@ -4,6 +4,7 @@ using System.Linq;
 using Code.Gameplay.Features.Abilities;
 using Code.Gameplay.Features.Abilities.Configs;
 using Code.Gameplay.Features.Enchants;
+using Code.Gameplay.Features.LevelUp;
 using Code.Gameplay.Features.Loot;
 using Code.Gameplay.Features.Loot.Configs;
 using Code.Gameplay.Windows;
@@ -18,12 +19,14 @@ namespace Code.Gameplay.StaticData
     private Dictionary<EnchantTypeId, EnchantConfig> _enchantById;
     private Dictionary<LootTypeId, LootConfig> _lootById;
     private Dictionary<WindowId, GameObject> _windowPrefabsById;
+    private LevelUpConfig _levelUp;
 
     public void LoadAll()
     {
       LoadAbilities();
       LoadEnchants();
       LoadLoot();
+      LoadLevelUpRules();
       LoadWindows();
     }
 
@@ -57,7 +60,7 @@ namespace Code.Gameplay.StaticData
 
       throw new Exception($"Enchant config for {typeId} was not found");
     }
-    
+
     public LootConfig GetLootConfig(LootTypeId typeId)
     {
       if (_lootById.TryGetValue(typeId, out LootConfig config))
@@ -65,6 +68,12 @@ namespace Code.Gameplay.StaticData
 
       throw new Exception($"Loot config for {typeId} was not found");
     }
+
+    public int MaxLevel() => 
+      _levelUp.MaxLevel;
+
+    public float ExperienceForLevel(int level) =>
+      _levelUp.ExperienceForLevel[level];
 
     private void LoadEnchants()
     {
@@ -86,7 +95,13 @@ namespace Code.Gameplay.StaticData
         .LoadAll<AbilityConfig>("Configs/Abilities")
         .ToDictionary(x => x.AbilityId, x => x);
     }
-    
+
+    private void LoadLevelUpRules()
+    {
+      _levelUp = Resources
+        .Load<LevelUpConfig>("Configs/LevelUp/LevelUpConfig");
+    }
+
     private void LoadWindows()
     {
       _windowPrefabsById = Resources
