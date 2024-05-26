@@ -159,6 +159,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2421077232666752859}
+  - component: {fileID: 2194048339263883262}
   m_Layer: 5
   m_Name: Enchant
   m_TagString: Untagged
@@ -187,3 +188,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2194048339263883262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7687388593135115363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b238e75001174742b6a13e265b355a80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Id: 0
+  Icon: {fileID: 214205192409135601}

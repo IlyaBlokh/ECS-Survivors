@@ -19,3 +19,6 @@ MonoBehaviour:
     Value: 0.35
     Duration: 2
     Period: 0.5
+  Radius: 0
+  ViewPrefab: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 118f2e16dfa19e146b43b0c999ea5cba, type: 3}
