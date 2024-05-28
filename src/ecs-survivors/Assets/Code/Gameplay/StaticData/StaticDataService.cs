@@ -23,6 +23,7 @@ namespace Code.Gameplay.StaticData
     private Dictionary<WindowId, GameObject> _windowPrefabsById;
     private Dictionary<EnemyTypeId, EnemyConfig> _enemyById;
     private LevelUpConfig _levelUp;
+    private SpawnConfig _spawn;
 
     public void LoadAll()
     {
@@ -31,6 +32,7 @@ namespace Code.Gameplay.StaticData
       LoadEnchants();
       LoadLoot();
       LoadLevelUpRules();
+      LoadSpawnRules();
       LoadWindows();
     }
 
@@ -81,6 +83,9 @@ namespace Code.Gameplay.StaticData
       throw new Exception($"Enemy config for {typeId} was not found");
     }
 
+    public List<EnemyTypeSpawnTime> EnemyTypeSpawnTimes => 
+      _spawn.EnemyTypeSpawnTimes;
+
     public int MaxLevel() => 
       _levelUp.MaxLevel;
 
@@ -106,6 +111,12 @@ namespace Code.Gameplay.StaticData
       _enemyById = Resources
         .LoadAll<EnemyConfig>("Configs/Enemies/Types")
         .ToDictionary(x => x.TypeId, x => x);
+    }   
+    
+    private void LoadSpawnRules()
+    {
+      _spawn = Resources
+        .Load<SpawnConfig>("Configs/Enemies/SpawnConfig");
     }
 
     private void LoadAbilities()

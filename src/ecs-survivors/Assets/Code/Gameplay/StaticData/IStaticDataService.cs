@@ -1,4 +1,5 @@
-﻿using Code.Gameplay.Features.Abilities;
+﻿using System.Collections.Generic;
+using Code.Gameplay.Features.Abilities;
 using Code.Gameplay.Features.Abilities.Configs;
 using Code.Gameplay.Features.Enchants;
 using Code.Gameplay.Features.Enemies;
@@ -22,5 +23,6 @@ namespace Code.Gameplay.StaticData
     int MaxLevel();
     float ExperienceForLevel(int level);
     EnemyConfig GetEnemyConfig(EnemyTypeId typeId);
+    List<EnemyTypeSpawnTime> EnemyTypeSpawnTimes { get; }
   }
 }

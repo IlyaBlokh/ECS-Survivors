@@ -9,20 +9,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d368b324f3346029bae64aaa6c8b4da, type: 3}
+  m_Script: {fileID: 11500000, guid: 190a1235383847b983940f0e90c9f82a, type: 3}
   m_Name: HexArmamentsConfig
   m_EditorClassIdentifier: 
   TypeId: 3
   EffectSetups: []
   StatusSetups:
-  - StatusTypeId: 5
-    Value: -0.7
-    Duration: 2
-    Period: 0
   - StatusTypeId: 7
     Value: 0
-    Duration: 2
+    Duration: 5
     Period: 0
+  - StatusTypeId: 5
+    Value: -0.5
+    Duration: 5
+    Period: 0.5
   Radius: 0
   ViewPrefab: {fileID: 0}
-  ViewImage: {fileID: 8980259175255949757, guid: 2c6676b9aeae36c48b60d04ad8e15251, type: 3}
+  Image: {fileID: 8980259175255949757, guid: 2c6676b9aeae36c48b60d04ad8e15251, type: 3}
+  Icon: {fileID: 21300000, guid: 4dd1ca3b3f4c144438f4dc393a05ddeb, type: 3}

@@ -26,7 +26,7 @@ namespace Code.Gameplay.Features.Statuses.Systems.StatusVisuals
       {
         GameEntity target = status.Target();
         if (target is {hasStatusVisuals: true}) 
-          target.StatusVisuals.ApplyMetamorph(_staticDataService.GetEnchantConfig(EnchantTypeId.HexArmaments).Icon);
+          target.StatusVisuals.ApplyMetamorph(_staticDataService.GetEnchantConfig(EnchantTypeId.HexArmaments).Image);
       }
     }
   }
