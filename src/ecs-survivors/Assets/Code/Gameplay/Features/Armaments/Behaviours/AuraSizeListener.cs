@@ -10,7 +10,7 @@ namespace Code.Gameplay.Features.Armaments.Behaviours
 
     private void Update()
     {
-      if (Mathf.Abs(Entity.Radius - _radiusPrev) < Mathf.Epsilon)
+      if (Mathf.Approximately(Entity.Radius, _radiusPrev))
         return;
       
       SetAuraScale();
@@ -20,7 +20,6 @@ namespace Code.Gameplay.Features.Armaments.Behaviours
     {
       float scale = Entity.Radius * 2;
       Container.localScale = new Vector3(scale, scale, scale);
-
       _radiusPrev = Entity.Radius;
     }
   }

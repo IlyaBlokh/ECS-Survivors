@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace Code.Gameplay.Common.Visuals.StatusVisuals
 {
   public interface IStatusVisuals
@@ -6,5 +8,7 @@ namespace Code.Gameplay.Common.Visuals.StatusVisuals
     void UnapplyFreeze();
     void ApplyPoison();
     void UnapplyPoison();
+    void ApplyMetamorph(Sprite viewImage);
+    void UnapplyMetamorph();
   }
 }

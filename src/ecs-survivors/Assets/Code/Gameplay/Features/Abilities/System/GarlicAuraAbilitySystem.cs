@@ -34,7 +34,7 @@ namespace Code.Gameplay.Features.Abilities.System
       foreach (GameEntity hero in _heroes)
       {
         int level = _abilityUpgradeService.GetAbilityLevel(AbilityId.GarlicAura);
-        _armamentFactory.CreateEffectAura(AbilityId.GarlicAura, hero.Id, level);
+        _armamentFactory.CreateGarlicEffectAura(AbilityId.GarlicAura, hero.Id, level);
         
         ability.isActive = true;
       }

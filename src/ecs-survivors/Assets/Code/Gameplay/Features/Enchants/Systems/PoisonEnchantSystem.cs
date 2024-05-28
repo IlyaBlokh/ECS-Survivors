@@ -10,6 +10,7 @@ namespace Code.Gameplay.Features.Enchants.Systems
     private readonly IGroup<GameEntity> _enchants;
     private readonly IGroup<GameEntity> _armaments;
     private readonly List<GameEntity> _buffer = new(32);
+    
     private readonly IStaticDataService _staticDataService;
 
     public PoisonEnchantSystem(GameContext game, IStaticDataService staticDataService)
@@ -17,13 +18,13 @@ namespace Code.Gameplay.Features.Enchants.Systems
       _staticDataService = staticDataService;
       _enchants = game.GetGroup(GameMatcher
         .AllOf(
-          GameMatcher.EnchantTypeId,
-          GameMatcher.ProducerId,
-          GameMatcher.PoisonEnchant));
-
+          GameMatcher.EnchantTypeId, 
+          GameMatcher.PoisonEnchant,
+          GameMatcher.ProducerId));
+      
       _armaments = game.GetGroup(GameMatcher
         .AllOf(
-          GameMatcher.Armament,
+          GameMatcher.Armament, 
           GameMatcher.ProducerId)
         .NoneOf(GameMatcher.PoisonEnchant));
     }
@@ -31,16 +32,15 @@ namespace Code.Gameplay.Features.Enchants.Systems
     public void Execute()
     {
       foreach (GameEntity enchant in _enchants)
-      foreach (GameEntity armament in _armaments.GetEntities(_buffer))
-      {
-        if (enchant.ProducerId == armament.ProducerId)
+        foreach (GameEntity armament in _armaments.GetEntities(_buffer))
         {
-          GetOrAddStatusSetups(armament)
-            .AddRange(_staticDataService.GetEnchantConfig(EnchantTypeId.PoisonArmaments).StatusSetups);
-          
-          armament.isPoisonEnchant = true;
+          if (enchant.ProducerId == armament.ProducerId)
+          {
+            GetOrAddStatusSetups(armament)
+              .AddRange(_staticDataService.GetEnchantConfig(EnchantTypeId.PoisonArmaments).StatusSetups);
+            armament.isPoisonEnchant = true;
+          }
         }
-      }
     }
 
     private static List<StatusSetup> GetOrAddStatusSetups(GameEntity armament)

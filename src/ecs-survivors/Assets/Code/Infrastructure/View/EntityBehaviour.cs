@@ -1,5 +1,6 @@
 ﻿using Code.Gameplay.Common.Collisions;
 using Code.Infrastructure.View.Registrars;
+using Entitas.Unity;
 using UnityEngine;
 using Zenject;
 
@@ -21,6 +22,8 @@ namespace Code.Infrastructure.View
       _entity.AddView(this);
       _entity.Retain(this);
 
+      gameObject.Link(_entity);
+
       foreach (IEntityComponentRegistrar registrar in GetComponentsInChildren<IEntityComponentRegistrar>()) 
         registrar.RegisterComponents();
 
@@ -36,6 +39,7 @@ namespace Code.Infrastructure.View
       foreach (Collider2D collider2d in GetComponentsInChildren<Collider2D>(includeInactive: true)) 
         _collisionRegistry.Unregister(collider2d.GetInstanceID());
       
+      gameObject.Unlink();
       _entity.Release(this);
       _entity = null;
     }

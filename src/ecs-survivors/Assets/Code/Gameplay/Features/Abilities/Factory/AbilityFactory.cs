@@ -28,6 +28,24 @@ namespace Code.Gameplay.Features.Abilities.Factory
         .AddCooldown(abilityLevel.Cooldown)
         .With(x => x.isVegetableBoltAbility = true)
         .PutOnCooldown();
+    }    
+    
+    public GameEntity CreateSpeedUpAuraAbility(int producerId)
+    {
+      return CreateEntity.Empty()
+        .AddId(_identifiers.Next())
+        .AddAbilityId(AbilityId.SpeedUpAura)
+        .AddProducerId(producerId)
+        .With(x => x.isSpeedUpAuraAbility = true);
+    }    
+    
+    public GameEntity CreateHealAuraAbility(int producerId)
+    {
+      return CreateEntity.Empty()
+        .AddId(_identifiers.Next())
+        .AddAbilityId(AbilityId.HealAura)
+        .AddProducerId(producerId)
+        .With(x => x.isHealAuraAbility = true);
     }
 
     public GameEntity CreateOrbitingMushroomAbility(int level)

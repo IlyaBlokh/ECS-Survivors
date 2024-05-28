@@ -6,5 +6,7 @@
     VegetableBolt = 1,
     GarlicAura = 2,
     OrbitingMushroom = 3,
+    SpeedUpAura = 4,
+    HealAura = 5
   }
 }

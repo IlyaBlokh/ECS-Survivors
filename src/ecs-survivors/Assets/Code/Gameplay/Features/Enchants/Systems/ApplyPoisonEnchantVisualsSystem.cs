@@ -1,11 +1,12 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Enchants.Systems
 {
   public class ApplyPoisonEnchantVisualsSystem : ReactiveSystem<GameEntity>
   {
-    public ApplyPoisonEnchantVisualsSystem(GameContext game) : base(game)
+    public ApplyPoisonEnchantVisualsSystem(GameContext context) : base(context)
     {
     }
 

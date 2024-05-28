@@ -7,4 +7,7 @@ namespace Code.Gameplay.Features.Enemies
   [Game] public class EnemyAnimatorComponent : IComponent { public EnemyAnimator Value; }
   [Game] public class SpawnTimer : IComponent { public float Value; }
   [Game] public class EnemyTypeIdComponent : IComponent { public EnemyTypeId Value; }
+  [Game] public class Goblin : IComponent { }
+  [Game] public class Buffer : IComponent { }
+  [Game] public class Healer : IComponent { }
 }

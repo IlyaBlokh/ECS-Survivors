@@ -1,6 +1,7 @@
 using Code.Common.Extensions;
 using Code.Gameplay.Cameras.Provider;
 using Code.Gameplay.Common;
+using Code.Gameplay.Common.Random;
 using Code.Gameplay.Common.Time;
 using Code.Gameplay.Features.Enemies.Factory;
 using Entitas;
@@ -10,19 +11,22 @@ namespace Code.Gameplay.Features.Enemies.Systems
 {
   public class EnemySpawnSystem : IExecuteSystem
   {
-    private const float SpawnDistanceGap = 0.5f;
+    private const float SpawnDistanceGap = 1f;
 
-    private readonly ITimeService _time;
     private readonly IEnemyFactory _enemyFactory;
     private readonly ICameraProvider _cameraProvider;
+    private readonly ITimeService _time;
+    private readonly IRandomService _random;
+    
     private readonly IGroup<GameEntity> _timers;
     private readonly IGroup<GameEntity> _heroes;
 
-    public EnemySpawnSystem(GameContext game, ITimeService time, IEnemyFactory enemyFactory, ICameraProvider cameraProvider)
+    public EnemySpawnSystem(GameContext game, ITimeService time, IEnemyFactory enemyFactory, ICameraProvider cameraProvider, IRandomService random)
     {
-      _time = time;
       _enemyFactory = enemyFactory;
       _cameraProvider = cameraProvider;
+      _time = time;
+      _random = random;
 
       _timers = game.GetGroup(GameMatcher.SpawnTimer);
       _heroes = game.GetGroup(GameMatcher
@@ -40,8 +44,19 @@ namespace Code.Gameplay.Features.Enemies.Systems
         if (timer.SpawnTimer <= 0)
         {
           timer.ReplaceSpawnTimer(GameplayConstants.EnemySpawnTimer);
-          _enemyFactory.CreateEnemy(EnemyTypeId.Goblin, at: RandomSpawnPosition(hero.WorldPosition));
+          
+          _enemyFactory.CreateEnemy(RandomEnemyType(), at: RandomSpawnPosition(hero.WorldPosition));
         }
+      }
+    }
+
+    private EnemyTypeId RandomEnemyType()
+    {
+      switch (_random.Range(0, 1f))
+      {
+        case < 0.33f: return EnemyTypeId.Healer;
+        case < 0.66f: return EnemyTypeId.Buffer;
+        default: return EnemyTypeId.Goblin;
       }
     }
 

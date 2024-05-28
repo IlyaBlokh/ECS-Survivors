@@ -4,6 +4,6 @@
   {
     Unknown = 0,
     Damage = 1,
-    Heal = 2,
+    Heal = 2
   }
 }
