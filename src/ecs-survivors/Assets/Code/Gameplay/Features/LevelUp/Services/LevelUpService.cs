@@ -1,5 +1,4 @@
 ﻿using Code.Common.Entity;
-using Code.Common.Extensions;
 using Code.Gameplay.StaticData;
 
 namespace Code.Gameplay.Features.LevelUp.Services

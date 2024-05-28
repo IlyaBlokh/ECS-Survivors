@@ -10,6 +10,7 @@ using Code.Gameplay.Features.Armaments.Factory;
 using Code.Gameplay.Features.Effects.Factory;
 using Code.Gameplay.Features.Enchants.UIFactories;
 using Code.Gameplay.Features.Enemies.Factory;
+using Code.Gameplay.Features.GameSession.Factory;
 using Code.Gameplay.Features.Hero.Factory;
 using Code.Gameplay.Features.LevelUp.Services;
 using Code.Gameplay.Features.LevelUp.Windows;
@@ -71,6 +72,7 @@ namespace Code.Infrastructure.Installers
     private void BindGameplayFactories()
     {
       Container.Bind<IEntityViewFactory>().To<EntityViewFactory>().AsSingle();
+      Container.Bind<ITimerFactory>().To<TimerFactory>().AsSingle();
       Container.Bind<IHeroFactory>().To<HeroFactory>().AsSingle();
       Container.Bind<IEnemyFactory>().To<EnemyFactory>().AsSingle();
       Container.Bind<IArmamentFactory>().To<ArmamentFactory>().AsSingle();
