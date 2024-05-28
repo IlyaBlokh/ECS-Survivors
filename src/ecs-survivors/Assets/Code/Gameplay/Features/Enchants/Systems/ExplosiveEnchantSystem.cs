@@ -23,9 +23,10 @@ namespace Code.Gameplay.Features.Enchants.Systems
       context.CreateCollector(GameMatcher
         .AllOf(
           GameMatcher.Armament, 
+          GameMatcher.TargetBuffer,
           GameMatcher.Reached).Added());
 
-    protected override bool Filter(GameEntity entity) => entity.isArmament && entity.hasWorldPosition;
+    protected override bool Filter(GameEntity entity) => entity.isArmament && entity.hasWorldPosition && entity.hasTargetBuffer;
 
     protected override void Execute(List<GameEntity> armaments)
     {

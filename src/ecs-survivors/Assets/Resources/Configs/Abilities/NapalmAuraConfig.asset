@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9833df43fb064a3199752651eaefcfde, type: 3}
+  m_Name: NapalmAuraConfig
+  m_EditorClassIdentifier: 
+  AbilityId: 7
+  AllowedOwners: 00000000
+  Levels:
+  - Icon: {fileID: 21300000, guid: 215eb748d6d66824391ec8c3e1444f3d, type: 3}
+    Description: Fire aura
+    Cooldown: 5
+    ViewPrefab: {fileID: 2893445765622195075, guid: f66d2045c21af7e4bb0156d5618a9c65, type: 3}
+    EffectSetups:
+    - EffectTypeId: 1
+      Value: 5
+    StatusSetups:
+    - StatusTypeId: 8
+      Value: 5
+      Duration: 15
+      Period: 0.05
+    ProjectileSetup:
+      ProjectileCount: 0
+      Speed: 0
+      Pierce: 0
+      ContactRadius: 0
+      Lifetime: 0
+      OrbitRadius: 0
+    AuraSetup:
+      Radius: 2
+      Interval: 0.5
+  - Icon: {fileID: 21300000, guid: 215eb748d6d66824391ec8c3e1444f3d, type: 3}
+    Description: Fire aura
+    Cooldown: 5
+    ViewPrefab: {fileID: 2893445765622195075, guid: f66d2045c21af7e4bb0156d5618a9c65, type: 3}
+    EffectSetups:
+    - EffectTypeId: 1
+      Value: 6
+    StatusSetups:
+    - StatusTypeId: 8
+      Value: 5
+      Duration: 15
+      Period: 0.05
+    ProjectileSetup:
+      ProjectileCount: 0
+      Speed: 0
+      Pierce: 0
+      ContactRadius: 0
+      Lifetime: 0
+      OrbitRadius: 0
+    AuraSetup:
+      Radius: 2.5
+      Interval: 0.5
+  - Icon: {fileID: 21300000, guid: 215eb748d6d66824391ec8c3e1444f3d, type: 3}
+    Description: Fire aura
+    Cooldown: 5
+    ViewPrefab: {fileID: 2893445765622195075, guid: f66d2045c21af7e4bb0156d5618a9c65, type: 3}
+    EffectSetups:
+    - EffectTypeId: 1
+      Value: 7
+    StatusSetups:
+    - StatusTypeId: 8
+      Value: 5
+      Duration: 15
+      Period: 0.05
+    ProjectileSetup:
+      ProjectileCount: 0
+      Speed: 0
+      Pierce: 0
+      ContactRadius: 0
+      Lifetime: 0
+      OrbitRadius: 0
+    AuraSetup:
+      Radius: 3
+      Interval: 0.5
+  - Icon: {fileID: 21300000, guid: 215eb748d6d66824391ec8c3e1444f3d, type: 3}
+    Description: Fire aura
+    Cooldown: 5
+    ViewPrefab: {fileID: 2893445765622195075, guid: f66d2045c21af7e4bb0156d5618a9c65, type: 3}
+    EffectSetups:
+    - EffectTypeId: 1
+      Value: 7
+    StatusSetups:
+    - StatusTypeId: 8
+      Value: 5
+      Duration: 15
+      Period: 0.05
+    ProjectileSetup:
+      ProjectileCount: 0
+      Speed: 0
+      Pierce: 0
+      ContactRadius: 0
+      Lifetime: 0
+      OrbitRadius: 0
+    AuraSetup:
+      Radius: 3
+      Interval: 0.5

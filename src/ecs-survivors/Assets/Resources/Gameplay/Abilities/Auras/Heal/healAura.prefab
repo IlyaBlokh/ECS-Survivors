@@ -9713,7 +9713,7 @@ GameObject:
   - component: {fileID: 7897260696194773655}
   - component: {fileID: 2893445765622195075}
   - component: {fileID: 5776008095014193973}
-  - component: {fileID: 6901901538254673162}
+  - component: {fileID: 6032018894881419767}
   m_Layer: 0
   m_Name: healAura
   m_TagString: Untagged
@@ -9762,7 +9762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EntityView: {fileID: 2893445765622195075}
---- !u!114 &6901901538254673162
+--- !u!114 &6032018894881419767
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9771,7 +9771,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8783522936459097793}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 258166ad02be441fba963118744f15ac, type: 3}
+  m_Script: {fileID: 11500000, guid: 882fcc7faf9e42049cb691dc92beece5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   EntityView: {fileID: 2893445765622195075}

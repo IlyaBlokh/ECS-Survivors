@@ -13,6 +13,13 @@ namespace Code.Gameplay.Features.Armaments.Extensions
         .AddTargetBuffer(new List<int>(TargetBufferCapacity))
         .AddProcessedTargets(new List<int>(TargetBufferCapacity))
         .With(x => x.isCollectingTargetsContinuously = true);
+    }    
+    
+    public static GameEntity AddProducerFollow(this GameEntity entity, int producerId)
+    {
+      return entity
+        .AddProducerId(producerId)
+        .With(x => x.isFollowingProducer = true);
     }
   }
 }

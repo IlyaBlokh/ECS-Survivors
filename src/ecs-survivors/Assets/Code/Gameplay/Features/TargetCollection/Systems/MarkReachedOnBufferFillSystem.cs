@@ -3,12 +3,12 @@ using Entitas;
 
 namespace Code.Gameplay.Features.TargetCollection.Systems
 {
-  public class MarkReachedSystem : IExecuteSystem
+  public class MarkReachedOnBufferFillSystem : IExecuteSystem
   {
     private readonly IGroup<GameEntity> _entities;
     private readonly List<GameEntity> _buffer = new(128);
 
-    public MarkReachedSystem(GameContext game)
+    public MarkReachedOnBufferFillSystem(GameContext game)
     {
       _entities = game.GetGroup(GameMatcher
         .AllOf(GameMatcher.TargetBuffer)

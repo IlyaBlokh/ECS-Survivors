@@ -70,7 +70,8 @@ namespace Code.Gameplay.Features.Armaments.Factory
     {
       AbilityLevel abilityLevel = _staticDataService.GetAbilityLevel(AbilityId.GarlicAura, level);
 
-      return CreateBaseAura(producerId, abilityLevel)
+      return CreateBaseAura(abilityLevel)
+        .AddProducerFollow(producerId)
         .AddParentAbility(AbilityId.GarlicAura);
     }
 
@@ -78,7 +79,8 @@ namespace Code.Gameplay.Features.Armaments.Factory
     {
       AbilityLevel abilityLevel = _staticDataService.GetAbilityLevel(AbilityId.SpeedUpAura, level);
 
-      return CreateBaseAura(producerId, abilityLevel)
+      return CreateBaseAura(abilityLevel)
+        .AddProducerFollow(producerId)
         .AddParentAbility(AbilityId.SpeedUpAura);
     }
 
@@ -86,7 +88,8 @@ namespace Code.Gameplay.Features.Armaments.Factory
     {
       AbilityLevel abilityLevel = _staticDataService.GetAbilityLevel(AbilityId.HealAura, level);
 
-      return CreateBaseAura(producerId, abilityLevel)
+      return CreateBaseAura(abilityLevel)
+        .AddProducerFollow(producerId)
         .AddParentAbility(AbilityId.HealAura);
     }
 
@@ -101,7 +104,16 @@ namespace Code.Gameplay.Features.Armaments.Factory
         ;
     }
 
-    private GameEntity CreateBaseAura(int producerId, AbilityLevel abilityLevel)
+    public GameEntity CreateNapalmAura(int level, Vector3 at)
+    {
+      AbilityLevel abilityLevel = _staticDataService.GetAbilityLevel(AbilityId.NapalmAura, level);
+
+      return CreateBaseAura(abilityLevel)
+        .AddParentAbility(AbilityId.NapalmAura)
+        .ReplaceWorldPosition(at);
+    }
+
+    private GameEntity CreateBaseAura(AbilityLevel abilityLevel)
     {
       AuraSetup setup = abilityLevel.AuraSetup;
 
@@ -116,9 +128,7 @@ namespace Code.Gameplay.Features.Armaments.Factory
           .AddRadius(setup.Radius)
           .AddCollectTargetsInterval(setup.Interval)
           .AddCollectTargetsTimer(0)
-          .AddProducerId(producerId)
           .AddWorldPosition(Vector3.zero)
-          .With(x => x.isFollowingProducer = true)
         ;
     }
 
