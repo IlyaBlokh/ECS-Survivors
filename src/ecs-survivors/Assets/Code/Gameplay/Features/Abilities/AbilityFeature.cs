@@ -16,6 +16,7 @@ namespace Code.Gameplay.Features.Abilities
       Add(systems.Create<GarlicAuraAbilitySystem>());
       Add(systems.Create<SpeedUpAuraAbilitySystem>());
       Add(systems.Create<HealAuraAbilitySystem>());
+      Add(systems.Create<NapalmBombAbilitySystem>());
     }
   }
 }

@@ -12,4 +12,5 @@ namespace Code.Gameplay.Features.Abilities
   [Game] public class RecreatedOnUpgrade : IComponent { }
   [Game] public class SpeedUpAuraAbility : IComponent { }
   [Game] public class HealAuraAbility : IComponent { }
+  [Game] public class NapalmBombAbility : IComponent { }
 }

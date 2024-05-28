@@ -3,6 +3,7 @@ using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Abilities;
 using Code.Gameplay.Features.Abilities.Configs;
+using Code.Gameplay.Features.Armaments.Extensions;
 using Code.Gameplay.Features.Enchants;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
@@ -13,7 +14,7 @@ namespace Code.Gameplay.Features.Armaments.Factory
   public class ArmamentFactory : IArmamentFactory
   {
     private const int TargetBufferSize = 16;
-    
+
     private readonly IIdentifierService _identifiers;
     private readonly IStaticDataService _staticDataService;
 
@@ -30,10 +31,11 @@ namespace Code.Gameplay.Features.Armaments.Factory
 
       return CreateProjectileEntity(at, abilityLevel, setup)
           .AddParentAbility(AbilityId.VegetableBolt)
+          .AddTargetCollecting()
           .With(x => x.isRotationAlignedAlongDirection = true)
         ;
-    }    
-    
+    }
+
     public GameEntity CreateMushroom(int level, Vector3 at, float phase)
     {
       AbilityLevel abilityLevel = _staticDataService.GetAbilityLevel(AbilityId.OrbitingMushroom, level);
@@ -42,6 +44,7 @@ namespace Code.Gameplay.Features.Armaments.Factory
       return CreateProjectileEntity(at, abilityLevel, setup)
           .AddParentAbility(AbilityId.OrbitingMushroom)
           .AddOrbitPhase(phase)
+          .AddTargetCollecting()
           .AddOrbitRadius(setup.OrbitRadius)
         ;
     }
@@ -74,7 +77,7 @@ namespace Code.Gameplay.Features.Armaments.Factory
     public GameEntity CreateSpeedUpEffectAura(AbilityId parentAbilityId, int producerId, int level)
     {
       AbilityLevel abilityLevel = _staticDataService.GetAbilityLevel(AbilityId.SpeedUpAura, level);
-      
+
       return CreateBaseAura(producerId, abilityLevel)
         .AddParentAbility(AbilityId.SpeedUpAura);
     }
@@ -87,10 +90,21 @@ namespace Code.Gameplay.Features.Armaments.Factory
         .AddParentAbility(AbilityId.HealAura);
     }
 
+    public GameEntity CreateNapalmBomb(int level, Vector3 at)
+    {
+      AbilityLevel abilityLevel = _staticDataService.GetAbilityLevel(AbilityId.NapalmBomb, level);
+      ProjectileSetup setup = abilityLevel.ProjectileSetup;
+
+      return CreateProjectileEntity(at, abilityLevel, setup)
+          .AddParentAbility(AbilityId.NapalmBomb)
+          .With(x => x.isRotationAlignedAlongDirection = true)
+        ;
+    }
+
     private GameEntity CreateBaseAura(int producerId, AbilityLevel abilityLevel)
     {
       AuraSetup setup = abilityLevel.AuraSetup;
-      
+
       return CreateEntity.Empty()
           .AddId(_identifiers.Next())
           .With(x => x.isArmament = true)
@@ -120,12 +134,9 @@ namespace Code.Gameplay.Features.Armaments.Factory
         .With(x => x.AddStatusSetups(abilityLevel.StatusSetups), when: !abilityLevel.StatusSetups.IsNullOrEmpty())
         .With(x => x.AddTargetLimit(setup.Pierce), when: setup.Pierce > 0)
         .AddRadius(setup.ContactRadius)
-        .AddTargetBuffer(new List<int>(TargetBufferSize))
-        .AddProcessedTargets(new List<int>(TargetBufferSize))
         .AddLayerMask(CollisionLayer.Enemy.AsMask())
         .With(x => x.isMovementAvailable = true)
         .With(x => x.isReadyToCollectTargets = true)
-        .With(x => x.isCollectingTargetsContinuously = true)
         .AddSelfDestructTimer(setup.Lifetime);
     }
   }

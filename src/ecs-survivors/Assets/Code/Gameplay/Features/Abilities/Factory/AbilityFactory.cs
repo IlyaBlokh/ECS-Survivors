@@ -4,6 +4,7 @@ using Code.Gameplay.Features.Abilities.Configs;
 using Code.Gameplay.Features.Cooldowns;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
+using NotImplementedException = System.NotImplementedException;
 
 namespace Code.Gameplay.Features.Abilities.Factory
 {
@@ -46,6 +47,18 @@ namespace Code.Gameplay.Features.Abilities.Factory
         .AddAbilityId(AbilityId.HealAura)
         .AddProducerId(producerId)
         .With(x => x.isHealAuraAbility = true);
+    }
+
+    public GameEntity CreateNapalmBombAbility(int level)
+    {
+      AbilityLevel abilityLevel = _staticDataService.GetAbilityLevel(AbilityId.NapalmBomb, level);
+      
+      return CreateEntity.Empty()
+        .AddId(_identifiers.Next())
+        .AddAbilityId(AbilityId.NapalmBomb)
+        .AddCooldown(abilityLevel.Cooldown)
+        .With(x => x.isNapalmBombAbility = true)
+        .PutOnCooldown();
     }
 
     public GameEntity CreateOrbitingMushroomAbility(int level)

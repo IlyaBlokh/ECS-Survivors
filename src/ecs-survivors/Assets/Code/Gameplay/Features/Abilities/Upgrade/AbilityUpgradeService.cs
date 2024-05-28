@@ -49,6 +49,9 @@ namespace Code.Gameplay.Features.Abilities.Upgrade
           break;
         case AbilityId.OrbitingMushroom:
           _abilityFactory.CreateOrbitingMushroomAbility(level: 1);
+          break;        
+        case AbilityId.NapalmBomb:
+          _abilityFactory.CreateNapalmBombAbility(level: 1);
           break;
         default:
           throw new Exception($"Ability {ability} is not defined");

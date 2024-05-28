@@ -26,97 +26,98 @@ public static class GameComponentsLookup {
     public const int AbilityId = 15;
     public const int GarlicAuraAbility = 16;
     public const int HealAuraAbility = 17;
-    public const int OrbitingMushroomAbility = 18;
-    public const int ParentAbility = 19;
-    public const int RecreatedOnUpgrade = 20;
-    public const int SpeedUpAuraAbility = 21;
-    public const int UpgradeRequest = 22;
-    public const int VegetableBoltAbility = 23;
-    public const int Armament = 24;
-    public const int EffectSetups = 25;
-    public const int FollowingProducer = 26;
-    public const int Processed = 27;
-    public const int StatusSetups = 28;
-    public const int TargetLimit = 29;
-    public const int BaseStats = 30;
-    public const int StatChange = 31;
-    public const int StatModifiers = 32;
-    public const int Cooldown = 33;
-    public const int CooldownLeft = 34;
-    public const int CooldownUp = 35;
-    public const int DamageEffect = 36;
-    public const int Effect = 37;
-    public const int EffectValue = 38;
-    public const int HealEffect = 39;
-    public const int ProducerId = 40;
-    public const int TargetId = 41;
-    public const int EnchantHolder = 42;
-    public const int EnchantTypeId = 43;
-    public const int EnchantVisuals = 44;
-    public const int ExplosiveEnchant = 45;
-    public const int HexEnchant = 46;
-    public const int PoisonEnchant = 47;
-    public const int Buffer = 48;
-    public const int Enemy = 49;
-    public const int EnemyAnimator = 50;
-    public const int EnemyTypeId = 51;
-    public const int EnemyTypes = 52;
-    public const int Goblin = 53;
-    public const int Healer = 54;
-    public const int SpawnProgress = 55;
-    public const int SpawnTimer = 56;
-    public const int SessionTimer = 57;
-    public const int Hero = 58;
-    public const int HeroAnimator = 59;
-    public const int ExperienceMeter = 60;
-    public const int LevelUp = 61;
-    public const int CurrentHp = 62;
-    public const int Dead = 63;
-    public const int MaxHp = 64;
-    public const int ProcessingDeath = 65;
-    public const int Collected = 66;
-    public const int Experience = 67;
-    public const int LootTypeId = 68;
-    public const int PickupRadius = 69;
-    public const int Pullable = 70;
-    public const int Pulling = 71;
-    public const int Direction = 72;
-    public const int MovementAvailable = 73;
-    public const int Moving = 74;
-    public const int OrbitCenterFollowTarget = 75;
-    public const int OrbitCenterPosition = 76;
-    public const int OrbitPhase = 77;
-    public const int OrbitRadius = 78;
-    public const int RotationAlignedAlongDirection = 79;
-    public const int Speed = 80;
-    public const int TurnedAlongDirection = 81;
-    public const int Affected = 82;
-    public const int Applied = 83;
-    public const int ApplierStatusLink = 84;
-    public const int Duration = 85;
-    public const int Freeze = 86;
-    public const int Heal = 87;
-    public const int Metamorph = 88;
-    public const int Period = 89;
-    public const int Poison = 90;
-    public const int SpeedChange = 91;
-    public const int Status = 92;
-    public const int StatusTypeId = 93;
-    public const int TimeLeft = 94;
-    public const int TimeSinceLastTick = 95;
-    public const int Unapplied = 96;
-    public const int CollectingTargetsContinuously = 97;
-    public const int CollectTargetsInterval = 98;
-    public const int CollectTargetsTimer = 99;
-    public const int LayerMask = 100;
-    public const int ProcessedTargets = 101;
-    public const int Reached = 102;
-    public const int ReadyToCollectTargets = 103;
-    public const int TargetBuffer = 104;
-    public const int AxisInput = 105;
-    public const int Input = 106;
+    public const int NapalmBombAbility = 18;
+    public const int OrbitingMushroomAbility = 19;
+    public const int ParentAbility = 20;
+    public const int RecreatedOnUpgrade = 21;
+    public const int SpeedUpAuraAbility = 22;
+    public const int UpgradeRequest = 23;
+    public const int VegetableBoltAbility = 24;
+    public const int Armament = 25;
+    public const int EffectSetups = 26;
+    public const int FollowingProducer = 27;
+    public const int Processed = 28;
+    public const int StatusSetups = 29;
+    public const int TargetLimit = 30;
+    public const int BaseStats = 31;
+    public const int StatChange = 32;
+    public const int StatModifiers = 33;
+    public const int Cooldown = 34;
+    public const int CooldownLeft = 35;
+    public const int CooldownUp = 36;
+    public const int DamageEffect = 37;
+    public const int Effect = 38;
+    public const int EffectValue = 39;
+    public const int HealEffect = 40;
+    public const int ProducerId = 41;
+    public const int TargetId = 42;
+    public const int EnchantHolder = 43;
+    public const int EnchantTypeId = 44;
+    public const int EnchantVisuals = 45;
+    public const int ExplosiveEnchant = 46;
+    public const int HexEnchant = 47;
+    public const int PoisonEnchant = 48;
+    public const int Buffer = 49;
+    public const int Enemy = 50;
+    public const int EnemyAnimator = 51;
+    public const int EnemyTypeId = 52;
+    public const int EnemyTypes = 53;
+    public const int Goblin = 54;
+    public const int Healer = 55;
+    public const int SpawnProgress = 56;
+    public const int SpawnTimer = 57;
+    public const int SessionTimer = 58;
+    public const int Hero = 59;
+    public const int HeroAnimator = 60;
+    public const int ExperienceMeter = 61;
+    public const int LevelUp = 62;
+    public const int CurrentHp = 63;
+    public const int Dead = 64;
+    public const int MaxHp = 65;
+    public const int ProcessingDeath = 66;
+    public const int Collected = 67;
+    public const int Experience = 68;
+    public const int LootTypeId = 69;
+    public const int PickupRadius = 70;
+    public const int Pullable = 71;
+    public const int Pulling = 72;
+    public const int Direction = 73;
+    public const int MovementAvailable = 74;
+    public const int Moving = 75;
+    public const int OrbitCenterFollowTarget = 76;
+    public const int OrbitCenterPosition = 77;
+    public const int OrbitPhase = 78;
+    public const int OrbitRadius = 79;
+    public const int RotationAlignedAlongDirection = 80;
+    public const int Speed = 81;
+    public const int TurnedAlongDirection = 82;
+    public const int Affected = 83;
+    public const int Applied = 84;
+    public const int ApplierStatusLink = 85;
+    public const int Duration = 86;
+    public const int Freeze = 87;
+    public const int Heal = 88;
+    public const int Metamorph = 89;
+    public const int Period = 90;
+    public const int Poison = 91;
+    public const int SpeedChange = 92;
+    public const int Status = 93;
+    public const int StatusTypeId = 94;
+    public const int TimeLeft = 95;
+    public const int TimeSinceLastTick = 96;
+    public const int Unapplied = 97;
+    public const int CollectingTargetsContinuously = 98;
+    public const int CollectTargetsInterval = 99;
+    public const int CollectTargetsTimer = 100;
+    public const int LayerMask = 101;
+    public const int ProcessedTargets = 102;
+    public const int Reached = 103;
+    public const int ReadyToCollectTargets = 104;
+    public const int TargetBuffer = 105;
+    public const int AxisInput = 106;
+    public const int Input = 107;
 
-    public const int TotalComponents = 107;
+    public const int TotalComponents = 108;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -137,6 +138,7 @@ public static class GameComponentsLookup {
         "AbilityId",
         "GarlicAuraAbility",
         "HealAuraAbility",
+        "NapalmBombAbility",
         "OrbitingMushroomAbility",
         "ParentAbility",
         "RecreatedOnUpgrade",
@@ -247,6 +249,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Abilities.AbilityIdComponent),
         typeof(Code.Gameplay.Features.Abilities.GarlicAuraAbility),
         typeof(Code.Gameplay.Features.Abilities.HealAuraAbility),
+        typeof(Code.Gameplay.Features.Abilities.NapalmBombAbility),
         typeof(Code.Gameplay.Features.Abilities.OrbitingMushroomAbility),
         typeof(Code.Gameplay.Features.Abilities.ParentAbility),
         typeof(Code.Gameplay.Features.Abilities.RecreatedOnUpgrade),

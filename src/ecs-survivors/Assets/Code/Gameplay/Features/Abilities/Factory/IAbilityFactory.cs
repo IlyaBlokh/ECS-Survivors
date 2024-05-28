@@ -7,5 +7,6 @@ namespace Code.Gameplay.Features.Abilities.Factory
     GameEntity CreateGarlicAuraAbility();
     GameEntity CreateSpeedUpAuraAbility(int producerId);
     GameEntity CreateHealAuraAbility(int producerId);
+    GameEntity CreateNapalmBombAbility(int level);
   }
 }
