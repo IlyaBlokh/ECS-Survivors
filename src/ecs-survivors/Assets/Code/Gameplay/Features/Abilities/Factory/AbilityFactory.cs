@@ -4,7 +4,6 @@ using Code.Gameplay.Features.Abilities.Configs;
 using Code.Gameplay.Features.Cooldowns;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
-using NotImplementedException = System.NotImplementedException;
 
 namespace Code.Gameplay.Features.Abilities.Factory
 {

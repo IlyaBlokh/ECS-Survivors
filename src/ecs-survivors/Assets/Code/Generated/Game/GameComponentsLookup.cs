@@ -90,34 +90,35 @@ public static class GameComponentsLookup {
     public const int OrbitRadius = 79;
     public const int RotationAlignedAlongDirection = 80;
     public const int Speed = 81;
-    public const int TurnedAlongDirection = 82;
-    public const int Affected = 83;
-    public const int Applied = 84;
-    public const int ApplierStatusLink = 85;
-    public const int Duration = 86;
-    public const int Freeze = 87;
-    public const int Heal = 88;
-    public const int Metamorph = 89;
-    public const int Period = 90;
-    public const int Poison = 91;
-    public const int SpeedChange = 92;
-    public const int Status = 93;
-    public const int StatusTypeId = 94;
-    public const int TimeLeft = 95;
-    public const int TimeSinceLastTick = 96;
-    public const int Unapplied = 97;
-    public const int CollectingTargetsContinuously = 98;
-    public const int CollectTargetsInterval = 99;
-    public const int CollectTargetsTimer = 100;
-    public const int LayerMask = 101;
-    public const int ProcessedTargets = 102;
-    public const int Reached = 103;
-    public const int ReadyToCollectTargets = 104;
-    public const int TargetBuffer = 105;
-    public const int AxisInput = 106;
-    public const int Input = 107;
+    public const int TargetDestination = 82;
+    public const int TurnedAlongDirection = 83;
+    public const int Affected = 84;
+    public const int Applied = 85;
+    public const int ApplierStatusLink = 86;
+    public const int Duration = 87;
+    public const int Freeze = 88;
+    public const int Heal = 89;
+    public const int Metamorph = 90;
+    public const int Period = 91;
+    public const int Poison = 92;
+    public const int SpeedChange = 93;
+    public const int Status = 94;
+    public const int StatusTypeId = 95;
+    public const int TimeLeft = 96;
+    public const int TimeSinceLastTick = 97;
+    public const int Unapplied = 98;
+    public const int CollectingTargetsContinuously = 99;
+    public const int CollectTargetsInterval = 100;
+    public const int CollectTargetsTimer = 101;
+    public const int LayerMask = 102;
+    public const int ProcessedTargets = 103;
+    public const int Reached = 104;
+    public const int ReadyToCollectTargets = 105;
+    public const int TargetBuffer = 106;
+    public const int AxisInput = 107;
+    public const int Input = 108;
 
-    public const int TotalComponents = 108;
+    public const int TotalComponents = 109;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -202,6 +203,7 @@ public static class GameComponentsLookup {
         "OrbitRadius",
         "RotationAlignedAlongDirection",
         "Speed",
+        "TargetDestination",
         "TurnedAlongDirection",
         "Affected",
         "Applied",
@@ -313,6 +315,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Movement.OrbitRadius),
         typeof(Code.Gameplay.Features.Movement.RotationAlignedAlongDirection),
         typeof(Code.Gameplay.Features.Movement.Speed),
+        typeof(Code.Gameplay.Features.Movement.TargetDestination),
         typeof(Code.Gameplay.Features.Movement.TurnedAlongDirection),
         typeof(Code.Gameplay.Features.Statuses.Affected),
         typeof(Code.Gameplay.Features.Statuses.Applied),

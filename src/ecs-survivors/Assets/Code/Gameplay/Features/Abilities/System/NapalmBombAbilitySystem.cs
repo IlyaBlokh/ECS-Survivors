@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using Code.Common.Extensions;
+using Code.Gameplay.Common.Random;
 using Code.Gameplay.Features.Abilities.Upgrade;
 using Code.Gameplay.Features.Armaments.Factory;
 using Code.Gameplay.Features.Cooldowns;
@@ -12,11 +12,14 @@ namespace Code.Gameplay.Features.Abilities.System
 {
   public class NapalmBombAbilitySystem : IExecuteSystem
   {
+    private const float MaxTargetDistance = 10f;
+    
     private readonly IStaticDataService _staticDataService;
     private readonly IArmamentFactory _armamentFactory;
     private readonly IAbilityUpgradeService _abilityUpgradeService;
+    private readonly IRandomService _random;
     private readonly List<GameEntity> _buffer = new(1);
-    
+
     private readonly IGroup<GameEntity> _abilities;
     private readonly IGroup<GameEntity> _heroes;
 
@@ -24,8 +27,10 @@ namespace Code.Gameplay.Features.Abilities.System
       GameContext game,
       IStaticDataService staticDataService,
       IArmamentFactory armamentFactory,
-      IAbilityUpgradeService abilityUpgradeService)
+      IAbilityUpgradeService abilityUpgradeService,
+      IRandomService random)
     {
+      _random = random;
       _abilityUpgradeService = abilityUpgradeService;
       _staticDataService = staticDataService;
       _armamentFactory = armamentFactory;
@@ -47,10 +52,14 @@ namespace Code.Gameplay.Features.Abilities.System
         foreach (GameEntity hero in _heroes)
         {
           int level = _abilityUpgradeService.GetAbilityLevel(AbilityId.NapalmBomb);
+          
+          Vector2 randomDestination = _random.RandomInRadius(MaxTargetDistance);
+          
           _armamentFactory
             .CreateNapalmBomb(level, hero.WorldPosition)
             .AddProducerId(hero.Id)
-            .ReplaceDirection(Vector2.right)
+            .AddTargetDestination(randomDestination)
+            .ReplaceDirection((randomDestination.ToVector3() - hero.WorldPosition).normalized)
             .With(x => x.isMoving = true);
         
           ability
