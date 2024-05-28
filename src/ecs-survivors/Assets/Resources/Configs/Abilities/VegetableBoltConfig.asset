@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: VegetableBoltConfig
   m_EditorClassIdentifier: 
   AbilityId: 1
+  AllowedOwners: 01000000
   Levels:
   - Icon: {fileID: -219949570, guid: d5b38a44d661b59469b9795112af70db, type: 3}
     Description: Adds a dangerous projectile
@@ -20,7 +21,7 @@ MonoBehaviour:
     ViewPrefab: {fileID: 6295621220853740386, guid: 08ce9f5922001044d87f0b92a159a8c4, type: 3}
     EffectSetups:
     - EffectTypeId: 1
-      Value: 1
+      Value: 3
     StatusSetups: []
     ProjectileSetup:
       ProjectileCount: 1

@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using Code.Gameplay.Common.Random;
+using Code.Gameplay.Features.Abilities.Configs;
 using Code.Gameplay.Features.Abilities.Factory;
+using Code.Gameplay.StaticData;
 
 namespace Code.Gameplay.Features.Abilities.Upgrade
 {
@@ -12,14 +14,19 @@ namespace Code.Gameplay.Features.Abilities.Upgrade
     private const int MaxCardsToOffer = 2;
 
     private readonly Dictionary<AbilityId, int> _currentAbilities;
+    private readonly List<AbilityId> _unavailableAbilities;
     private readonly IRandomService _random;
     private readonly IAbilityFactory _abilityFactory;
+    private readonly IStaticDataService _staticDataService;
 
-    public AbilityUpgradeService(IRandomService randomService, IAbilityFactory abilityFactory)
+    public AbilityUpgradeService(IRandomService randomService, IAbilityFactory abilityFactory, IStaticDataService staticDataService)
     {
       _currentAbilities = new Dictionary<AbilityId, int>();
+      _unavailableAbilities = new List<AbilityId>();
       _random = randomService;
       _abilityFactory = abilityFactory;
+      _staticDataService = staticDataService;
+      InitializeUnavailableAbilities(staticDataService);
     }
 
     public int GetAbilityLevel(AbilityId abilityId) => 
@@ -56,6 +63,18 @@ namespace Code.Gameplay.Features.Abilities.Upgrade
         InitializeAbility(ability);
     }
 
+    private void InitializeUnavailableAbilities(IStaticDataService staticDataService)
+    {
+      foreach (AbilityId abilityId in Enum.GetValues(typeof(AbilityId)))
+      {
+        if (abilityId == AbilityId.Unknown)
+          continue;
+        
+        if (!staticDataService.GetAbilityConfig(abilityId).AllowedOwners.Contains(OwnerType.Hero))
+          _unavailableAbilities.Add(abilityId);
+      }
+    }
+    
     public List<AbilityUpgradeOption> GetUpgradeOptions()
     {
       int repeatedAbilitiesToReturnCount = MinRepeatedAbilitiesToOffer + _random.Range(0, Math.Min(_currentAbilities.Count, MaxCardsToOffer));
@@ -86,6 +105,7 @@ namespace Code.Gameplay.Features.Abilities.Upgrade
         .GetValues(typeof(AbilityId))
         .Cast<AbilityId>()
         .Except(_currentAbilities.Keys)
+        .Except(_unavailableAbilities)
         .Except(new[] { AbilityId.Unknown })
         .ToList();
 

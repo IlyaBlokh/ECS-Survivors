@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: OrbitingMushroomConfig
   m_EditorClassIdentifier: 
   AbilityId: 3
+  AllowedOwners: 01000000
   Levels:
   - Icon: {fileID: 21300000, guid: 4d94380f2cdab534b96b00f84934873a, type: 3}
     Description: Adds an orbital mushroom

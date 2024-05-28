@@ -7,6 +7,7 @@ namespace Code.Gameplay.Features.Abilities.Configs
   public class AbilityConfig : ScriptableObject
   {
     public AbilityId AbilityId;
+    public OwnerType[] AllowedOwners;
     public List<AbilityLevel> Levels;
   }
 }

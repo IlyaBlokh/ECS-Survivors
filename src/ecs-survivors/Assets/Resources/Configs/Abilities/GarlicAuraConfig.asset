@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: GarlicAuraConfig
   m_EditorClassIdentifier: 
   AbilityId: 2
+  AllowedOwners: 01000000
   Levels:
   - Icon: {fileID: 21300000, guid: 7c5b1d69d323a2c489af81f57a7a9602, type: 3}
     Description: Adds an odourous aura
