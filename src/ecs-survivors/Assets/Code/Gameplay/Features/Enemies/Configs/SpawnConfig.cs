@@ -7,5 +7,6 @@ namespace Code.Gameplay.Features.Enemies.Configs
   public class SpawnConfig : ScriptableObject
   {
     public List<EnemyTypeSpawnTime> EnemyTypeSpawnTimes;
+    public List<int> EnemyInWaveByHeroLevel;
   }
 }

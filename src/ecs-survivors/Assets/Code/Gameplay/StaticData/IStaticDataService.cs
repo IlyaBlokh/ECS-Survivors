@@ -24,5 +24,6 @@ namespace Code.Gameplay.StaticData
     float ExperienceForLevel(int level);
     EnemyConfig GetEnemyConfig(EnemyTypeId typeId);
     List<EnemyTypeSpawnTime> EnemyTypeSpawnTimes { get; }
+    int EnemyInWaveForLevel(int level);
   }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Code.Gameplay.Features.Enemies.Factory
 {
-  public interface IUnlockEnemyFactory
+  public interface IEnemySpawnProgressFactory
   {
     GameEntity CreateUnlockEnemy();
   }

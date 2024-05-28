@@ -92,6 +92,9 @@ namespace Code.Gameplay.StaticData
     public float ExperienceForLevel(int level) =>
       _levelUp.ExperienceForLevel[level];
 
+    public int EnemyInWaveForLevel(int level) =>
+      _spawn.EnemyInWaveByHeroLevel[level];
+
     private void LoadEnchants()
     {
       _enchantById = Resources

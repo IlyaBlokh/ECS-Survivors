@@ -1,11 +1,9 @@
-using System;
-using System.Collections.Generic;
 using Code.Common.Extensions;
 using Code.Gameplay.Cameras.Provider;
 using Code.Gameplay.Common;
-using Code.Gameplay.Common.Random;
 using Code.Gameplay.Common.Time;
 using Code.Gameplay.Features.Enemies.Factory;
+using Code.Gameplay.Features.Enemies.Services;
 using Entitas;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -17,6 +15,7 @@ namespace Code.Gameplay.Features.Enemies.Systems
     private const float SpawnDistanceGap = 1f;
 
     private readonly IEnemyFactory _enemyFactory;
+    private readonly IWaveCounter _waveCounter;
     private readonly ICameraProvider _cameraProvider;
     private readonly ITimeService _time;
 
@@ -28,8 +27,10 @@ namespace Code.Gameplay.Features.Enemies.Systems
       GameContext game, 
       ITimeService time, 
       IEnemyFactory enemyFactory, 
+      IWaveCounter waveCounter,
       ICameraProvider cameraProvider)
     {
+      _waveCounter = waveCounter;
       _enemyFactory = enemyFactory;
       _cameraProvider = cameraProvider;
       _time = time;
@@ -52,8 +53,8 @@ namespace Code.Gameplay.Features.Enemies.Systems
         timer.ReplaceSpawnTimer(timer.SpawnTimer - _time.DeltaTime);
         if (timer.SpawnTimer <= 0)
         {
-          timer.ReplaceSpawnTimer(GameplayConstants.EnemySpawnTimer);
           _enemyFactory.CreateRandomEnemy(enemyUnlock.EnemyTypes, at: RandomSpawnPosition(hero.WorldPosition));
+          timer.ReplaceSpawnTimer(_waveCounter.TimerAfterEnemySpawn());
         }
       }
     }

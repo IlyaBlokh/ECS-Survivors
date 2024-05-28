@@ -10,6 +10,7 @@ using Code.Gameplay.Features.Armaments.Factory;
 using Code.Gameplay.Features.Effects.Factory;
 using Code.Gameplay.Features.Enchants.UIFactories;
 using Code.Gameplay.Features.Enemies.Factory;
+using Code.Gameplay.Features.Enemies.Services;
 using Code.Gameplay.Features.GameSession.Factory;
 using Code.Gameplay.Features.Hero.Factory;
 using Code.Gameplay.Features.LevelUp.Services;
@@ -67,6 +68,7 @@ namespace Code.Infrastructure.Installers
       Container.Bind<IStatusApplier>().To<StatusApplier>().AsSingle();
       Container.Bind<ILevelUpService>().To<LevelUpService>().AsSingle();
       Container.Bind<IAbilityUpgradeService>().To<AbilityUpgradeService>().AsSingle();
+      Container.Bind<IWaveCounter>().To<WaveCounter>().AsSingle();
     }
 
     private void BindGameplayFactories()
@@ -75,7 +77,7 @@ namespace Code.Infrastructure.Installers
       Container.Bind<ITimerFactory>().To<TimerFactory>().AsSingle();
       Container.Bind<IHeroFactory>().To<HeroFactory>().AsSingle();
       Container.Bind<IEnemyFactory>().To<EnemyFactory>().AsSingle();
-      Container.Bind<IUnlockEnemyFactory>().To<UnlockEnemyFactory>().AsSingle();
+      Container.Bind<IEnemySpawnProgressFactory>().To<EnemySpawnProgressFactory>().AsSingle();
       Container.Bind<IArmamentFactory>().To<ArmamentFactory>().AsSingle();
       Container.Bind<IAbilityFactory>().To<AbilityFactory>().AsSingle();
       Container.Bind<IEffectFactory>().To<EffectFactory>().AsSingle();
