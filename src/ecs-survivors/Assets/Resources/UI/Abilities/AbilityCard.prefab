@@ -204,6 +204,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7599933232651247516}
+  - component: {fileID: 3708507890826135056}
   m_Layer: 5
   m_Name: AbilityCard
   m_TagString: Untagged
@@ -236,6 +237,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 416, y: 448}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &3708507890826135056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5296392938635038729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b01fd935be4ae29447253746718801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AbilityId: 0
+  Icon: {fileID: 5026564783958190945}
+  Description: {fileID: 5229566197411914241}
+  Button: {fileID: 5315171488268379295}
+  Stamp: {fileID: 1363749608522332249}
 --- !u!1 &6919402537536825101
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,6 +639,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ed5d7cc095164c4094d5c1108686996, type: 3}
+--- !u!1 &1363749608522332249 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5107897481113209983, guid: 6ed5d7cc095164c4094d5c1108686996, type: 3}
+  m_PrefabInstance: {fileID: 6057313706554995750}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &5319034219835607386 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2152412518530841980, guid: 6ed5d7cc095164c4094d5c1108686996, type: 3}
