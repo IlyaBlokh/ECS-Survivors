@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Code.Common.Entity;
 using Code.Common.Extensions;
+using Code.Gameplay.Common.Random;
 using Code.Gameplay.Features.Abilities.Factory;
 using Code.Gameplay.Features.CharacterStats;
 using Code.Gameplay.Features.Effects;
@@ -17,15 +18,20 @@ namespace Code.Gameplay.Features.Enemies.Factory
     private readonly IIdentifierService _identifiers;
     private readonly IAbilityFactory _abilityFactory;
     private readonly IStaticDataService _staticDataService;
+    private readonly IRandomService _random;
 
-    public EnemyFactory(IIdentifierService identifiers, IAbilityFactory abilityFactory, IStaticDataService staticDataService)
+    public EnemyFactory(IIdentifierService identifiers, IAbilityFactory abilityFactory, IStaticDataService staticDataService, IRandomService random)
     {
       _identifiers = identifiers;
       _abilityFactory = abilityFactory;
       _staticDataService = staticDataService;
+      _random = random;
     }
-    
-    public GameEntity CreateEnemy(EnemyTypeId typeId, Vector3 at)
+
+    public GameEntity CreateRandomEnemy(List<EnemyTypeId> availableTypes, Vector3 at) => 
+      CreateEnemy(RandomEnemyType(availableTypes), at);
+
+    private GameEntity CreateEnemy(EnemyTypeId typeId, Vector3 at)
     {
       switch (typeId)
       {
@@ -40,6 +46,24 @@ namespace Code.Gameplay.Features.Enemies.Factory
       throw new Exception($"Enemy with type id {typeId} does not exist");
     }
 
+    private EnemyTypeId RandomEnemyType(List<EnemyTypeId> enemyTypes)
+    {
+      if (enemyTypes.Count == 0)
+        throw new Exception($"No enemy types are unlocked!");
+
+      float current = 0f;
+      float probabilityStep = 1f / enemyTypes.Count;
+      float typeRoll = _random.Range(0, 1f);
+      foreach (EnemyTypeId enemyTypeId in enemyTypes)
+      {
+        current += probabilityStep;
+        if (typeRoll <= current)
+          return enemyTypeId;
+      }
+
+      return EnemyTypeId.Unknown;
+    }
+    
     private GameEntity CreateGoblin(Vector2 at)
     {
       Dictionary<Stats, float> baseStats = LoadBaseStats(EnemyTypeId.Goblin);
