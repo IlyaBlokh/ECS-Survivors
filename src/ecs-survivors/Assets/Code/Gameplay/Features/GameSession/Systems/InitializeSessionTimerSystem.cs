@@ -5,7 +5,7 @@ namespace Code.Gameplay.Features.GameSession.Systems
 {
   public class InitializeSessionTimerSystem : IInitializeSystem
   {
-    private ITimerFactory _timerFactory;
+    private readonly ITimerFactory _timerFactory;
 
     public InitializeSessionTimerSystem(ITimerFactory timerFactory)
     {

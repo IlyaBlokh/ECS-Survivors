@@ -75,6 +75,7 @@ namespace Code.Infrastructure.Installers
       Container.Bind<ITimerFactory>().To<TimerFactory>().AsSingle();
       Container.Bind<IHeroFactory>().To<HeroFactory>().AsSingle();
       Container.Bind<IEnemyFactory>().To<EnemyFactory>().AsSingle();
+      Container.Bind<IUnlockEnemyFactory>().To<UnlockEnemyFactory>().AsSingle();
       Container.Bind<IArmamentFactory>().To<ArmamentFactory>().AsSingle();
       Container.Bind<IAbilityFactory>().To<AbilityFactory>().AsSingle();
       Container.Bind<IEffectFactory>().To<EffectFactory>().AsSingle();

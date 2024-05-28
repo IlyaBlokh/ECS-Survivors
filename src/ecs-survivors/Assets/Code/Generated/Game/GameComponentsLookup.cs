@@ -60,61 +60,62 @@ public static class GameComponentsLookup {
     public const int Enemy = 49;
     public const int EnemyAnimator = 50;
     public const int EnemyTypeId = 51;
-    public const int Goblin = 52;
-    public const int Healer = 53;
-    public const int SpawnTimer = 54;
-    public const int SessionTimer = 55;
-    public const int Hero = 56;
-    public const int HeroAnimator = 57;
-    public const int ExperienceMeter = 58;
-    public const int LevelUp = 59;
-    public const int CurrentHp = 60;
-    public const int Dead = 61;
-    public const int MaxHp = 62;
-    public const int ProcessingDeath = 63;
-    public const int Collected = 64;
-    public const int Experience = 65;
-    public const int LootTypeId = 66;
-    public const int PickupRadius = 67;
-    public const int Pullable = 68;
-    public const int Pulling = 69;
-    public const int Direction = 70;
-    public const int MovementAvailable = 71;
-    public const int Moving = 72;
-    public const int OrbitCenterFollowTarget = 73;
-    public const int OrbitCenterPosition = 74;
-    public const int OrbitPhase = 75;
-    public const int OrbitRadius = 76;
-    public const int RotationAlignedAlongDirection = 77;
-    public const int Speed = 78;
-    public const int TurnedAlongDirection = 79;
-    public const int Affected = 80;
-    public const int Applied = 81;
-    public const int ApplierStatusLink = 82;
-    public const int Duration = 83;
-    public const int Freeze = 84;
-    public const int Heal = 85;
-    public const int Metamorph = 86;
-    public const int Period = 87;
-    public const int Poison = 88;
-    public const int SpeedChange = 89;
-    public const int Status = 90;
-    public const int StatusTypeId = 91;
-    public const int TimeLeft = 92;
-    public const int TimeSinceLastTick = 93;
-    public const int Unapplied = 94;
-    public const int CollectingTargetsContinuously = 95;
-    public const int CollectTargetsInterval = 96;
-    public const int CollectTargetsTimer = 97;
-    public const int LayerMask = 98;
-    public const int ProcessedTargets = 99;
-    public const int Reached = 100;
-    public const int ReadyToCollectTargets = 101;
-    public const int TargetBuffer = 102;
-    public const int AxisInput = 103;
-    public const int Input = 104;
+    public const int EnemyTypes = 52;
+    public const int Goblin = 53;
+    public const int Healer = 54;
+    public const int SpawnTimer = 55;
+    public const int SessionTimer = 56;
+    public const int Hero = 57;
+    public const int HeroAnimator = 58;
+    public const int ExperienceMeter = 59;
+    public const int LevelUp = 60;
+    public const int CurrentHp = 61;
+    public const int Dead = 62;
+    public const int MaxHp = 63;
+    public const int ProcessingDeath = 64;
+    public const int Collected = 65;
+    public const int Experience = 66;
+    public const int LootTypeId = 67;
+    public const int PickupRadius = 68;
+    public const int Pullable = 69;
+    public const int Pulling = 70;
+    public const int Direction = 71;
+    public const int MovementAvailable = 72;
+    public const int Moving = 73;
+    public const int OrbitCenterFollowTarget = 74;
+    public const int OrbitCenterPosition = 75;
+    public const int OrbitPhase = 76;
+    public const int OrbitRadius = 77;
+    public const int RotationAlignedAlongDirection = 78;
+    public const int Speed = 79;
+    public const int TurnedAlongDirection = 80;
+    public const int Affected = 81;
+    public const int Applied = 82;
+    public const int ApplierStatusLink = 83;
+    public const int Duration = 84;
+    public const int Freeze = 85;
+    public const int Heal = 86;
+    public const int Metamorph = 87;
+    public const int Period = 88;
+    public const int Poison = 89;
+    public const int SpeedChange = 90;
+    public const int Status = 91;
+    public const int StatusTypeId = 92;
+    public const int TimeLeft = 93;
+    public const int TimeSinceLastTick = 94;
+    public const int Unapplied = 95;
+    public const int CollectingTargetsContinuously = 96;
+    public const int CollectTargetsInterval = 97;
+    public const int CollectTargetsTimer = 98;
+    public const int LayerMask = 99;
+    public const int ProcessedTargets = 100;
+    public const int Reached = 101;
+    public const int ReadyToCollectTargets = 102;
+    public const int TargetBuffer = 103;
+    public const int AxisInput = 104;
+    public const int Input = 105;
 
-    public const int TotalComponents = 105;
+    public const int TotalComponents = 106;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -169,6 +170,7 @@ public static class GameComponentsLookup {
         "Enemy",
         "EnemyAnimator",
         "EnemyTypeId",
+        "EnemyTypes",
         "Goblin",
         "Healer",
         "SpawnTimer",
@@ -277,6 +279,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Enemies.Enemy),
         typeof(Code.Gameplay.Features.Enemies.EnemyAnimatorComponent),
         typeof(Code.Gameplay.Features.Enemies.EnemyTypeIdComponent),
+        typeof(Code.Gameplay.Features.Enemies.EnemyTypes),
         typeof(Code.Gameplay.Features.Enemies.Goblin),
         typeof(Code.Gameplay.Features.Enemies.Healer),
         typeof(Code.Gameplay.Features.Enemies.SpawnTimer),
