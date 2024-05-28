@@ -4,6 +4,8 @@ using System.Linq;
 using Code.Gameplay.Features.Abilities;
 using Code.Gameplay.Features.Abilities.Configs;
 using Code.Gameplay.Features.Enchants;
+using Code.Gameplay.Features.Enemies;
+using Code.Gameplay.Features.Enemies.Configs;
 using Code.Gameplay.Features.LevelUp;
 using Code.Gameplay.Features.Loot;
 using Code.Gameplay.Features.Loot.Configs;
@@ -19,11 +21,13 @@ namespace Code.Gameplay.StaticData
     private Dictionary<EnchantTypeId, EnchantConfig> _enchantById;
     private Dictionary<LootTypeId, LootConfig> _lootById;
     private Dictionary<WindowId, GameObject> _windowPrefabsById;
+    private Dictionary<EnemyTypeId, EnemyConfig> _enemyById;
     private LevelUpConfig _levelUp;
 
     public void LoadAll()
     {
       LoadAbilities();
+      LoadEnemies();
       LoadEnchants();
       LoadLoot();
       LoadLevelUpRules();
@@ -68,6 +72,14 @@ namespace Code.Gameplay.StaticData
 
       throw new Exception($"Loot config for {typeId} was not found");
     }
+    
+    public EnemyConfig GetEnemyConfig(EnemyTypeId typeId)
+    {
+      if (_enemyById.TryGetValue(typeId, out EnemyConfig config))
+        return config;
+
+      throw new Exception($"Enemy config for {typeId} was not found");
+    }
 
     public int MaxLevel() => 
       _levelUp.MaxLevel;
@@ -86,6 +98,13 @@ namespace Code.Gameplay.StaticData
     {
       _lootById = Resources
         .LoadAll<LootConfig>("Configs/Loot")
+        .ToDictionary(x => x.TypeId, x => x);
+    }
+    
+    private void LoadEnemies()
+    {
+      _enemyById = Resources
+        .LoadAll<EnemyConfig>("Configs/Enemies/Types")
         .ToDictionary(x => x.TypeId, x => x);
     }
 

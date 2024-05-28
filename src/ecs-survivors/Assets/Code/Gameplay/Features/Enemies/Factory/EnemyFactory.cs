@@ -5,6 +5,8 @@ using Code.Common.Extensions;
 using Code.Gameplay.Features.Abilities.Factory;
 using Code.Gameplay.Features.CharacterStats;
 using Code.Gameplay.Features.Effects;
+using Code.Gameplay.Features.Enemies.Configs;
+using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
 using UnityEngine;
 
@@ -14,11 +16,13 @@ namespace Code.Gameplay.Features.Enemies.Factory
   {
     private readonly IIdentifierService _identifiers;
     private readonly IAbilityFactory _abilityFactory;
+    private readonly IStaticDataService _staticDataService;
 
-    public EnemyFactory(IIdentifierService identifiers, IAbilityFactory abilityFactory)
+    public EnemyFactory(IIdentifierService identifiers, IAbilityFactory abilityFactory, IStaticDataService staticDataService)
     {
       _identifiers = identifiers;
       _abilityFactory = abilityFactory;
+      _staticDataService = staticDataService;
     }
     
     public GameEntity CreateEnemy(EnemyTypeId typeId, Vector3 at)
@@ -38,10 +42,7 @@ namespace Code.Gameplay.Features.Enemies.Factory
 
     private GameEntity CreateGoblin(Vector2 at)
     {
-      Dictionary<Stats, float> baseStats = InitStats.EmptyStatDictionary()
-        .With(x => x[Stats.Speed] = 1)
-        .With(x => x[Stats.MaxHp] = 5)
-        .With(x => x[Stats.Damage] = 1);
+      Dictionary<Stats, float> baseStats = LoadBaseStats(EnemyTypeId.Goblin);
       
       return
         CreateEnemyBase(at, baseStats)
@@ -52,11 +53,7 @@ namespace Code.Gameplay.Features.Enemies.Factory
 
     private GameEntity CreateBuffer(Vector3 at)
     {
-      Dictionary<Stats, float> baseStats = InitStats.EmptyStatDictionary()
-        .With(x => x[Stats.Speed] = 1f)
-        .With(x => x[Stats.MaxHp] = 3)
-        .With(x => x[Stats.Damage] = 0.5f);
-
+      Dictionary<Stats, float> baseStats = LoadBaseStats(EnemyTypeId.Buffer);
 
       GameEntity bufferEnemy = 
         CreateEnemyBase(at, baseStats)
@@ -66,16 +63,12 @@ namespace Code.Gameplay.Features.Enemies.Factory
       
       _abilityFactory.CreateSpeedUpAuraAbility(bufferEnemy.Id);
       return bufferEnemy;
-    }    
-    
+    }
+
     private GameEntity CreateHealer(Vector3 at)
     {
-      Dictionary<Stats, float> baseStats = InitStats.EmptyStatDictionary()
-        .With(x => x[Stats.Speed] = 1f)
-        .With(x => x[Stats.MaxHp] = 2)
-        .With(x => x[Stats.Damage] = 0.5f);
-
-
+      Dictionary<Stats, float> baseStats = LoadBaseStats(EnemyTypeId.Healer);
+      
       GameEntity healerEnemy = 
         CreateEnemyBase(at, baseStats)
           .AddEnemyTypeId(EnemyTypeId.Healer)
@@ -107,6 +100,15 @@ namespace Code.Gameplay.Features.Enemies.Factory
           .With(x => x.isTurnedAlongDirection = true)
           .With(x => x.isMovementAvailable = true)
         ;
+    }
+
+    private Dictionary<Stats, float> LoadBaseStats(EnemyTypeId typeId)
+    {
+      EnemyConfig config = _staticDataService.GetEnemyConfig(typeId); 
+      return InitStats.EmptyStatDictionary()
+        .With(x => x[Stats.Speed] = config.Speed)
+        .With(x => x[Stats.MaxHp] = config.MaxHp)
+        .With(x => x[Stats.Damage] = config.Damage);
     }
   }
 }
