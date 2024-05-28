@@ -35,8 +35,9 @@ MonoBehaviour:
       Lifetime: 0
       OrbitRadius: 0
     AuraSetup:
-      Radius: 2
+      Radius: 1.5
       Interval: 0.5
+      SelfDestructionTime: 2
   - Icon: {fileID: 21300000, guid: 215eb748d6d66824391ec8c3e1444f3d, type: 3}
     Description: Fire aura
     Cooldown: 5
@@ -57,8 +58,32 @@ MonoBehaviour:
       Lifetime: 0
       OrbitRadius: 0
     AuraSetup:
+      Radius: 2
+      Interval: 0.5
+      SelfDestructionTime: 2.5
+  - Icon: {fileID: 21300000, guid: 215eb748d6d66824391ec8c3e1444f3d, type: 3}
+    Description: Fire aura
+    Cooldown: 5
+    ViewPrefab: {fileID: 2893445765622195075, guid: f66d2045c21af7e4bb0156d5618a9c65, type: 3}
+    EffectSetups:
+    - EffectTypeId: 1
+      Value: 7
+    StatusSetups:
+    - StatusTypeId: 8
+      Value: 5
+      Duration: 15
+      Period: 0.05
+    ProjectileSetup:
+      ProjectileCount: 0
+      Speed: 0
+      Pierce: 0
+      ContactRadius: 0
+      Lifetime: 0
+      OrbitRadius: 0
+    AuraSetup:
       Radius: 2.5
       Interval: 0.5
+      SelfDestructionTime: 3
   - Icon: {fileID: 21300000, guid: 215eb748d6d66824391ec8c3e1444f3d, type: 3}
     Description: Fire aura
     Cooldown: 5
@@ -81,25 +106,4 @@ MonoBehaviour:
     AuraSetup:
       Radius: 3
       Interval: 0.5
-  - Icon: {fileID: 21300000, guid: 215eb748d6d66824391ec8c3e1444f3d, type: 3}
-    Description: Fire aura
-    Cooldown: 5
-    ViewPrefab: {fileID: 2893445765622195075, guid: f66d2045c21af7e4bb0156d5618a9c65, type: 3}
-    EffectSetups:
-    - EffectTypeId: 1
-      Value: 7
-    StatusSetups:
-    - StatusTypeId: 8
-      Value: 5
-      Duration: 15
-      Period: 0.05
-    ProjectileSetup:
-      ProjectileCount: 0
-      Speed: 0
-      Pierce: 0
-      ContactRadius: 0
-      Lifetime: 0
-      OrbitRadius: 0
-    AuraSetup:
-      Radius: 3
-      Interval: 0.5
+      SelfDestructionTime: 4

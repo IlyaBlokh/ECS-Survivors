@@ -110,7 +110,8 @@ namespace Code.Gameplay.Features.Armaments.Factory
 
       return CreateBaseAura(abilityLevel)
         .AddParentAbility(AbilityId.NapalmAura)
-        .ReplaceWorldPosition(at);
+        .ReplaceWorldPosition(at)
+        .AddSelfDestructTimer(abilityLevel.AuraSetup.SelfDestructionTime);
     }
 
     private GameEntity CreateBaseAura(AbilityLevel abilityLevel)

@@ -7,5 +7,6 @@ namespace Code.Gameplay.Features.Abilities.Configs
   {
     public float Radius;
     public float Interval;
+    public float SelfDestructionTime;
   }
 }
