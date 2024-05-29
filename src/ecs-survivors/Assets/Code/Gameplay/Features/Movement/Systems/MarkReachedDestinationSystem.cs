@@ -7,6 +7,8 @@ namespace Code.Gameplay.Features.Movement.Systems
 {
   public class MarkReachedDestinationSystem : IExecuteSystem
   {
+    private const float ReachDistance = 0.1f;
+    
     private readonly IGroup<GameEntity> _entities;
     private readonly List<GameEntity> _buffer = new(16);
 
@@ -23,10 +25,9 @@ namespace Code.Gameplay.Features.Movement.Systems
     {
       foreach (GameEntity entity in _entities.GetEntities(_buffer))
       {
-        if (Vector3.SqrMagnitude(entity.WorldPosition - entity.TargetDestination.ToVector3()) <= 0.1f)
+        if (Vector3.SqrMagnitude(entity.WorldPosition - entity.TargetDestination.ToVector3()) <= ReachDistance)
         {
           entity.isReached = true;
-          Debug.Log($"Reached!");
         }
       }
     }

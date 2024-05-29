@@ -1,13 +1,12 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Common.Time;
-using Code.Gameplay.Windows;
 using Entitas;
 
 namespace Code.Gameplay.Features.LevelUp.Systems
 {
   public class StopTimeOnLevelUpSystem : ReactiveSystem<GameEntity>
   {
-    private ITimeService _time;
+    private readonly ITimeService _time;
 
     public StopTimeOnLevelUpSystem(GameContext game, ITimeService time) : base(game)
     {
