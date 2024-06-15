@@ -9,15 +9,13 @@ namespace Code.Infrastructure.States.GameStates
   public class BattleLoopState : SimpleState
   {
     private readonly ISystemFactory _systems;
-    private readonly GameContext _gameContext;
     private readonly IBattleFeatureProvider _battleFeatureProvider;
     
     private BattleFeature _battleFeature;
 
-    public BattleLoopState(ISystemFactory systems, GameContext gameContext, IBattleFeatureProvider battleFeatureProvider)
+    public BattleLoopState(ISystemFactory systems, IBattleFeatureProvider battleFeatureProvider)
     {
       _systems = systems;
-      _gameContext = gameContext;
       _battleFeatureProvider = battleFeatureProvider;
     }
     
