@@ -8,5 +8,8 @@ namespace Code.Gameplay.Features.Abilities.Factory
     GameEntity CreateSpeedUpAuraAbility(int producerId);
     GameEntity CreateHealAuraAbility(int producerId);
     GameEntity CreateNapalmBombAbility(int level);
+    GameEntity CreateShovelRadialStrikeAbility(int level);
+    GameEntity CreateBouncingBeerAbility(int level);
+    GameEntity CreateScatteringFireballAbility(int level);
   }
 }

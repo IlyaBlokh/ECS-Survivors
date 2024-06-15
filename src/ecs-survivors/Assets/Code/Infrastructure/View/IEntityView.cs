@@ -7,7 +7,7 @@ namespace Code.Infrastructure.View
     GameEntity Entity { get; }
     void SetEntity(GameEntity entity);
     void ReleaseEntity();
-    
+    void ReleaseColliders();
     GameObject gameObject { get; }
   }
 }

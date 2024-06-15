@@ -13,5 +13,6 @@ namespace Code.Gameplay.Features.Abilities.Configs
     public float Lifetime;
     
     public float OrbitRadius;
+    public float AngleSpeed;
   }
 }

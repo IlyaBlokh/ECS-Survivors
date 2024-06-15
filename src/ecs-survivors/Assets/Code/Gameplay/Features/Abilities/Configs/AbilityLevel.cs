@@ -22,5 +22,12 @@ namespace Code.Gameplay.Features.Abilities.Configs
     
     public ProjectileSetup ProjectileSetup;
     public AuraSetup AuraSetup;
+    
+    [Header("Shovel Strike Ability")]
+    public int ProjectileAmount;
+    
+    [Header("Scattering Fireball Ability")]
+    public EntityBehaviour ChildViewPrefab;
+    public ProjectileSetup ChildProjectile;
   }
 }

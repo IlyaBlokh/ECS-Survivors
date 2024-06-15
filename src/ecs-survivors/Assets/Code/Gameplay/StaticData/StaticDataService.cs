@@ -67,6 +67,7 @@ namespace Code.Gameplay.StaticData
 
     public List<ShopItemConfig> GetShopItemConfigs() => 
       _shopItemConfigs;
+    
 
     public AbilityLevel GetAbilityLevel(AbilityId abilityId, int level)
     {
@@ -117,8 +118,7 @@ namespace Code.Gameplay.StaticData
         .LoadAll<EnchantConfig>("Configs/Enchants")
         .ToDictionary(x => x.TypeId, x => x);
     }
-
-
+    
     private void LoadAfkGainConfig()
     {
       _afkGainConfig = Resources.Load<AfkGainConfig>("Configs/AfkGainConfig");
@@ -143,7 +143,7 @@ namespace Code.Gameplay.StaticData
       _spawn = Resources
         .Load<SpawnConfig>("Configs/Enemies/SpawnConfig");
     }
-
+    
     private void LoadAbilities()
     {
       _abilityById = Resources

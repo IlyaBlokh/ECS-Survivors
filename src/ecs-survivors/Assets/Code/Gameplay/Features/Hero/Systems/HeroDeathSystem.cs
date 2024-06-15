@@ -1,4 +1,4 @@
-using Entitas;
+﻿using Entitas;
 
 namespace Code.Gameplay.Features.Hero.Systems
 {
@@ -21,7 +21,7 @@ namespace Code.Gameplay.Features.Hero.Systems
       foreach (GameEntity hero in _heroes)
       {
         hero.isMovementAvailable = false;
-        
+        hero.isTurnedAlongDirection = false;
         hero.HeroAnimator.PlayDied();
       }
     }

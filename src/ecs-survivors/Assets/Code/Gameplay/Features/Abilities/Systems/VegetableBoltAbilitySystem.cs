@@ -7,7 +7,7 @@ using Code.Gameplay.Features.Cooldowns;
 using Code.Gameplay.StaticData;
 using Entitas;
 
-namespace Code.Gameplay.Features.Abilities.System
+namespace Code.Gameplay.Features.Abilities.Systems
 {
   public class VegetableBoltAbilitySystem : IExecuteSystem
   {

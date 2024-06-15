@@ -8,7 +8,7 @@ using Code.Gameplay.StaticData;
 using Entitas;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Abilities.System
+namespace Code.Gameplay.Features.Abilities.Systems
 {
   public class NapalmBombAbilitySystem : IExecuteSystem
   {

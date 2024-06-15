@@ -13,4 +13,6 @@ namespace Code.Gameplay.Features.Enemies
   [Game] public class Goblin : IComponent { }
   [Game] public class Buffer : IComponent { }
   [Game] public class Healer : IComponent { }
+  [Game] public class ScheduledToProcessByArmaments : IComponent { public List<int> Value; }
+  [Game] public class ProcessedByArmaments: IComponent { public List<int> Value; }
 }

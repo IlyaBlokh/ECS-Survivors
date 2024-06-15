@@ -3,7 +3,7 @@ using Code.Gameplay.Features.Abilities.Upgrade;
 using Code.Gameplay.Features.Armaments.Factory;
 using Entitas;
 
-namespace Code.Gameplay.Features.Abilities.System
+namespace Code.Gameplay.Features.Abilities.Systems
 {
   public class GarlicAuraAbilitySystem : IExecuteSystem
   {

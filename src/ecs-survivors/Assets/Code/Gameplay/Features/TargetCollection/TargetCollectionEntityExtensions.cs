@@ -17,5 +17,16 @@
       
       return entity;
     }
+
+    public static GameEntity RemoveProcessedByArmamentsComponents(this GameEntity entity)
+    {
+      if (entity.hasScheduledToProcessByArmaments)
+        entity.RemoveScheduledToProcessByArmaments();
+
+      if (entity.hasProcessedByArmaments)
+        entity.RemoveProcessedByArmaments();
+
+      return entity;
+    }
   }
 }

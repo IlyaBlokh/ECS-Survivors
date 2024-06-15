@@ -13,4 +13,8 @@ namespace Code.Gameplay.Features.Abilities
   [Game] public class SpeedUpAuraAbility : IComponent { }
   [Game] public class HealAuraAbility : IComponent { }
   [Game] public class NapalmBombAbility : IComponent { }
+  [Game] public class ShovelRadialStrikeAbility : IComponent { }
+  [Game] public class BouncingBeerAbility : IComponent { }
+  [Game] public class ScatteringFireballAbility : IComponent { }
+
 }

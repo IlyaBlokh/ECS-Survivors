@@ -113,6 +113,51 @@ namespace Code.Gameplay.Features.Armaments.Factory
         .ReplaceWorldPosition(at)
         .AddSelfDestructTimer(abilityLevel.AuraSetup.SelfDestructionTime);
     }
+    
+    public GameEntity CreateShovelBolt(int level, Vector3 at)
+    {
+      AbilityLevel abilityLevel = _staticDataService.GetAbilityLevel(AbilityId.ShovelRadialStrike, level);
+      ProjectileSetup setup = abilityLevel.ProjectileSetup;
+
+      return CreateProjectileEntity(at, abilityLevel, setup)
+        .AddParentAbility(AbilityId.ShovelRadialStrike)
+        .AddTargetCollecting()
+        .AddAngleSpeed(setup.AngleSpeed)
+        .With(x => x.RotatesAroundCenter = true)
+        .With(x => x.isShovelRadialStrikeAbility = true);
+    }
+    
+    public GameEntity CreateBeerBolt(int level, Vector3 at)
+    {
+      AbilityLevel abilityLevel = _staticDataService.GetAbilityLevel(AbilityId.BouncingBeer, level);
+      ProjectileSetup setup = abilityLevel.ProjectileSetup;
+      
+      return CreateProjectileEntity(at, abilityLevel, setup)
+        .AddParentAbility(AbilityId.BouncingBeer)
+        .AddTargetCollecting()
+        .With(x => x.isBeerBoltArmament = true);
+    }
+    
+    public GameEntity CreateMainFireball(int level, Vector3 at)
+    {
+      AbilityLevel abilityLevel = _staticDataService.GetAbilityLevel(AbilityId.ScatteringFireball, level);
+      ProjectileSetup setup = abilityLevel.ProjectileSetup;
+      
+      return CreateProjectileEntity(at, abilityLevel, setup)
+        .AddParentAbility(AbilityId.ScatteringFireball)
+        .AddTargetCollecting()
+        .With(x => x.isScatteringFireballArmament = true);
+    } 
+    
+    public GameEntity CreateChildFireball(int level, Vector3 at)
+    {
+      AbilityLevel abilityLevel = _staticDataService.GetAbilityLevel(AbilityId.ScatteringFireball, level);
+      ProjectileSetup setup = abilityLevel.ChildProjectile;
+
+      return CreateProjectileEntity(at, abilityLevel, setup)
+        .AddParentAbility(AbilityId.ScatteringFireball)
+        .AddTargetCollecting();
+    }
 
     private GameEntity CreateBaseAura(AbilityLevel abilityLevel)
     {

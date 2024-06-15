@@ -9,6 +9,9 @@
     SpeedUpAura = 4,
     HealAura = 5,
     NapalmBomb = 6,
-    NapalmAura = 7
+    NapalmAura = 7,
+    ShovelRadialStrike = 8,
+    BouncingBeer = 9,
+    ScatteringFireball = 10
   }
 }

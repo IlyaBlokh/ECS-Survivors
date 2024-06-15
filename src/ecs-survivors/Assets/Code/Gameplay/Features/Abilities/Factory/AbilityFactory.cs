@@ -27,7 +27,7 @@ namespace Code.Gameplay.Features.Abilities.Factory
         .AddAbilityId(AbilityId.VegetableBolt)
         .AddCooldown(abilityLevel.Cooldown)
         .With(x => x.isVegetableBoltAbility = true)
-        .PutOnCooldown();
+        .PutOnCooldown(abilityLevel.Cooldown);
     }    
     
     public GameEntity CreateSpeedUpAuraAbility(int producerId)
@@ -71,7 +71,6 @@ namespace Code.Gameplay.Features.Abilities.Factory
         .With(x => x.isOrbitingMushroomAbility = true)
         .With(x => x.isRecreatedOnUpgrade = true)
         .PutOnCooldown();
-        ;
     }
 
     public GameEntity CreateGarlicAuraAbility()
@@ -81,6 +80,42 @@ namespace Code.Gameplay.Features.Abilities.Factory
         .AddAbilityId(AbilityId.GarlicAura)
         .With(x => x.isGarlicAuraAbility = true)
         .With(x => x.isRecreatedOnUpgrade = true);
+    }
+
+    public GameEntity CreateShovelRadialStrikeAbility(int level)
+    {
+      AbilityLevel abilityLevel = _staticDataService.GetAbilityLevel(AbilityId.ShovelRadialStrike, level);
+      
+      return CreateEntity.Empty()
+        .AddId(_identifiers.Next())
+        .AddAbilityId(AbilityId.ShovelRadialStrike)
+        .AddCooldown(abilityLevel.Cooldown)
+        .With(x => x.isShovelRadialStrikeAbility = true)
+        .PutOnCooldown();
+    }    
+    
+    public GameEntity CreateBouncingBeerAbility(int level)
+    {
+      AbilityLevel abilityLevel = _staticDataService.GetAbilityLevel(AbilityId.BouncingBeer, level);
+      
+      return CreateEntity.Empty()
+        .AddId(_identifiers.Next())
+        .AddAbilityId(AbilityId.BouncingBeer)
+        .AddCooldown(abilityLevel.Cooldown)
+        .With(x => x.isBouncingBeerAbility = true)
+        .PutOnCooldown();
+    }    
+    
+    public GameEntity CreateScatteringFireballAbility(int level)
+    {
+      AbilityLevel abilityLevel = _staticDataService.GetAbilityLevel(AbilityId.ScatteringFireball, level);
+      
+      return CreateEntity.Empty()
+        .AddId(_identifiers.Next())
+        .AddAbilityId(AbilityId.ScatteringFireball)
+        .AddCooldown(abilityLevel.Cooldown)
+        .With(x => x.isScatteringFireballAbility = true)
+        .PutOnCooldown();
     }
   }
 }

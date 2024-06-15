@@ -7,12 +7,10 @@ using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Enchants;
 using Code.Gameplay.Features.Enemies;
 using Code.Gameplay.Features.GameOver;
-using Code.Gameplay.Features.GameOver.Systems;
 using Code.Gameplay.Features.GameSession;
 using Code.Gameplay.Features.Hero;
 using Code.Gameplay.Features.LevelUp;
-using Code.Gameplay.Features.Lifetime.Systems;
-using Code.Gameplay.Features.LevelUp;
+using Code.Gameplay.Features.Lifetime;
 using Code.Gameplay.Features.Loot;
 using Code.Gameplay.Features.Movement;
 using Code.Gameplay.Features.Statuses;
@@ -33,7 +31,6 @@ namespace Code.Gameplay
       
       Add(systems.Create<HeroFeature>());
       Add(systems.Create<EnemyFeature>());
-      Add(systems.Create<DeathFeature>());
       
       Add(systems.Create<LootingFeature>());
       
@@ -51,9 +48,16 @@ namespace Code.Gameplay
       Add(systems.Create<EffectFeature>());
       Add(systems.Create<StatusFeature>());
       Add(systems.Create<StatsFeature>());
+
+
+      Add(systems.Create<MovementFeature>());
+      Add(systems.Create<AbilityFeature>());
+      Add(systems.Create<ArmamentFeature>());
+
+      Add(systems.Create<CollectTargetsFeature>());
+      Add(systems.Create<DeathFeature>());
       
       Add(systems.Create<GameOverFeature>());
-      
       Add(systems.Create<ProcessDestructedFeature>());
     }
   }

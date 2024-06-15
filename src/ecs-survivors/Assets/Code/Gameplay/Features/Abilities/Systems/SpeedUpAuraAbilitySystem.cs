@@ -2,22 +2,22 @@
 using Code.Gameplay.Features.Armaments.Factory;
 using Entitas;
 
-namespace Code.Gameplay.Features.Abilities.System
+namespace Code.Gameplay.Features.Abilities.Systems
 {
-  public class HealAuraAbilitySystem : IExecuteSystem
+  public class SpeedUpAuraAbilitySystem : IExecuteSystem
   {
     private readonly IGroup<GameEntity> _abilities;
     private readonly IArmamentFactory _armamentFactory;
     
     private readonly List<GameEntity> _buffer = new(32);
 
-    public HealAuraAbilitySystem(GameContext game, IArmamentFactory armamentFactory)
+    public SpeedUpAuraAbilitySystem(GameContext game, IArmamentFactory armamentFactory)
     {
       _armamentFactory = armamentFactory;
 
       _abilities = game.GetGroup(GameMatcher
         .AllOf(
-          GameMatcher.HealAuraAbility,
+          GameMatcher.SpeedUpAuraAbility,
           GameMatcher.ProducerId)
         .NoneOf(GameMatcher.Active));
     }
@@ -26,7 +26,7 @@ namespace Code.Gameplay.Features.Abilities.System
     {
       foreach (GameEntity ability in _abilities.GetEntities(_buffer))
       {
-        _armamentFactory.CreateHealEffectAura(AbilityId.HealAura, ability.ProducerId, 1);
+        _armamentFactory.CreateSpeedUpEffectAura(AbilityId.SpeedUpAura, ability.ProducerId, 1);
         ability.isActive = true;
       }
     }

@@ -1,12 +1,12 @@
-using Code.Gameplay.Features.TargetCollection;
+﻿using Code.Gameplay.Features.TargetCollection;
 using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Enemies.Systems
 {
   public class EnemyDeathSystem : IExecuteSystem
   {
     private const float DeathAnimationTime = 2;
-    
     private readonly IGroup<GameEntity> _enemies;
 
     public EnemyDeathSystem(GameContext game)
@@ -24,12 +24,15 @@ namespace Code.Gameplay.Features.Enemies.Systems
       {
         enemy.isMovementAvailable = false;
         enemy.isTurnedAlongDirection = false;
-        
         enemy.RemoveTargetCollectionComponents();
+        enemy.RemoveProcessedByArmamentsComponents();
         
-        if(enemy.hasEnemyAnimator)
+        if (enemy.hasView)
+          enemy.View.ReleaseColliders();
+        
+        if (enemy.hasEnemyAnimator)
           enemy.EnemyAnimator.PlayDied();
-
+        
         enemy.ReplaceSelfDestructTimer(DeathAnimationTime);
       }
     }
