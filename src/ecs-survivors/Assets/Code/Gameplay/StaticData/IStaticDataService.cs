@@ -2,6 +2,8 @@
 using Code.Gameplay.Features.Abilities;
 using Code.Gameplay.Features.Abilities.Configs;
 using Code.Gameplay.Features.Enchants;
+using Code.Gameplay.Features.Enemies;
+using Code.Gameplay.Features.Enemies.Configs;
 using Code.Gameplay.Features.Loot;
 using Code.Gameplay.Features.Loot.Configs;
 using Code.Gameplay.Windows;
@@ -18,12 +20,14 @@ namespace Code.Gameplay.StaticData
     AbilityLevel GetAbilityLevel(AbilityId abilityId, int level);
     EnchantConfig GetEnchantConfig(EnchantTypeId typeId);
     LootConfig GetLootConfig(LootTypeId lootTypeId);
-    
     GameObject GetWindowPrefab(WindowId id);
-    int MaxLevel();
-    float ExperienceForLevel(int level);
     AfkGainConfig AfkGain { get; }
     ShopItemConfig GetShopItemConfig(ShopItemId shopItemId);
     List<ShopItemConfig> GetShopItemConfigs();
+    int MaxLevel();
+    float ExperienceForLevel(int level);
+    EnemyConfig GetEnemyConfig(EnemyTypeId typeId);
+    List<EnemyTypeSpawnTime> EnemyTypeSpawnTimes { get; }
+    int EnemyInWaveForLevel(int level);
   }
 }

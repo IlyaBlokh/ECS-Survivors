@@ -28,6 +28,36 @@ namespace Code.Gameplay.Features.Abilities.Factory
         .AddCooldown(abilityLevel.Cooldown)
         .With(x => x.isVegetableBoltAbility = true)
         .PutOnCooldown();
+    }    
+    
+    public GameEntity CreateSpeedUpAuraAbility(int producerId)
+    {
+      return CreateEntity.Empty()
+        .AddId(_identifiers.Next())
+        .AddAbilityId(AbilityId.SpeedUpAura)
+        .AddProducerId(producerId)
+        .With(x => x.isSpeedUpAuraAbility = true);
+    }    
+    
+    public GameEntity CreateHealAuraAbility(int producerId)
+    {
+      return CreateEntity.Empty()
+        .AddId(_identifiers.Next())
+        .AddAbilityId(AbilityId.HealAura)
+        .AddProducerId(producerId)
+        .With(x => x.isHealAuraAbility = true);
+    }
+
+    public GameEntity CreateNapalmBombAbility(int level)
+    {
+      AbilityLevel abilityLevel = _staticDataService.GetAbilityLevel(AbilityId.NapalmBomb, level);
+      
+      return CreateEntity.Empty()
+        .AddId(_identifiers.Next())
+        .AddAbilityId(AbilityId.NapalmBomb)
+        .AddCooldown(abilityLevel.Cooldown)
+        .With(x => x.isNapalmBombAbility = true)
+        .PutOnCooldown();
     }
 
     public GameEntity CreateOrbitingMushroomAbility(int level)
@@ -50,8 +80,7 @@ namespace Code.Gameplay.Features.Abilities.Factory
         .AddId(_identifiers.Next())
         .AddAbilityId(AbilityId.GarlicAura)
         .With(x => x.isGarlicAuraAbility = true)
-        .With(x => x.isRecreatedOnUpgrade = true)
-        ;
+        .With(x => x.isRecreatedOnUpgrade = true);
     }
   }
 }

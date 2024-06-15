@@ -1,5 +1,5 @@
-﻿using Code.Gameplay.Features.Statuses.Systems.StatusVisuals;
-using Code.Gameplay.Features.Enchants.Systems;
+﻿using Code.Gameplay.Features.Enchants.Systems;
+using Code.Gameplay.Features.Statuses.Systems.StatusVisuals;
 using Code.Infrastructure.Systems;
 
 namespace Code.Gameplay.Features.Statuses.Systems
@@ -10,10 +10,12 @@ namespace Code.Gameplay.Features.Statuses.Systems
     {
       Add(systems.Create<ApplyPoisonVisualsSystem>());
       Add(systems.Create<ApplyFreezeVisualsSystem>());
+      Add(systems.Create<ApplyMetamorphVisualsSystem>());
       
       Add(systems.Create<UnapplyPoisonVisualsSystem>());
       Add(systems.Create<UnapplyFreezeVisualsSystem>());
-      
+      Add(systems.Create<UnapplyMetamorphVisualsSystem>());
+
       Add(systems.Create<RemoveUnappliedEnchantsFromHolderSystem>());
     }
   }

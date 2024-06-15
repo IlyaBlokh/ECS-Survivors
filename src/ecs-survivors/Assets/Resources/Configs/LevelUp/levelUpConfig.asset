@@ -10,16 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 35922f6c549349bb83d26e7a1eb75954, type: 3}
-  m_Name: levelUpConfig
+  m_Name: LevelUpConfig
   m_EditorClassIdentifier: 
-  MaxLevel: 7
+  MaxLevel: 10
   ExperienceForLevel:
   - 0
-  - 3
-  - 5
-  - 10
-  - 15
+  - 2
+  - 4
+  - 6
+  - 9
+  - 14
   - 20
-  - 30
-  - 50
-  - 100
+  - 25
+  - 32
+  - 40

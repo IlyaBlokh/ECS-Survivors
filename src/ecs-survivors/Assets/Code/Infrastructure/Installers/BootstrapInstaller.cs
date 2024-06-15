@@ -10,12 +10,14 @@ using Code.Gameplay.Features.Armaments.Factory;
 using Code.Gameplay.Features.Effects.Factory;
 using Code.Gameplay.Features.Enchants.UIFactory;
 using Code.Gameplay.Features.Enemies.Factory;
+using Code.Gameplay.Features.Enemies.Services;
+using Code.Gameplay.Features.GameSession.Factory;
 using Code.Gameplay.Features.Hero.Factory;
-using Code.Gameplay.Features.Statuses.Applier;
-using Code.Gameplay.Features.Statuses.Factory;
 using Code.Gameplay.Features.LevelUp.Services;
 using Code.Gameplay.Features.LevelUp.Windows;
 using Code.Gameplay.Features.Loot.Factory;
+using Code.Gameplay.Features.Statuses.Applier;
+using Code.Gameplay.Features.Statuses.Factory;
 using Code.Gameplay.Input.Service;
 using Code.Gameplay.Levels;
 using Code.Gameplay.Providers;
@@ -32,7 +34,6 @@ using Code.Infrastructure.View.Factory;
 using Code.Meta.UI.GoldHolder.Service;
 using Code.Meta.UI.Shop;
 using Code.Meta.UI.Shop.Service;
-using Code.Meta.UI.Shop.Systems;
 using Code.Meta.UI.Shop.UIFactory;
 using Code.Progress.Provider;
 using Code.Progress.SaveLoad;
@@ -51,12 +52,12 @@ namespace Code.Infrastructure.Installers
       BindAssetManagementServices();
       BindCommonServices();
       BindSystemFactory();
-      BindUIFactories();
+      BindUIServices();
       BindContexts();
       BindGameplayServices();
-      BindUIServices();
       BindCameraProvider();
       BindGameplayFactories();
+      BindUIFactories();
       BindEntityIndices();
       BindStateMachine();
       BindStateFactory();
@@ -115,13 +116,16 @@ namespace Code.Infrastructure.Installers
       Container.Bind<ILevelUpService>().To<LevelUpService>().AsSingle();
       Container.Bind<IAbilityUpgradeService>().To<AbilityUpgradeService>().AsSingle();
       Container.Bind<IBattleFeatureProvider>().To<BattleFeatureProvider>().AsSingle();
+      Container.Bind<IWaveCounter>().To<WaveCounter>().AsSingle();
     }
 
     private void BindGameplayFactories()
     {
       Container.Bind<IEntityViewFactory>().To<EntityViewFactory>().AsSingle();
+      Container.Bind<ITimerFactory>().To<TimerFactory>().AsSingle();
       Container.Bind<IHeroFactory>().To<HeroFactory>().AsSingle();
       Container.Bind<IEnemyFactory>().To<EnemyFactory>().AsSingle();
+      Container.Bind<IEnemySpawnProgressFactory>().To<EnemySpawnProgressFactory>().AsSingle();
       Container.Bind<IArmamentFactory>().To<ArmamentFactory>().AsSingle();
       Container.Bind<IAbilityFactory>().To<AbilityFactory>().AsSingle();
       Container.Bind<IEffectFactory>().To<EffectFactory>().AsSingle();
@@ -168,7 +172,6 @@ namespace Code.Infrastructure.Installers
     private void BindUIServices()
     {
       Container.Bind<IWindowService>().To<WindowService>().AsSingle();
-      
       Container.Bind<IStorageUIService>().To<StorageUIService>().AsSingle();
       Container.Bind<IShopUIService>().To<ShopUIService>().AsSingle();
     }
@@ -180,7 +183,7 @@ namespace Code.Infrastructure.Installers
       Container.Bind<IAbilityUIFactory>().To<AbilityUIFactory>().AsSingle();
       Container.Bind<IShopUIFactory>().To<ShopUIFactory>().AsSingle();
     }
-    
+  
     public void Initialize()
     {
       Promise.UnhandledException += LogPromiseException;

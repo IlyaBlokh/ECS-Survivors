@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Code.Gameplay.Features.LevelUp
 {
-  [CreateAssetMenu(fileName = "levelUpConfig", menuName = "ECS Survivors/Level up Config")]
+  [CreateAssetMenu(menuName = "ECS Survivors/LevelUpConfig", fileName = "LevelUpConfig", order = 0)]
   public class LevelUpConfig : ScriptableObject
   {
     public int MaxLevel;

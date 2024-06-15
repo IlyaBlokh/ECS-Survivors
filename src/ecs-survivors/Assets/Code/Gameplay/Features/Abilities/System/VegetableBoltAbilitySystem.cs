@@ -11,11 +11,10 @@ namespace Code.Gameplay.Features.Abilities.System
 {
   public class VegetableBoltAbilitySystem : IExecuteSystem
   {
-    private readonly List<GameEntity> _buffer = new(4);
-    
     private readonly IArmamentFactory _armamentFactory;
     private readonly IAbilityUpgradeService _abilityUpgradeService;
     private readonly IStaticDataService _staticDataService;
+    private readonly List<GameEntity> _buffer = new(1);
     
     private readonly IGroup<GameEntity> _abilities;
     private readonly IGroup<GameEntity> _heroes;
@@ -23,10 +22,11 @@ namespace Code.Gameplay.Features.Abilities.System
 
     public VegetableBoltAbilitySystem(
       GameContext game,
+      IStaticDataService staticDataService,
       IArmamentFactory armamentFactory,
-      IAbilityUpgradeService abilityUpgradeService,
-      IStaticDataService staticDataService)
+      IAbilityUpgradeService abilityUpgradeService)
     {
+      _abilityUpgradeService = abilityUpgradeService;
       _staticDataService = staticDataService;
       _armamentFactory = armamentFactory;
       _abilityUpgradeService = abilityUpgradeService;
@@ -54,11 +54,10 @@ namespace Code.Gameplay.Features.Abilities.System
       {
         if (_enemies.count <= 0)
           continue;
-        
-        int level = _abilityUpgradeService.GetAbilityLevel(AbilityId.VegetableBolt);
 
+        int level = _abilityUpgradeService.GetAbilityLevel(AbilityId.VegetableBolt);
         _armamentFactory
-          .CreateVegetableBolt(1, hero.WorldPosition)
+          .CreateVegetableBolt(level, hero.WorldPosition)
           .AddProducerId(hero.Id)
           .ReplaceDirection((FirstAvailableTarget().WorldPosition - hero.WorldPosition).normalized)
           .With(x => x.isMoving = true);

@@ -75,5 +75,8 @@ namespace Code.Common.Extensions
       v = tmp;
       return v;
     }
+
+    public static Vector3 ToVector3(this Vector2 v) => 
+      new(v.x, v.y, 0);
   }
 }

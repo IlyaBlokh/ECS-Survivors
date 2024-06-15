@@ -8,7 +8,9 @@ using Code.Gameplay.Features.Enchants;
 using Code.Gameplay.Features.Enemies;
 using Code.Gameplay.Features.GameOver;
 using Code.Gameplay.Features.GameOver.Systems;
+using Code.Gameplay.Features.GameSession;
 using Code.Gameplay.Features.Hero;
+using Code.Gameplay.Features.LevelUp;
 using Code.Gameplay.Features.Lifetime.Systems;
 using Code.Gameplay.Features.LevelUp;
 using Code.Gameplay.Features.Loot;
@@ -26,6 +28,7 @@ namespace Code.Gameplay
     public BattleFeature(ISystemFactory systems)
     {
       Add(systems.Create<InputFeature>());
+      Add(systems.Create<GameSessionFeature>());
       Add(systems.Create<BindViewFeature>());
       
       Add(systems.Create<HeroFeature>());

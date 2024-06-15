@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace Code.Gameplay.Common.Random
 {
   public class UnityRandomService : IRandomService
@@ -7,5 +9,8 @@ namespace Code.Gameplay.Common.Random
 
     public int Range(int inclusiveMin, int exclusiveMax) => 
       UnityEngine.Random.Range(inclusiveMin, exclusiveMax);
+
+    public Vector2 RandomInRadius(float radius) => 
+      UnityEngine.Random.insideUnitCircle * radius;
   }
 }

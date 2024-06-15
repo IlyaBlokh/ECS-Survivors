@@ -17,25 +17,18 @@ namespace Code.Gameplay.Features.Statuses.Factory
 
     public GameEntity CreateStatus(StatusSetup setup, int producerId, int targetId)
     {
-      GameEntity status;
-      switch (setup.StatusTypeId)
+      GameEntity status = setup.StatusTypeId switch
       {
-        case StatusTypeId.Poison:
-          status = CreatePoisonStatus(setup, producerId, targetId);
-          break;
-        case StatusTypeId.Freeze:
-          status = CreateFreezeStatus(setup, producerId, targetId);
-          break;
-        case StatusTypeId.PoisonEnchant:
-          status = CreatePoisonEnchantStatus(setup, producerId, targetId);
-          break;
-        case StatusTypeId.ExplosiveEnchant:
-          status = CreateExplosiveEnchantStatus(setup, producerId, targetId);
-          break;
-        
-        default:
-          throw new Exception($"Status with type id {setup.StatusTypeId} does not exist");
-      }
+        StatusTypeId.Poison => CreatePoisonStatus(setup, producerId, targetId),
+        StatusTypeId.Freeze => CreateFreezeStatus(setup, producerId, targetId),
+        StatusTypeId.SpeedChange => CreateSpeedChangeStatus(setup, producerId, targetId),
+        StatusTypeId.PoisonEnchant => CreatePoisonEnchantStatus(setup, producerId, targetId),
+        StatusTypeId.ExplosiveEnchant => CreateExplosiveEnchantStatus(setup, producerId, targetId),
+        StatusTypeId.HexEnchant => CreateHexEnchantStatus(setup, producerId, targetId),
+        StatusTypeId.Metamorph => CreateMetamorphStatus(setup, producerId, targetId),
+        StatusTypeId.Heal => CreateHealStatus(setup, producerId, targetId),
+        _ => throw new Exception($"Status with type id {setup.StatusTypeId} does not exist")
+      };
 
       status
         .With(x => x.AddDuration(setup.Duration), when: setup.Duration > 0)
@@ -60,6 +53,19 @@ namespace Code.Gameplay.Features.Statuses.Factory
         ;
     }
 
+    private GameEntity CreateHealStatus(StatusSetup setup, int producerId, int targetId)
+    {
+      return CreateEntity.Empty()
+          .AddId(_identifiers.Next())
+          .AddStatusTypeId(StatusTypeId.Heal)
+          .AddEffectValue(setup.Value)
+          .AddProducerId(producerId)
+          .AddTargetId(targetId)
+          .With(x => x.isStatus = true)
+          .With(x => x.isHealing = true)
+        ;
+    }
+
     private GameEntity CreateFreezeStatus(StatusSetup setup, int producerId, int targetId)
     {
       return CreateEntity.Empty()
@@ -70,6 +76,19 @@ namespace Code.Gameplay.Features.Statuses.Factory
         .AddTargetId(targetId)
         .With(x => x.isStatus = true)
         .With(x => x.isFreeze = true)
+        ;
+    }
+
+    private GameEntity CreateSpeedChangeStatus(StatusSetup setup, int producerId, int targetId)
+    {
+      return CreateEntity.Empty()
+          .AddId(_identifiers.Next())
+          .AddStatusTypeId(StatusTypeId.SpeedChange)
+          .AddEffectValue(setup.Value)
+          .AddProducerId(producerId)
+          .AddTargetId(targetId)
+          .With(x => x.isStatus = true)
+          .With(x => x.isSpeedChange = true)
         ;
     }
 
@@ -84,7 +103,7 @@ namespace Code.Gameplay.Features.Statuses.Factory
           .AddTargetId(targetId)
           .With(x => x.isStatus = true)
           .With(x => x.isPoisonEnchant = true)
-        ;      
+        ;
     }
 
     private GameEntity CreateExplosiveEnchantStatus(StatusSetup setup, int producerId, int targetId)
@@ -98,6 +117,32 @@ namespace Code.Gameplay.Features.Statuses.Factory
           .AddTargetId(targetId)
           .With(x => x.isStatus = true)
           .With(x => x.isExplosiveEnchant = true)
+        ;
+    }
+
+    private GameEntity CreateHexEnchantStatus(StatusSetup setup, int producerId, int targetId)
+    {
+      return CreateEntity.Empty()
+          .AddId(_identifiers.Next())
+          .AddStatusTypeId(StatusTypeId.HexEnchant)
+          .AddEnchantTypeId(EnchantTypeId.HexArmaments)
+          .AddEffectValue(setup.Value)
+          .AddProducerId(producerId)
+          .AddTargetId(targetId)
+          .With(x => x.isStatus = true)
+          .With(x => x.isHexEnchant = true)
+        ;
+    }
+
+    private GameEntity CreateMetamorphStatus(StatusSetup setup, int producerId, int targetId)
+    {
+      return CreateEntity.Empty()
+          .AddId(_identifiers.Next())
+          .AddStatusTypeId(StatusTypeId.Metamorph)
+          .AddProducerId(producerId)
+          .AddTargetId(targetId)
+          .With(x => x.isStatus = true)
+          .With(x => x.isMetamorph = true)
         ;
     }
   }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Code.Common.Extensions;
+using UnityEngine;
 
 namespace Code.Gameplay.Common.Visuals.StatusVisuals
 {
@@ -9,8 +10,8 @@ namespace Code.Gameplay.Common.Visuals.StatusVisuals
     private static readonly int OutlineSizeProperty = Shader.PropertyToID("_OutlineSize");
     private static readonly int OutlineColorProperty = Shader.PropertyToID("_OutlineColor");
     private static readonly int OutlineSmoothnessProperty = Shader.PropertyToID("_OutlineSmoothness");
-   
-    public Renderer Renderer;
+
+    public SpriteRenderer Renderer;
     public Animator Animator;
     
     [Header("Freeze")]
@@ -22,6 +23,9 @@ namespace Code.Gameplay.Common.Visuals.StatusVisuals
     public Color PoisonColor = new Color32(56, 163, 190, 255);
     public float PoisonColorIntensity = 0.6f;
     
+    
+    private Sprite _originalSprite;
+
     public void ApplyFreeze()
     {
       Renderer.material.SetColor(OutlineColorProperty, FreezeColor);
@@ -48,6 +52,21 @@ namespace Code.Gameplay.Common.Visuals.StatusVisuals
     {
       Renderer.material.SetColor(ColorProperty, Color.white);
       Renderer.material.SetFloat(ColorIntensityProperty, 0f);
+    }
+
+    public void ApplyMetamorph(Sprite newImage)
+    {
+      Animator.enabled = false;
+      _originalSprite = Renderer.sprite;
+      Renderer.sprite = newImage;
+      Renderer.transform.AddLocalY(-1);
+    }
+
+    public void UnapplyMetamorph()
+    {
+      Animator.enabled = true;
+      Renderer.sprite = _originalSprite;
+      Renderer.transform.AddLocalY(1);
     }
   }
 }

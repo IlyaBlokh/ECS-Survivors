@@ -25,86 +25,100 @@ public static class GameComponentsLookup {
     public const int WorldPosition = 14;
     public const int AbilityId = 15;
     public const int GarlicAuraAbility = 16;
-    public const int OrbitingMushroomAbility = 17;
-    public const int ParentAbility = 18;
-    public const int RecreatedOnUpgrade = 19;
-    public const int UpgradeRequest = 20;
-    public const int VegetableBoltAbility = 21;
-    public const int Armament = 22;
-    public const int EffectSetups = 23;
-    public const int FollowingProducer = 24;
-    public const int Processed = 25;
-    public const int StatusSetups = 26;
-    public const int TargetLimit = 27;
-    public const int BaseStats = 28;
-    public const int StatChange = 29;
-    public const int StatModifiers = 30;
-    public const int Cooldown = 31;
-    public const int CooldownLeft = 32;
-    public const int CooldownUp = 33;
-    public const int DamageEffect = 34;
-    public const int Effect = 35;
-    public const int EffectValue = 36;
-    public const int HealEffect = 37;
-    public const int ProducerId = 38;
-    public const int TargetId = 39;
-    public const int EnchantsHolder = 40;
-    public const int EnchantTypeId = 41;
-    public const int EnchantVisuals = 42;
-    public const int ExplosiveEnchant = 43;
-    public const int PoisonEnchant = 44;
-    public const int Enemy = 45;
-    public const int EnemyAnimator = 46;
-    public const int EnemyTypeId = 47;
-    public const int SpawnTimer = 48;
-    public const int GameOver = 49;
-    public const int Hero = 50;
-    public const int HeroAnimator = 51;
-    public const int ExperienceMeter = 52;
-    public const int LevelUp = 53;
-    public const int CurrentHp = 54;
-    public const int Dead = 55;
-    public const int MaxHp = 56;
-    public const int ProcessingDeath = 57;
-    public const int Collected = 58;
-    public const int Experience = 59;
-    public const int Heal = 60;
-    public const int LootTypeId = 61;
-    public const int PickupRadius = 62;
-    public const int Pullable = 63;
-    public const int Pulling = 64;
-    public const int Direction = 65;
-    public const int MovementAvailable = 66;
-    public const int Moving = 67;
-    public const int OrbitCenterFollowTarget = 68;
-    public const int OrbitCenterPosition = 69;
-    public const int OrbitPhase = 70;
-    public const int OrbitRadius = 71;
-    public const int RotationAlignedAlongDirection = 72;
-    public const int Speed = 73;
-    public const int TurnedAlongDirection = 74;
-    public const int Affected = 75;
-    public const int Applied = 76;
-    public const int ApplierStatusLink = 77;
-    public const int Duration = 78;
-    public const int Freeze = 79;
-    public const int Period = 80;
-    public const int Poison = 81;
-    public const int Status = 82;
-    public const int StatusTypeId = 83;
-    public const int TimeLeft = 84;
-    public const int TimeSinceLastTick = 85;
-    public const int Unapplied = 86;
-    public const int CollectingTargetsContinuously = 87;
-    public const int CollectTargetsInterval = 88;
-    public const int CollectTargetsTimer = 89;
-    public const int LayerMask = 90;
-    public const int ProcessedTargets = 91;
-    public const int Reached = 92;
-    public const int ReadyToCollectTargets = 93;
-    public const int TargetBuffer = 94;
+    public const int HealAuraAbility = 17;
+    public const int NapalmBombAbility = 18;
+    public const int OrbitingMushroomAbility = 19;
+    public const int ParentAbility = 20;
+    public const int RecreatedOnUpgrade = 21;
+    public const int SpeedUpAuraAbility = 22;
+    public const int UpgradeRequest = 23;
+    public const int VegetableBoltAbility = 24;
+    public const int Armament = 25;
+    public const int EffectSetups = 26;
+    public const int FollowingProducer = 27;
+    public const int Processed = 28;
+    public const int StatusSetups = 29;
+    public const int TargetLimit = 30;
+    public const int BaseStats = 31;
+    public const int StatChange = 32;
+    public const int StatModifiers = 33;
+    public const int Cooldown = 34;
+    public const int CooldownLeft = 35;
+    public const int CooldownUp = 36;
+    public const int DamageEffect = 37;
+    public const int Effect = 38;
+    public const int EffectValue = 39;
+    public const int HealEffect = 40;
+    public const int ProducerId = 41;
+    public const int TargetId = 42;
+    public const int EnchantsHolder = 43;
+    public const int EnchantTypeId = 44;
+    public const int EnchantVisuals = 45;
+    public const int ExplosiveEnchant = 46;
+    public const int HexEnchant = 47;
+    public const int PoisonEnchant = 48;
+    public const int Buffer = 49;
+    public const int Enemy = 50;
+    public const int EnemyAnimator = 51;
+    public const int EnemyTypeId = 52;
+    public const int EnemyTypes = 53;
+    public const int Goblin = 54;
+    public const int Healer = 55;
+    public const int SpawnProgress = 56;
+    public const int SpawnTimer = 57;
+    public const int GameOver = 58;
+    public const int SessionTimer = 59;
+    public const int Hero = 60;
+    public const int HeroAnimator = 61;
+    public const int ExperienceMeter = 62;
+    public const int LevelUp = 63;
+    public const int CurrentHp = 64;
+    public const int Dead = 65;
+    public const int MaxHp = 66;
+    public const int ProcessingDeath = 67;
+    public const int Collected = 68;
+    public const int Experience = 69;
+    public const int Heal = 70;
+    public const int LootTypeId = 71;
+    public const int PickupRadius = 72;
+    public const int Pullable = 73;
+    public const int Pulling = 74;
+    public const int Direction = 75;
+    public const int MovementAvailable = 76;
+    public const int Moving = 77;
+    public const int OrbitCenterFollowTarget = 78;
+    public const int OrbitCenterPosition = 79;
+    public const int OrbitPhase = 80;
+    public const int OrbitRadius = 81;
+    public const int RotationAlignedAlongDirection = 82;
+    public const int Speed = 83;
+    public const int TargetDestination = 84;
+    public const int TurnedAlongDirection = 85;
+    public const int Affected = 86;
+    public const int Applied = 87;
+    public const int ApplierStatusLink = 88;
+    public const int Duration = 89;
+    public const int Freeze = 90;
+    public const int Healing = 91;
+    public const int Metamorph = 92;
+    public const int Period = 93;
+    public const int Poison = 94;
+    public const int SpeedChange = 95;
+    public const int Status = 96;
+    public const int StatusTypeId = 97;
+    public const int TimeLeft = 98;
+    public const int TimeSinceLastTick = 99;
+    public const int Unapplied = 100;
+    public const int CollectingTargetsContinuously = 101;
+    public const int CollectTargetsInterval = 102;
+    public const int CollectTargetsTimer = 103;
+    public const int LayerMask = 104;
+    public const int ProcessedTargets = 105;
+    public const int Reached = 106;
+    public const int ReadyToCollectTargets = 107;
+    public const int TargetBuffer = 108;
 
-    public const int TotalComponents = 95;
+    public const int TotalComponents = 109;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -124,9 +138,12 @@ public static class GameComponentsLookup {
         "WorldPosition",
         "AbilityId",
         "GarlicAuraAbility",
+        "HealAuraAbility",
+        "NapalmBombAbility",
         "OrbitingMushroomAbility",
         "ParentAbility",
         "RecreatedOnUpgrade",
+        "SpeedUpAuraAbility",
         "UpgradeRequest",
         "VegetableBoltAbility",
         "Armament",
@@ -151,12 +168,19 @@ public static class GameComponentsLookup {
         "EnchantTypeId",
         "EnchantVisuals",
         "ExplosiveEnchant",
+        "HexEnchant",
         "PoisonEnchant",
+        "Buffer",
         "Enemy",
         "EnemyAnimator",
         "EnemyTypeId",
+        "EnemyTypes",
+        "Goblin",
+        "Healer",
+        "SpawnProgress",
         "SpawnTimer",
         "GameOver",
+        "SessionTimer",
         "Hero",
         "HeroAnimator",
         "ExperienceMeter",
@@ -181,14 +205,18 @@ public static class GameComponentsLookup {
         "OrbitRadius",
         "RotationAlignedAlongDirection",
         "Speed",
+        "TargetDestination",
         "TurnedAlongDirection",
         "Affected",
         "Applied",
         "ApplierStatusLink",
         "Duration",
         "Freeze",
+        "Healing",
+        "Metamorph",
         "Period",
         "Poison",
+        "SpeedChange",
         "Status",
         "StatusTypeId",
         "TimeLeft",
@@ -222,9 +250,12 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.WorldPosition),
         typeof(Code.Gameplay.Features.Abilities.AbilityIdComponent),
         typeof(Code.Gameplay.Features.Abilities.GarlicAuraAbility),
+        typeof(Code.Gameplay.Features.Abilities.HealAuraAbility),
+        typeof(Code.Gameplay.Features.Abilities.NapalmBombAbility),
         typeof(Code.Gameplay.Features.Abilities.OrbitingMushroomAbility),
         typeof(Code.Gameplay.Features.Abilities.ParentAbility),
         typeof(Code.Gameplay.Features.Abilities.RecreatedOnUpgrade),
+        typeof(Code.Gameplay.Features.Abilities.SpeedUpAuraAbility),
         typeof(Code.Gameplay.Features.Abilities.UpgradeRequest),
         typeof(Code.Gameplay.Features.Abilities.VegetableBoltAbility),
         typeof(Code.Gameplay.Features.Armaments.Armament),
@@ -245,16 +276,23 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Effects.HealEffect),
         typeof(Code.Gameplay.Features.Effects.ProducerId),
         typeof(Code.Gameplay.Features.Effects.TargetId),
-        typeof(Code.Gameplay.Features.Enchants.EnchantsHolderComponent),
-        typeof(Code.Gameplay.Features.Enchants.EnchantTypeIdComponent),
-        typeof(Code.Gameplay.Features.Enchants.EnchantVisualsComponent),
-        typeof(Code.Gameplay.Features.Enchants.ExplosiveEnchant),
-        typeof(Code.Gameplay.Features.Enchants.PoisonEnchant),
+        typeof(Code.Gameplay.Features.Enchants.EnchantComponents.EnchantsHolderComponent),
+        typeof(Code.Gameplay.Features.Enchants.EnchantComponents.EnchantTypeIdComponent),
+        typeof(Code.Gameplay.Features.Enchants.EnchantComponents.EnchantVisualsComponent),
+        typeof(Code.Gameplay.Features.Enchants.EnchantComponents.ExplosiveEnchant),
+        typeof(Code.Gameplay.Features.Enchants.EnchantComponents.HexEnchant),
+        typeof(Code.Gameplay.Features.Enchants.EnchantComponents.PoisonEnchant),
+        typeof(Code.Gameplay.Features.Enemies.Buffer),
         typeof(Code.Gameplay.Features.Enemies.Enemy),
         typeof(Code.Gameplay.Features.Enemies.EnemyAnimatorComponent),
         typeof(Code.Gameplay.Features.Enemies.EnemyTypeIdComponent),
+        typeof(Code.Gameplay.Features.Enemies.EnemyTypes),
+        typeof(Code.Gameplay.Features.Enemies.Goblin),
+        typeof(Code.Gameplay.Features.Enemies.Healer),
+        typeof(Code.Gameplay.Features.Enemies.SpawnProgress),
         typeof(Code.Gameplay.Features.Enemies.SpawnTimer),
         typeof(Code.Gameplay.Features.GameOver.GameOverComponent),
+        typeof(Code.Gameplay.Features.GameSession.SessionTimer),
         typeof(Code.Gameplay.Features.Hero.Hero),
         typeof(Code.Gameplay.Features.Hero.HeroAnimatorComponent),
         typeof(Code.Gameplay.Features.LevelUp.ExperienceMeterComponent),
@@ -279,14 +317,18 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Movement.OrbitRadius),
         typeof(Code.Gameplay.Features.Movement.RotationAlignedAlongDirection),
         typeof(Code.Gameplay.Features.Movement.Speed),
+        typeof(Code.Gameplay.Features.Movement.TargetDestination),
         typeof(Code.Gameplay.Features.Movement.TurnedAlongDirection),
         typeof(Code.Gameplay.Features.Statuses.Affected),
         typeof(Code.Gameplay.Features.Statuses.Applied),
         typeof(Code.Gameplay.Features.Statuses.ApplierStatusLink),
         typeof(Code.Gameplay.Features.Statuses.Duration),
         typeof(Code.Gameplay.Features.Statuses.Freeze),
+        typeof(Code.Gameplay.Features.Statuses.Healing),
+        typeof(Code.Gameplay.Features.Statuses.Metamorph),
         typeof(Code.Gameplay.Features.Statuses.Period),
         typeof(Code.Gameplay.Features.Statuses.Poison),
+        typeof(Code.Gameplay.Features.Statuses.SpeedChange),
         typeof(Code.Gameplay.Features.Statuses.Status),
         typeof(Code.Gameplay.Features.Statuses.StatusTypeIdComponent),
         typeof(Code.Gameplay.Features.Statuses.TimeLeft),

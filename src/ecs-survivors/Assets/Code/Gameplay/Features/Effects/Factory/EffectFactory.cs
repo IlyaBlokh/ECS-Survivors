@@ -21,7 +21,7 @@ namespace Code.Gameplay.Features.Effects.Factory
         case EffectTypeId.Unknown:
           break;
         case EffectTypeId.Damage:
-          return CreateDamage(producerId, targetId, setup.Value);
+          return CreateDamage(producerId, targetId, setup.Value);        
         case EffectTypeId.Heal:
           return CreateHeal(producerId, targetId, setup.Value);
       }

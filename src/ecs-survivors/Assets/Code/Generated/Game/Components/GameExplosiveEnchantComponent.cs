@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Enchants.ExplosiveEnchant explosiveEnchantComponent = new Code.Gameplay.Features.Enchants.ExplosiveEnchant();
+    static readonly Code.Gameplay.Features.Enchants.EnchantComponents.ExplosiveEnchant explosiveEnchantComponent = new Code.Gameplay.Features.Enchants.EnchantComponents.ExplosiveEnchant();
 
     public bool isExplosiveEnchant {
         get { return HasComponent(GameComponentsLookup.ExplosiveEnchant); }

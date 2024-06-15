@@ -1,50 +1,63 @@
 using Code.Common.Extensions;
 using Code.Gameplay.Cameras.Provider;
-using Code.Gameplay.Common;
 using Code.Gameplay.Common.Time;
 using Code.Gameplay.Features.Enemies.Factory;
+using Code.Gameplay.Features.Enemies.Services;
 using Entitas;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Code.Gameplay.Features.Enemies.Systems
 {
   public class EnemySpawnSystem : IExecuteSystem
   {
-    private const float SpawnDistanceGap = 0.5f;
+    private const float SpawnDistanceGap = 1f;
 
-    private readonly ITimeService _time;
     private readonly IEnemyFactory _enemyFactory;
+    private readonly IWaveCounter _waveCounter;
     private readonly ICameraProvider _cameraProvider;
+    private readonly ITimeService _time;
+
     private readonly IGroup<GameEntity> _timers;
     private readonly IGroup<GameEntity> _heroes;
+    private readonly IGroup<GameEntity> _enemyUnlocks;
 
-    public EnemySpawnSystem(GameContext game, ITimeService time, IEnemyFactory enemyFactory, ICameraProvider cameraProvider)
+    public EnemySpawnSystem(
+      GameContext game, 
+      ITimeService time, 
+      IEnemyFactory enemyFactory, 
+      IWaveCounter waveCounter,
+      ICameraProvider cameraProvider)
     {
-      _time = time;
+      _waveCounter = waveCounter;
       _enemyFactory = enemyFactory;
       _cameraProvider = cameraProvider;
+      _time = time;
 
       _timers = game.GetGroup(GameMatcher.SpawnTimer);
       _heroes = game.GetGroup(GameMatcher
         .AllOf(
           GameMatcher.Hero,
           GameMatcher.WorldPosition));
+      
+      _enemyUnlocks = game.GetGroup(GameMatcher.EnemyTypes);
     }
 
     public void Execute()
     {
       foreach (GameEntity hero in _heroes)
-      foreach (GameEntity timer in _timers)
+      foreach (GameEntity timer in _timers) 
+      foreach (GameEntity enemyUnlock in _enemyUnlocks)
       {
         timer.ReplaceSpawnTimer(timer.SpawnTimer - _time.DeltaTime);
         if (timer.SpawnTimer <= 0)
         {
-          timer.ReplaceSpawnTimer(GameplayConstants.EnemySpawnTimer);
-          _enemyFactory.CreateEnemy(EnemyTypeId.Goblin, at: RandomSpawnPosition(hero.WorldPosition));
+          _enemyFactory.CreateRandomEnemy(enemyUnlock.EnemyTypes, at: RandomSpawnPosition(hero.WorldPosition));
+          timer.ReplaceSpawnTimer(_waveCounter.TimerAfterEnemySpawn());
         }
       }
     }
-
+    
     private Vector2 RandomSpawnPosition(Vector2 heroWorldPosition)
     {
       bool startWithHorizontal = Random.Range(0, 2) == 0;
