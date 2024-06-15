@@ -6,6 +6,7 @@ using Code.Gameplay.Features.EffectApplication;
 using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Enchants;
 using Code.Gameplay.Features.Enemies;
+using Code.Gameplay.Features.GameOver;
 using Code.Gameplay.Features.Hero;
 using Code.Gameplay.Features.Lifetime.Systems;
 using Code.Gameplay.Features.LevelUp;
@@ -46,6 +47,8 @@ namespace Code.Gameplay
       Add(systems.Create<EffectFeature>());
       Add(systems.Create<StatusFeature>());
       Add(systems.Create<StatsFeature>());
+      
+      Add(systems.Create<GameOverOnHeroDeathSystem>());
       
       Add(systems.Create<ProcessDestructedFeature>());
     }
