@@ -1,28 +1,19 @@
-﻿using RSG;
+﻿using Cysharp.Threading.Tasks;
 
 namespace Code.Infrastructure.States.StateInfrastructure
 {
   public class SimpleState : IState, IUpdateable
   {
-    public virtual void Enter()
-    {
-      
-    }
+    public virtual void Enter() { }
 
-    public virtual void Update()
-    {
-      
-    }
+    public virtual void Update() { }
 
-    protected virtual void Exit()
-    {
-      
-    }
+    protected virtual void Exit() { }
 
-    IPromise IExitableState.BeginExit()
+    async UniTask IExitableState.BeginExit()
     {
       Exit();
-      return Promise.Resolved();
+      await UniTask.CompletedTask;
     }
 
     void IExitableState.EndExit() { }

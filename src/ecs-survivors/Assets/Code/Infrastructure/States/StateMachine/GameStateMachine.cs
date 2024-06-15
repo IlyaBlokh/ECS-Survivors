@@ -1,6 +1,6 @@
 ﻿using Code.Infrastructure.States.Factory;
 using Code.Infrastructure.States.StateInfrastructure;
-using RSG;
+using Cysharp.Threading.Tasks;
 using Zenject;
 
 namespace Code.Infrastructure.States.StateMachine
@@ -20,54 +20,50 @@ namespace Code.Infrastructure.States.StateMachine
       if(_activeState is IUpdateable updateableState)
         updateableState.Update();
     }
-    
+
     public void Enter<TState>() where TState : class, IState =>
-      RequestEnter<TState>()
-        .Done();
+      RequestEnter<TState>();
 
     public void Enter<TState, TPayload>(TPayload payload) where TState : class, IPayloadState<TPayload> =>
-      RequestEnter<TState, TPayload>(payload)
-        .Done();
+      RequestEnter<TState, TPayload>(payload);
 
-    private IPromise<TState> RequestEnter<TState>() where TState : class, IState =>
-      RequestChangeState<TState>()
-        .Then(EnterState);
-
-    private IPromise<TState> RequestEnter<TState, TPayload>(TPayload payload) where TState : class, IPayloadState<TPayload> =>
-      RequestChangeState<TState>()
-        .Then(state => EnterPayloadState(state, payload));
-
-    private TState EnterPayloadState<TState, TPayload>(TState state, TPayload payload) where TState : class, IPayloadState<TPayload>
+    private async void RequestEnter<TState>() where TState : class, IState
     {
-      _activeState = state;
-      state.Enter(payload);
-      return state;
+      TState state = await RequestChangeState<TState>();
+      EnterState(state);
     }
 
-    private TState EnterState<TState>(TState state) where TState : class, IState
+    private async void RequestEnter<TState, TPayload>(TPayload payload) where TState : class, IPayloadState<TPayload>
+    {
+      TState state = await RequestChangeState<TState>();
+      EnterPayloadState(state, payload);
+    }
+
+    private void EnterState<TState>(TState state) where TState : class, IState
     {
       _activeState = state;
       state.Enter();
-      return state;
     }
 
-    private IPromise<TState> RequestChangeState<TState>() where TState : class, IExitableState
+    private void EnterPayloadState<TState, TPayload>(TState state, TPayload payload) where TState : class, IPayloadState<TPayload>
+    {
+      _activeState = state;
+      state.Enter(payload);
+    }
+
+    private async UniTask<TState> RequestChangeState<TState>() where TState : class, IExitableState
     {
       if (_activeState != null)
       {
-        return _activeState
-          .BeginExit()
-          .Then(_activeState.EndExit)
-          .Then(GetState<TState>);
+        await _activeState.BeginExit();
+        _activeState.EndExit();
+        return GetState<TState>();
       }
 
       return GetState<TState>();
     }
     
-    private IPromise<TState> GetState<TState>() where TState : class, IExitableState
-    {
-      TState state = _stateFactory.GetState<TState>();
-      return Promise<TState>.Resolved(state);
-    }
+    private TState GetState<TState>() where TState : class, IExitableState => 
+      _stateFactory.GetState<TState>();
   }
 }

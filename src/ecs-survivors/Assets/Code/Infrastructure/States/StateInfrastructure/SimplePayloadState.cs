@@ -1,23 +1,17 @@
-﻿using RSG;
+﻿using Cysharp.Threading.Tasks;
 
 namespace Code.Infrastructure.States.StateInfrastructure
 {
   public class SimplePayloadState<TPayload> : IPayloadState<TPayload>
   {
-    public virtual void Enter(TPayload payload)
-    {
-      
-    }
+    public virtual void Enter(TPayload payload) { }
 
-    protected virtual void Exit()
-    {
-      
-    }
+    protected virtual void Exit() { }
 
-    IPromise IExitableState.BeginExit()
+    async UniTask IExitableState.BeginExit()
     {
       Exit();
-      return Promise.Resolved();
+      await UniTask.CompletedTask;
     }
 
     void IExitableState.EndExit() { }
