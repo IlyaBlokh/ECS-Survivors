@@ -3,7 +3,7 @@ using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.StateMachine;
 using Entitas;
 
-namespace Code.Gameplay.Features.GameOver
+namespace Code.Gameplay.Features.GameOver.Systems
 {
   public class GameOverOnHeroDeathSystem : ReactiveSystem<GameEntity>
   {

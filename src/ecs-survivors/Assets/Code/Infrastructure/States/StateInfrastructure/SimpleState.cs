@@ -2,9 +2,14 @@
 
 namespace Code.Infrastructure.States.StateInfrastructure
 {
-  public class SimpleState : IState
+  public class SimpleState : IState, IUpdateable
   {
     public virtual void Enter()
+    {
+      
+    }
+
+    public virtual void Update()
     {
       
     }

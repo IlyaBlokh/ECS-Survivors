@@ -1,49 +1,43 @@
+using Code.Common.Entity;
 using Code.Gameplay;
+using Code.Gameplay.Providers;
 using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructure.Systems;
 
 namespace Code.Infrastructure.States.GameStates
 {
-  public class BattleLoopState : EndOfFrameExitState
+  public class BattleLoopState : SimpleState
   {
     private readonly ISystemFactory _systems;
-    private BattleFeature _battleFeature;
     private readonly GameContext _gameContext;
+    private readonly IBattleFeatureProvider _battleFeatureProvider;
+    
+    private BattleFeature _battleFeature;
 
-    public BattleLoopState(ISystemFactory systems, GameContext gameContext)
+    public BattleLoopState(ISystemFactory systems, GameContext gameContext, IBattleFeatureProvider battleFeatureProvider)
     {
       _systems = systems;
       _gameContext = gameContext;
+      _battleFeatureProvider = battleFeatureProvider;
     }
     
     public override void Enter()
     {
       _battleFeature = _systems.Create<BattleFeature>();
       _battleFeature.Initialize();
+      _battleFeatureProvider.BattleFeature = _battleFeature;
     }
-
-    protected override void OnUpdate()
+    
+    public override void Update()
     {
       _battleFeature.Execute();
       _battleFeature.Cleanup();
     }
 
-    protected override void ExitOnEndOfFrame()
+    protected override void Exit()
     {
-      _battleFeature.DeactivateReactiveSystems();
-      _battleFeature.ClearReactiveSystems();
-
-      DestructEntities();
-      
-      _battleFeature.Cleanup();
-      _battleFeature.TearDown();
-      _battleFeature = null;
-    }
-
-    private void DestructEntities()
-    {
-      foreach (GameEntity entity in _gameContext.GetEntities()) 
-        entity.isDestructed = true;
+      CreateEntity.Empty()
+        .isGameOver = true;
     }
   }
 }

@@ -18,6 +18,7 @@ using Code.Gameplay.Features.LevelUp.Windows;
 using Code.Gameplay.Features.Loot.Factory;
 using Code.Gameplay.Input.Service;
 using Code.Gameplay.Levels;
+using Code.Gameplay.Providers;
 using Code.Gameplay.StaticData;
 using Code.Gameplay.Windows;
 using Code.Infrastructure.AssetManagement;
@@ -113,6 +114,7 @@ namespace Code.Infrastructure.Installers
       Container.Bind<IStatusApplier>().To<StatusApplier>().AsSingle();
       Container.Bind<ILevelUpService>().To<LevelUpService>().AsSingle();
       Container.Bind<IAbilityUpgradeService>().To<AbilityUpgradeService>().AsSingle();
+      Container.Bind<IBattleFeatureProvider>().To<BattleFeatureProvider>().AsSingle();
     }
 
     private void BindGameplayFactories()
