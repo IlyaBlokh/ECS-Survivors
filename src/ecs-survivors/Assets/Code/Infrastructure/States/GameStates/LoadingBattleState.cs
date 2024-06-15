@@ -4,7 +4,7 @@ using Code.Infrastructure.States.StateMachine;
 
 namespace Code.Infrastructure.States.GameStates
 {
-  public class LoadingBattleState : IPayloadState<string>
+  public class LoadingBattleState : SimplePayloadState<string>
   {
     private readonly IGameStateMachine _stateMachine;
     private readonly ISceneLoader _sceneLoader;
@@ -15,7 +15,7 @@ namespace Code.Infrastructure.States.GameStates
       _sceneLoader = sceneLoader;
     }
     
-    public void Enter(string sceneName)
+    public override void Enter(string sceneName)
     {
       _sceneLoader.LoadScene(sceneName, EnterBattleLoopState);
     }
@@ -23,11 +23,6 @@ namespace Code.Infrastructure.States.GameStates
     private void EnterBattleLoopState()
     {
       _stateMachine.Enter<BattleEnterState>();
-    }
-
-    public void Exit()
-    {
-      
     }
   }
 }

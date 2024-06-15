@@ -8,7 +8,7 @@ using Code.Infrastructure.Systems;
 
 namespace Code.Infrastructure.States.GameStates
 {
-  public class BattleEnterState : IState
+  public class BattleEnterState : SimpleState
   {
     private readonly IGameStateMachine _stateMachine;
     private readonly ILevelDataProvider _levelDataProvider;
@@ -27,7 +27,7 @@ namespace Code.Infrastructure.States.GameStates
       _heroFactory = heroFactory;
     }
     
-    public void Enter()
+    public override void Enter()
     {
       PlaceHero();  
       
@@ -37,11 +37,6 @@ namespace Code.Infrastructure.States.GameStates
     private void PlaceHero()
     {
       _heroFactory.CreateHero(_levelDataProvider.StartPoint);
-    }
-
-    public void Exit()
-    {
-      
     }
   }
 }

@@ -7,7 +7,7 @@ using Code.Progress.SaveLoad;
 
 namespace Code.Infrastructure.States.GameStates
 {
-  public class LoadProgressState : IState
+  public class LoadProgressState : SimpleState
   {
     private readonly IGameStateMachine _stateMachine;
     private readonly IStaticDataService _staticDataService;
@@ -23,7 +23,7 @@ namespace Code.Infrastructure.States.GameStates
       _staticDataService = staticDataService;
     }
 
-    public void Enter()
+    public override void Enter()
     {
       InitializeProgress();
 
@@ -46,10 +46,6 @@ namespace Code.Infrastructure.States.GameStates
         .With(x => x.isStorage = true)
         .AddGold(0)
         .AddGoldPerSecond(_staticDataService.AfkGain.GoldPerSecond);
-    }
-
-    public void Exit()
-    {
     }
   }
 }

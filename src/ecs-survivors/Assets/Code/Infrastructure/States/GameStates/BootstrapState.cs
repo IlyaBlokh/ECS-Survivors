@@ -4,7 +4,7 @@ using Code.Infrastructure.States.StateMachine;
 
 namespace Code.Infrastructure.States.GameStates
 {
-  public class BootstrapState : IState
+  public class BootstrapState : SimpleState
   {
     private readonly IGameStateMachine _stateMachine;
     private readonly IStaticDataService _staticDataService;
@@ -15,16 +15,11 @@ namespace Code.Infrastructure.States.GameStates
       _staticDataService = staticDataService;
     }
     
-    public void Enter()
+    public override void Enter()
     {
       _staticDataService.LoadAll();
       
       _stateMachine.Enter<LoadProgressState>();
-    }
-
-    public void Exit()
-    {
-      
     }
   }
 }
